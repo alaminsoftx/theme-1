@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soppiya theme</title>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- common css -->
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+
+<body>
+    <!-- ========================================================
+    =============== start mobile bottom navigation ==============
+    ============================================================= -->
+    <div class="moblieBottomNav ">
+        <div class="container">
+            <!-- start mobile bottom navigation -->
+            <div class="mobileBottomNavInner">
+                <div class="bottomNavItemArea">
+                    <ul class="bottomNav">
+                        <li class="navItem">
+                            <div class="navItemInner">
+                                <img class="bottomNavIconSize" src="assets/icon/Cart.svg" alt="" />
+                                <span class="bottomNavItemText">Cart</span>
+                            </div>
+                        </li>
+                        <li class="navItem">
+                            <div class="navItemInner">
+                                <img class="bottomNavIconSize" src="assets/icon/Wishlist.svg" alt="" />
+                                <span class="bottomNavItemText">Wishlist</span>
+                            </div>
+                        </li>
+                        <li class="navItem navItemsHome" id="navItemsHome">
+                            <div class="navItemInner">
+                                <img class="bottomNavIconSize" id="bottomNavHomeIconSize" src="assets/icon/Home.svg"
+                                    alt="" />
+                                <span class="bottomNavItemText" id="bottomNavHomeItemText">Home</span>
+                            </div>
+                        </li>
+                        <li class="navItem">
+                            <div class="navItemInner">
+                                <img class="bottomNavIconSize" src="assets/icon/Notification.svg" alt="" />
+                                <span class="bottomNavItemText">Notification</span>
+                            </div>
+                        </li>
+                        <li class="navItem">
+                            <div class="navItemInner">
+                                <img class="bottomNavIconSize" src="assets/icon/Account.svg" alt="" />
+                                <span class="bottomNavItemText">Account</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bottomNavItemArea2">
+                    <ul class="bottomNav2">
+                        <li class="navItem2">
+                            <img class="bottomNavIconSize" src="assets/icon/Cart.svg" alt="" />
+                        </li>
+                        <li class="navItem2">
+                            <img class="bottomNavIconSize" src="assets/icon/Wishlist.svg" alt="" />
+                        </li>
+                        <li class="navItem2  showNavItem2 ">
+                            <span class="bottomNavItemText">
+                                <img class="bottomNavIconSize" src="assets/icon/Home.svg" alt="" />
+                            </span>
+                        </li>
+                        <li class="navItem2">
+                            <img class="bottomNavIconSize" src="assets/icon/Notification.svg" alt="" />
+                        </li>
+                        <li class="navItem2">
+                            <img class="bottomNavIconSize" src="assets/icon/Account.svg" alt="" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end  mobile bottom navigation -->
+        </div>
+    </div>
+    <!-- ========================================================
+    ================= end mobile bottom navigation ==============
+    ============================================================= -->
+
+
+
+    <!-- js -->
+    <script>
+        let navItem = document.getElementsByClassName("navItem");
+        let navItem2 = document.getElementsByClassName("navItem2");
+
+        let navItemsHome = document.getElementsByClassName("navItemsHome");
+
+        for (let i = 0; i < navItem.length; i++) {
+            navItem[i].addEventListener("click", function () {
+                if (navItem[i].id != 'navItemsHome') {
+                    document.getElementById("bottomNavHomeItemText").style.display = 'none'
+                    document.getElementById("bottomNavHomeIconSize").style.visibility = 'visible'
+                }
+                else{
+                    document.getElementById("bottomNavHomeItemText").style.display = 'block'
+                    document.getElementById("bottomNavHomeIconSize").style.visibility = 'hidden'
+                }
+            });
+        }
+
+        for (let i = 0; i < navItem2.length; i++) {
+            navItem[i].addEventListener("click", function () {
+                for (let j = 0; j < navItem2.length; j++) {
+                    navItem2[j].classList.remove("showNavItem2");
+                    navItem[j].classList.remove("showHideText");
+                }
+            });
+        }
+
+
+        for (let i = 0; i < navItem2.length; i++) {
+            navItem[i].addEventListener("click", function () {
+                navItem2[i].classList.add("showNavItem2");
+                navItem[i].classList.add("showHideText");
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

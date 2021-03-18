@@ -1,0 +1,186 @@
+/* ======================================================
+==================== start common style =================
+========================================================= */
+/* common prefix: sth */
+
+*{ 
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+body{
+    background-color: #f1f5ff;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 788px;
+    width:100%;
+    padding: 0 20px;
+    margin:0 auto;
+}
+
+
+
+/* ======================================================
+====================== end common style =================
+========================================================= */
+
+
+/* ======================================================
+================ start mobile bottom nav ================
+========================================================= */
+.moblieBottomNav{
+    background-color:#fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 60px;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    box-shadow: 0 0 15px rgb(108 99 255 / 10%);
+    display: flex;
+    align-items: center;
+}
+.mobileBottomNavInner{
+    position: relative;
+}
+
+.bottomNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navItem{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navItemInner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bottomNavIconSize{
+    width:17px;
+    height:22px;
+}
+.bottomNavItemText{
+    font-size:0px;
+    font-weight: 600;
+    color:#01126c;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* ================ 2 ========= */
+.bottomNavItemArea2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -40px;
+}
+.bottomNav2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navItem2 {
+    background-image: linear-gradient(to right, #00a5ff, #58c5ff) !important;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    visibility: hidden;
+}
+
+.showNavItem2{
+    visibility: visible;
+}
+.showNavItem2 .bottomNavIconSize{
+    filter: brightness(0) invert(1);
+}
+.navItem2::after {
+    content: "";
+    position: absolute;
+    width: 71px;
+    height: 71px;
+    border-radius: 50%;
+    z-index: -999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -999999;
+    background-color: #f1f5ff;
+
+}
+
+/* .fontSize0{
+    font-size:0px;
+} */
+
+.showHideText .bottomNavItemText{
+    font-size:10px !important;
+}
+.showHideText .bottomNavIconSize{
+   visibility: hidden !important;
+}
+
+.navItemsHome .bottomNavIconSize{
+    visibility: hidden;
+}
+.navItemsHome .bottomNavItemText{
+    font-size: 10px;
+}
+.bottomNavIconSize2{
+    width:17px;
+    height:22px;
+}
+/* ======================================================
+================== end mobile bottom nav ================
+========================================================= */
+
+
+/* ======================================================
+================= start display property ================
+========================================================= */
+
+/* ======================================================
+================= end display property ==================
+========================================================= */
+
+
+
+/* ==================== responsive ====================== */
+
+
+
+/* medium */
+@media(min-width:768px){
+    .container{
+        max-width: 1550px;
+        width:100%;
+        padding: 0 30px;
+    }
+
+    .moblieBottomNav{
+        display: none !important;
+    }
+}

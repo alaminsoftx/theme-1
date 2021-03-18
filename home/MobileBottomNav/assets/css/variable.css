@@ -1,0 +1,88 @@
+:root {
+    --primaryColor: #00a5ff;
+    --seconderyColor: #01126c;
+    --color3: #3e5570;
+    --color4: #95afc0;
+    --color5: #d1d8e0;
+    --color6:#2ECC71;
+    --white: #ffffff;
+    --color7:#F5F8FF;
+    --color8:#535C68;
+    --color9:#95AFC0;
+    --color10:#F1F5FF;
+    --subMenubg:#F1F5FF;
+    --borderColor: #707070;
+    --activeBtnBg:#E9FAF0;
+    --BtnClic:#F1F5FF;
+    --activeBtnClic:#e4e9f7;
+    --activeBtnTextColor:#2ECC71;
+    --inactiveBtnBg:#FDEAEA;
+    --inactiveBtnTextcolor:#FF5E57;
+    --invoiceBgcolor:#FFF0E1;
+    --invoiceTexcolor:#FF9F43;
+    --approvedBg:#D9F2FF;
+    --smallCuponBg:#E9FAF0;
+    --smallCashCountBg:#D9F2FF;
+    --smallShopIconBg:#FDEAEA;
+    --smallPurchaseIconBg:#FFF0E1;
+  
+    --spineProductInactive:#AAEAC6;
+  
+    --spineServiceColor:#00A5FF;
+    --spineServiceInactive:rgb(0 165 255 / 40%);
+  
+    --spineCategoryActive:#836AF9;
+    --spineSubCategoryActive:#FECA57;
+    --spineSubSubCategoryActive:#28DAC6;
+  
+  
+  
+    /*  comon fonts*/
+  
+    --fontSize10: 10px;
+    --fontSize12: 12px;
+    
+    --fontSizeXs: 13px;
+    --fontSizeS: 14px;
+    --fontSizeM: 15px;
+    --fontSize18:18px;
+    --fontSize18:16px;
+    --fontSize20:20px;
+    --fontSize22:22px;
+    --fontSize24:24px;
+    --fontSize26:26px;
+    --fontSize36:36px;
+  
+    
+  
+    /* heading fonts */
+    --fontSizeLH: 30px;
+    --fontSizeMH: 22px;
+    --fontSizeSH: 18px;
+  
+    /* button fonts */
+    --BtnFontSizeXs: 13px;
+    --BtnFontSizeS: 14px;
+    --BtnFontSizeM: 15px;
+  
+    /*  border */
+    --tableBorder:1px solid rgb(209 216 224 / 50%);
+    --cardBorder: 1px solid #E8EBEF;
+    --toggleBtnBorder:1px solid rgb(209 216 224);
+  
+  
+    /* gradient and shadow */
+    --buttonGradient: linear-gradient(to right, #00a5ff, #58c5ff);
+    --buttonHoverGradient: linear-gradient(to left, #00a5ff, #58c5ff);
+    --buttonShadow: 0 0 15px rgb(0 165 255 / 30%);
+    --BoxShadowForBoxes: -3px 0px 15px rgb(108 99 255 / 10%);
+    --boxShadowTableHead: 0px 2px 3px rgb(108 99 255 / 14%);
+    --activecolor: #00a5ff;
+    --productShadow: 0 0 15px rgb(108 99 255 / 16%);
+    --gradientActivecolor:linear-gradient(to right, #00a5ff, #58c5ff);
+
+
+
+    --mobileBottomNavShadow: 0 0 15px rgb(108 99 255 / 10%);
+  }
+  
