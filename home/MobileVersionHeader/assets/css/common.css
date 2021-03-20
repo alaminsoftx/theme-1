@@ -1,0 +1,224 @@
+/* ======================================================
+==================== start common style =================
+========================================================= */
+/* common prefix: sth */
+
+*{ 
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+body{
+    background-color: #f1f5ff;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1550px;
+    width:100%;
+    padding: 0 20px;
+    margin:0 auto;
+}
+
+.textCenter{
+    text-align: center;
+}
+
+/* ======================================================
+====================== end common style =================
+========================================================= */
+
+
+/* ======================================================
+================ start mobile version header ============
+========================================================= */
+/* humberger nav */
+.mobileHeaderWrapper{
+    position: relative;
+}
+.mobileHeaderArea{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+.mobileVersionHeader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.humbergerNavArea {
+    position: relative;
+    z-index: 999;
+}
+.humbergerNavIcon{
+    height:2px;
+    background-color: #2C2C2C;
+    position: absolute;
+  
+}
+.humbergerNavIcon:nth-child(1){
+    width:22px;
+    left: 0;
+    top: calc(50% - 3px);
+    transform: translateY(-50%) rotate(0deg);
+    transition: all .3s;
+}
+.humbergerNavIcon:nth-child(2) {
+    width: 15px;
+    left: 0;
+    top: calc(50% + 3px);
+    transform: translateY(-50%) rotate(0deg);
+    transition: all .3s;
+}
+.mobileHeaderCol{
+    width:33.33%;
+}
+.mobileHeaderLogoSize {
+    max-width: 96px;
+    width: 100%;
+}
+#humbergerToggle {
+    width: 22px;
+    height: 22px;
+    position: relative;
+    cursor: pointer;
+}
+.humbergerToggleBtn .humbergerNavIcon:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+.humbergerToggleBtn .humbergerNavIcon:nth-child(2) {
+    width: 22px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+/* search area */
+.searchIconArea{}
+.searchItem{
+    position: relative;
+    height:30px;
+}
+.soppiyaTheme1SearchBar {
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #95AFC0;
+    width: 100%;
+    visibility: hidden;
+    outline: none;
+    padding: 0 8px;
+  
+}
+.visibleSearch .soppiyaTheme1SearchBar{
+    visibility: visible;
+    transition: all .3s;
+}
+.searchIcon {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 17px;
+    height:17px;
+    transition: all .3s;
+    right:0;
+}
+.visibleSearch .searchIcon{
+    right:7px;
+}
+
+.visibleSearch .mobileHeaderCol.showFull{
+    width:100%;
+}
+.visibleSearch .mobileHeaderCol.hide{
+   display: none;
+}
+
+.searchItem input[type="text"]::placeholder{
+    font-size:11px;
+    font-weight: 500;
+    color:#778994;
+}
+
+
+
+/* humberger */
+.humbergerWrapper{
+    position: fixed;
+}
+.humbergerToggleBtn .humbergerOverLay{ 
+        background: rgb(44 44 44 / 70%);
+        width: calc(100% - 230px) !important;
+        position: fixed;
+        height: 100vh;
+        min-width: 768px;
+        right: 0;
+        cursor: pointer;
+        top:0;
+}
+.humbergerOverLay{ 
+    transition:all .3s;
+}
+
+
+.humbergerMenu {
+    width: 230px;
+    padding: 0 20px;
+    background: #fff;
+    height: 100vh;
+    min-height: 768px;
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    left: -230px;
+    position: fixed;
+    padding-top: 60px;
+    transition:all .3s;
+}
+.humbergerToggleBtn .humbergerMenu{
+    left:0 !important;
+}
+.humbergerNavItem {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    align-items: center;
+    margin-bottom: 1px;
+}
+.HumbergerNavItemText{
+    font-size:14px;
+    font-weight: 600;
+    color:#2C2C2C;
+    cursor: pointer;
+}
+
+
+/* ======================================================
+================== end mobile version header ============
+========================================================= */
+
+
+
+
+
+/* ==================== responsive ====================== */
+
+
+
+/* medium */
+@media(min-width:768px){
+    .container{
+        padding: 0 30px;
+    }
+
+}
