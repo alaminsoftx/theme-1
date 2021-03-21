@@ -6,22 +6,242 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soppiya theme</title>
-    <!-- google fonts -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
-    <!-- common css -->
-    <link rel="stylesheet" href="assets/css/common.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background-color: #f1f5ff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1550px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .textCenter {
+            text-align: center;
+        }
+
+
+        .mobileHeaderWrapper {
+            position: relative;
+        }
+
+        .mobileHeaderArea {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            background: #fff;
+        }
+
+        .mobileVersionHeader {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .humbergerNavArea {
+            position: relative;
+            z-index: 999;
+        }
+
+        .humbergerNavIcon {
+            height: 2px;
+            background-color: #2C2C2C;
+            position: absolute;
+
+        }
+
+        .humbergerNavIcon:nth-child(1) {
+            width: 22px;
+            left: 0;
+            top: calc(50% - 3px);
+            transform: translateY(-50%) rotate(0deg);
+            transition: all .3s;
+        }
+
+        .humbergerNavIcon:nth-child(2) {
+            width: 15px;
+            left: 0;
+            top: calc(50% + 3px);
+            transform: translateY(-50%) rotate(0deg);
+            transition: all .3s;
+        }
+
+        .mobileHeaderCol {
+            width: 33.33%;
+        }
+
+        .mobileHeaderLogoSize {
+            max-width: 96px;
+            width: 100%;
+        }
+
+        #humbergerToggle {
+            width: 22px;
+            height: 22px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .humbergerToggleBtn .humbergerNavIcon:nth-child(1) {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .humbergerToggleBtn .humbergerNavIcon:nth-child(2) {
+            width: 22px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+
+        .searchIconArea {}
+
+        .searchItem {
+            position: relative;
+            height: 30px;
+        }
+
+        .soppiyaTheme1SearchBar {
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid #95AFC0;
+            width: 100%;
+            visibility: hidden;
+            outline: none;
+            padding: 0 8px;
+
+        }
+
+        .visibleSearch .soppiyaTheme1SearchBar {
+            visibility: visible;
+            transition: all .3s;
+        }
+
+        .searchIcon {
+            position: absolute;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 17px;
+            height: 17px;
+            transition: all .3s;
+            right: 0;
+        }
+
+        .visibleSearch .searchIcon {
+            right: 7px;
+        }
+
+        .visibleSearch .mobileHeaderCol.showFull {
+            width: 100%;
+        }
+
+        .visibleSearch .mobileHeaderCol.hide {
+            display: none;
+        }
+
+        .searchItem input[type="text"]::placeholder {
+            font-size: 11px;
+            font-weight: 500;
+            color: #778994;
+        }
+
+
+        .humbergerWrapper {
+            position: fixed;
+        }
+
+        .humbergerToggleBtn .humbergerOverLay {
+            background: rgb(44 44 44 / 70%);
+            width: calc(100% - 230px) !important;
+            position: fixed;
+            height: 100vh;
+            min-width: 768px;
+            right: 0;
+            cursor: pointer;
+            top: 0;
+        }
+
+        .humbergerOverLay {
+            transition: all .3s;
+        }
+
+
+        .humbergerMenu {
+            width: 230px;
+            padding: 0 20px;
+            background: #fff;
+            height: 100vh;
+            min-height: 768px;
+            position: absolute;
+            top: 0;
+            z-index: 9;
+            left: -230px;
+            position: fixed;
+            padding-top: 60px;
+            transition: all .3s;
+        }
+
+        .humbergerToggleBtn .humbergerMenu {
+            left: 0 !important;
+        }
+
+        .humbergerNavItem {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            align-items: center;
+            margin-bottom: 1px;
+        }
+
+        .HumbergerNavItemText {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2C2C2C;
+            cursor: pointer;
+        }
+
+        @media(min-width:768px) {
+		
+            .container {
+                padding: 0 30px;
+            }
+
+
+        }
+    </style>
 </head>
 
 <body>
-    <!-- ========================================================
-    =============== start mobile version header =================
-    ============================================================= -->
+
     <header class="mobileHeaderWrapper" id="mobileHeaderWrapper">
         <div class="mobileHeaderArea">
             <div class="container">
-                <div class="mobileVersionHeader"  id="visibleSearch">
+                <div class="mobileVersionHeader" id="visibleSearch">
                     <div class="mobileHeaderCol hide">
                         <ul class="humbergerNavArea" id="humbergerToggle">
                             <li class="humbergerNavIcon" id="humbergerNavItem1"></li>
@@ -30,75 +250,75 @@
                     </div>
                     <div class="mobileHeaderCol textCenter hide">
                         <div class="logo">
-                            <img class="mobileHeaderLogoSize" src="assets/images/Logo.svg" alt="">
+                            <img class="mobileHeaderLogoSize" src="Logo.svg" alt="">
                         </div>
                     </div>
                     <div class="mobileHeaderCol showFull">
                         <div class="searchIconArea">
-                            <label class="searchItem" >
-                                <input type="text" placeholder="Search Product" class="soppiyaTheme1SearchBar " >
-                                <img id="searchIcon" class="searchIcon" src="assets/icon/fi-rr-search.svg" alt="">
+                            <label class="searchItem">
+                                <input type="text" placeholder="Search Product" class="soppiyaTheme1SearchBar ">
+                                <img id="searchIcon" class="searchIcon" src="fi-rr-search.svg" alt="">
                             </label>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- humberger menu -->
+   
         <div class="humbergerWrapper" id="humbergerWrapper">
-           <div class="container">
-            <div class="humbergerMenu">
-                <div class="humbergerMenuInner">
-                    <ul class="humbergerNav">
-                        <li class="humbergerNavItem">
-                            <p class="HumbergerNavItemText">Fashion</p>
-                            <p class="navItemIconArea"><img class="navItemIconSize" src="assets/icon/fi-rr-angle-small-down.svg" alt=""></p>
-                        </li>
-                        <li class="humbergerNavItem">
-                            <p class="HumbergerNavItemText">Beauty</p>
-                            <p class="navItemIconArea"><img class="navItemIconSize" src="assets/icon/fi-rr-angle-small-down.svg" alt=""></p>
-                        </li>
-                        <li class="humbergerNavItem">
-                            <p class="HumbergerNavItemText">Shoes</p>
-                            <p class="navItemIconArea"><img class="navItemIconSize" src="assets/icon/fi-rr-angle-small-down.svg" alt=""></p>
-                        </li>
-                        <li class="humbergerNavItem">
-                            <p class="HumbergerNavItemText">Electronics</p>
-                            <p class="navItemIconArea"><img class="navItemIconSize" src="assets/icon/fi-rr-angle-small-down.svg" alt=""></p>
-                        </li>
-                        <li class="humbergerNavItem">
-                            <p class="HumbergerNavItemText">Furniture</p>
-                            <p class="navItemIconArea"><img class="navItemIconSize" src="assets/icon/fi-rr-angle-small-down.svg" alt=""></p>
-                        </li>
-                        <li class="humbergerNavItem">
-                            <p class="HumbergerNavItemText">Stationary</p>
-                            <p class="navItemIconArea"><img class="navItemIconSize" src="assets/icon/fi-rr-angle-small-down.svg" alt=""></p>
-                        </li>
-                        <li class="humbergerNavItem">
-                            <p class="HumbergerNavItemText">Grocery </p>
-                            <p class="navItemIconArea"><img class="navItemIconSize" src="assets/icon/fi-rr-angle-small-down.svg" alt=""></p>
-                        </li>
-                        <li class="humbergerNavItem">
-                            <p class="HumbergerNavItemText">Vehicle </p>
-                            <p class="navItemIconArea"><img class="navItemIconSize" src="assets/icon/fi-rr-angle-small-down.svg" alt=""></p>
-                        </li>
-                    </ul>
+            <div class="container">
+                <div class="humbergerMenu">
+                    <div class="humbergerMenuInner">
+                        <ul class="humbergerNav">
+                            <li class="humbergerNavItem">
+                                <p class="HumbergerNavItemText">Fashion</p>
+                                <p class="navItemIconArea"><img class="navItemIconSize"
+                                        src="fi-rr-angle-small-down.svg" alt=""></p>
+                            </li>
+                            <li class="humbergerNavItem">
+                                <p class="HumbergerNavItemText">Beauty</p>
+                                <p class="navItemIconArea"><img class="navItemIconSize"
+                                        src="fi-rr-angle-small-down.svg" alt=""></p>
+                            </li>
+                            <li class="humbergerNavItem">
+                                <p class="HumbergerNavItemText">Shoes</p>
+                                <p class="navItemIconArea"><img class="navItemIconSize"
+                                        src="fi-rr-angle-small-down.svg" alt=""></p>
+                            </li>
+                            <li class="humbergerNavItem">
+                                <p class="HumbergerNavItemText">Electronics</p>
+                                <p class="navItemIconArea"><img class="navItemIconSize"
+                                        src="fi-rr-angle-small-down.svg" alt=""></p>
+                            </li>
+                            <li class="humbergerNavItem">
+                                <p class="HumbergerNavItemText">Furniture</p>
+                                <p class="navItemIconArea"><img class="navItemIconSize"
+                                        src="fi-rr-angle-small-down.svg" alt=""></p>
+                            </li>
+                            <li class="humbergerNavItem">
+                                <p class="HumbergerNavItemText">Stationary</p>
+                                <p class="navItemIconArea"><img class="navItemIconSize"
+                                        src="fi-rr-angle-small-down.svg" alt=""></p>
+                            </li>
+                            <li class="humbergerNavItem">
+                                <p class="HumbergerNavItemText">Grocery </p>
+                                <p class="navItemIconArea"><img class="navItemIconSize"
+                                        src="fi-rr-angle-small-down.svg" alt=""></p>
+                            </li>
+                            <li class="humbergerNavItem">
+                                <p class="HumbergerNavItemText">Vehicle </p>
+                                <p class="navItemIconArea"><img class="navItemIconSize"
+                                        src="fi-rr-angle-small-down.svg" alt=""></p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-           </div>
             <div class="humbergerOverLay"></div>
         </div>
     </header>
 
 
-
-    <!-- ========================================================
-    ================= end mobile version header =================
-    ============================================================= -->
-
-
-
-    <!-- js -->
     <script>
         let humbergerToggle = document.getElementById("humbergerToggle");
         let humbergerNavItem1 = document.getElementById("humbergerNavItem1");
@@ -106,10 +326,10 @@
         let mobileHeaderWrapper = document.getElementById("mobileHeaderWrapper");
         let humbergerWrapper = document.getElementById("humbergerWrapper");
 
-        humbergerToggle.addEventListener("click", function(){
+        humbergerToggle.addEventListener("click", function () {
             mobileHeaderWrapper.classList.toggle("humbergerToggleBtn");
         })
-        humbergerWrapper.addEventListener("click", function(){
+        humbergerWrapper.addEventListener("click", function () {
             mobileHeaderWrapper.classList.remove("humbergerToggleBtn");
         })
 

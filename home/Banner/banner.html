@@ -6,35 +6,114 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soppiya theme</title>
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <!-- common css -->
-    <link rel="stylesheet" href="assets/css/common.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background-color: #f1f5ff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1550px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .MobileBannerImageSize {
+            width: 100%;
+        }
+
+        .fade {
+            animation: fade 5s infinite;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @media(min-width:768px) {
+            .container {
+                padding: 0 30px;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
-    <!-- ========================================================
-    ==================== start banner section ===================
-    ============================================================= -->
-    <section class="bannerSection">
-        <div class="bannerSectionInner" id="">
-            <img id="mobileBannerSlider" class="MobileBannerImageSize" src="assets/images/Banner.svg" alt="">
+
+    <section class="mobileBannerSection">
+        <div class="mobileBannerSectionInner " id="mobileBannerSlider">
+            <img id="mobileBannerSliderImg" class="MobileBannerImageSize " src="Banner.svg" alt="">
+
         </div>
     </section>
-    <!-- ========================================================
-    ====================== end banner section ===================
-    ============================================================= -->
 
 
-
-    <!-- js -->
     <script>
-        let mobileBannerImages = ["assets/images/Banner.svg"];
-        let mobileBannerSlider = document.getElementById("mobileBannerSlider");
+        let mobileBannerImages = ["Banner.svg"];
+        let mobileBannerImagesLenth = mobileBannerImages.length;
+        let mobileBannerSliderImg = document.getElementById("mobileBannerSliderImg");
         let mobileSliderImgCount = 0;
+        let mobileBannerSlider = document.getElementById("mobileBannerSlider");
 
 
+        if (mobileBannerImagesLenth != 1) {
+            mobileBannerSliderImg.classList.add("fade");
+        } else {
+            mobileBannerSliderImg.classList.add(" ");
+        }
+        mobileBannerSlider.addEventListener("load", autoSlide());
 
+        function autoSlide() {
+            setInterval(function () {
+                mobileSliderImgCount--;
+                mobileBannerSliderImg.src = mobileBannerImages[mobileSliderImgCount];
+                if (mobileSliderImgCount < 0) {
+                    mobileSliderImgCount = mobileBannerImagesLenth - 1;
+                    mobileBannerSliderImg.src = mobileBannerImages[mobileSliderImgCount];
+                } else {
+                    mobileBannerSliderImg.src = mobileBannerImages[mobileSliderImgCount];
+                }
+            }, 3000)
+        }
 
     </script>
 </body>
