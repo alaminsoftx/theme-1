@@ -39,16 +39,38 @@
             margin: 0 auto;
         }
 
+        .DtFooterSection {
+            padding: 30px 0;
+        }
+
         .DTFooterWrapper {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            border-bottom: 1px solid #778994;
+            padding-bottom: 30px;
         }
 
         /* col */
-        .DTFooterCol1 {
+        /* .DTFooterCol1 {
             width: 32%;
             line-height: 23px;
+        } */
+
+        .DTFooterCol1 {
+            width: 100%;
+            line-height: 23px;
+            margin-bottom: 40px;
+        }
+
+        .DTFooterCol2 {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .DTFooterCol3 {
+            width: 100%;
+            margin-bottom: 40px;
         }
 
         .DTFooterColTitle {
@@ -104,11 +126,22 @@
         }
 
         .DTFooterCol4 {
-            width: 20%;
+            width: 100%;
         }
 
         .DTAddressNavItem.DTAddressNavItemTop {
             margin-bottom: 15px;
+        }
+
+        .DTSocketArea {
+            text-align: center;
+        }
+
+        .DTSocketText {
+            font-size: 12px;
+            font-weight: 500;
+            color: #778994;
+            margin-top: 10px;
         }
 
         @media(min-width:768px) {
@@ -117,7 +150,48 @@
                 padding: 0 30px;
             }
 
+            .DTFooterCol1 {
+                width: 70%;
+                line-height: 23px;
+            }
 
+            .DTFooterCol2 {
+                width: 33.33%;
+                margin-bottom: 0px;
+            }
+
+            .DTFooterCol3 {
+                width: 33.33%;
+                margin-bottom: 0px;
+            }
+
+            .DTFooterCol4  {
+                width: 33.33%;
+                margin-bottom: 0px;
+            }
+
+
+        }
+
+        @media(min-width:1024px) {
+
+            .DTFooterCol1 {
+                width: 32%;
+                line-height: 23px;
+            }
+            .DTFooterCol2 {
+                width: auto;
+                margin-bottom: 0px;
+            }
+
+            .DTFooterCol3 {
+                width: auto;
+                margin-bottom: 0px;
+            }
+            .DTFooterCol4 {
+    width: 18%;
+    margin-bottom: 0px;
+}
         }
     </style>
 </head>
@@ -209,6 +283,10 @@
                 </div>
 
 
+            </div>
+
+            <div class="DTSocketArea">
+                <p class="DTSocketText">&copy; 2021 SoftX. All rights reserved.</p>
             </div>
         </div>
     </footer>
