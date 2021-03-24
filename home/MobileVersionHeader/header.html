@@ -314,7 +314,7 @@
                     </div>
                 </div>
             </div>
-            <div class="humbergerOverLay"></div>
+            <div class="humbergerOverLay" id="humbergerOverLay"></div>
         </div>
     </header>
 
@@ -325,11 +325,12 @@
         let humbergerNavItem2 = document.getElementById("humbergerNavItem2");
         let mobileHeaderWrapper = document.getElementById("mobileHeaderWrapper");
         let humbergerWrapper = document.getElementById("humbergerWrapper");
+        let humbergerOverLay = document.getElementById("humbergerOverLay");
 
         humbergerToggle.addEventListener("click", function () {
             mobileHeaderWrapper.classList.toggle("humbergerToggleBtn");
         })
-        humbergerWrapper.addEventListener("click", function () {
+        humbergerOverLay.addEventListener("click", function () {
             mobileHeaderWrapper.classList.remove("humbergerToggleBtn");
         })
 
