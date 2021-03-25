@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soppiya theme</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background-color: #f1f5ff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1550px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .DesktopBannerImageSize {
+            width: 100%;
+        }
+
+        .fade {
+            animation: fade 3s infinite;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .sliderBtn {
+            border: 1px solid;
+            cursor: pointer;
+            width: 100px;
+            outline: none;
+        }
+
+        @media(min-width:768px) {
+            .container {
+                padding: 0 30px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="DesktopBannerSection" class="DesktopBannerSection">
+        <div class="DesktopBannerSectionInner">
+    
+          <div class="DesktopBannerImageArea">
+            <img id="DesktopBannerSliderImg fade" src="https://i.ibb.co/SdrRWRr/1.jpg" alt="" />
+          </div>
+    
+          <div class="sliderButtonArea">
+            <button id="SlidePrev">
+              Prev
+            </button>
+            <button id="SlideNext">
+              Next
+            </button>
+          </div>
+    
+        </div>
+      </div>
+    
+    
+      <script>
+        let DesktopBannerImages = [
+        "https://i.ibb.co/SdrRWRr/1.jpg",
+        "https://i.ibb.co/6sz7Yjh/2.jpg",
+        "https://i.ibb.co/GWVQPCV/3.jpg",
+        "https://i.ibb.co/S74tSvx/4.jpg",
+        "https://i.ibb.co/S74tSvx/4.jpg",
+        ];
+        let DesktopBannerSliderImg = document.getElementById("DesktopBannerSliderImg");
+        let DesktopSliderImgCount = 0;
+        let DesktopBannerImagesLength = DesktopBannerImages.length;
+        let counter = 3000;
+    
+        document.getElementById("DesktopBannerSection").addEventListener("load", autoPlay());
+    
+        document.getElementById("SlideNext").addEventListener("click", function () {
+            counter = 3000;
+            DesktopSliderImgCount++;
+            DesktopBannerSliderImg.src = DesktopBannerImages[DesktopSliderImgCount];
+            if (DesktopSliderImgCount >= DesktopBannerImagesLength) {
+              DesktopSliderImgCount = 0;
+              DesktopBannerSliderImg.src = DesktopBannerImages[DesktopSliderImgCount];
+            } else {
+              DesktopBannerSliderImg.src = DesktopBannerImages[DesktopSliderImgCount];
+            }
+          });
+    
+        document.getElementById("SlidePrev").addEventListener("click", function () {
+            counter = 3000;
+            DesktopSliderImgCount--;
+            DesktopBannerSliderImg.src = DesktopBannerImages[DesktopSliderImgCount];
+            if (DesktopSliderImgCount < 0) {
+              DesktopSliderImgCount = DesktopBannerImagesLength - 1;
+              DesktopBannerSliderImg.src = DesktopBannerImages[DesktopSliderImgCount];
+            } else {
+              DesktopBannerSliderImg.src = DesktopBannerImages[DesktopSliderImgCount];
+            }
+          });
+    
+        function autoPlay() {
+          setInterval(function () {
+            if (counter < 0) {
+              if (DesktopSliderImgCount == DesktopBannerImagesLength - 1) {
+                DesktopSliderImgCount = 0;
+              }
+              DesktopSliderImgCount++;
+              DesktopBannerSliderImg.src = DesktopBannerImages[DesktopSliderImgCount];
+              counter = 3000;
+            }
+            counter = counter - 1000;
+          }, 1000);
+        }
+    
+       
+
+
+
+    </script>
+</body>
+
+</html>
