@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soppiya theme</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1550px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .wishlistHeaderInner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .wishlistIconArea {
+            width: auto;
+        }
+
+        .wishlistHeadingTextArea {
+            width: 55%;
+        }
+
+        .wishlistHeader {
+            background-color: #fff;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .wishlistHeadingText {
+            font-weight: 700;
+            font-size: 18px;
+            color: #01126C;
+            display: inline-block;
+        }
+
+        .addProductInWistlist {
+            background-color: #F1F5FF;
+            /* height: calc(100vh - 60px); */
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .addProudctArea {
+            padding: 25px 0px;
+        }
+
+        .wishlistProductItem {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: #fff;
+            padding: 13px 16px;
+            border-radius: 5px;
+        }
+
+        .wishlistProductItem:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .wishlistProductImgArea img {
+            width: 100%;
+        }
+
+        .wishlistProductImgArea {
+            width: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .deleteIconArea {
+            width: 15px;
+        }
+
+        .wishlistProductContent {
+            width: calc(100% - 120px);
+            margin-left: 15px;
+        }
+
+        .productHeadingText {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2C2C2C;
+            line-height: 16px;
+        }
+
+        .productPricingText {
+            font-size: 11px;
+            font-weight: 500;
+            color: #778994;
+            margin-top: 8px;
+        }
+
+        .wishlistproductButton {
+            font-size: 11px;
+            font-weight: 500;
+            background-color: #2C2C2C;
+            border-radius: 3px;
+            color: #fff;
+            border: none;
+            outline: none;
+            width: 82px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        @media(min-width:768px) {
+
+            .container {
+                padding: 0 30px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- start  wishlist header -->
+    <div class="wishlistHeader">
+        <div class="container">
+            <div class="wishlistHeaderInner">
+                <div class="wishlistIconArea">
+                    <svg class="leftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="5.123" height="10"
+                        viewBox="0 0 5.123 10">
+                        <path id="fi-rr-angle-small-down"
+                            d="M14.791,8.123a.714.714,0,0,0-1.01,0L10.505,11.4a.729.729,0,0,1-1.01,0L6.219,8.123a.714.714,0,1,0-1.01,1.01l3.275,3.276a2.143,2.143,0,0,0,3.031,0l3.276-3.276a.714.714,0,0,0,0-1.01Z"
+                            transform="translate(-7.914 15) rotate(-90)" fill="#2c2c2c" />
+                    </svg>
+                </div>
+                <div class="wishlistHeadingTextArea">
+                    <p class="wishlistHeadingText">Wishlist</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end  wishlist header -->
+
+    <!-- start add wishlist product -->
+    <div class="addProductInWistlist">
+        <div class="container">
+            <div class="addProudctArea">
+                <div class="wishlistProductItemWrapper" id="wishlistProductItemWrapper">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start end wishlist product -->
+
+    <script>
+        let wishlistProductItemWrapper = document.getElementById("wishlistProductItemWrapper");
+        let wishlistProductItem = document.getElementById("wishlistProductItem");
+
+        let wishlistProductItHTML = "";
+
+        const wishlistProdcutObj = [
+            {
+                id: 2356,
+                productImg: `Thumbnails.svg`,
+                productTitle: `iPhone 12 Pro Max 256gb Ocean Blue...`,
+                productPrice: `৳ 78000`,
+                productBtn: `Add to cart`,
+                deleteIcon: `
+                        <svg id="" xmlns="http://www.w3.org/2000/svg" width="13.333" height="16"
+                            viewBox="0 0 13.333 16">
+                            <g id="fi-rr-trash" transform="translate(-2)">
+                                <path id="Path_1660" data-name="Path 1660"
+                                    d="M14.667,2.667H12.6A3.339,3.339,0,0,0,9.333,0H8A3.339,3.339,0,0,0,4.733,2.667H2.667A.667.667,0,1,0,2.667,4h.667v8.667A3.337,3.337,0,0,0,6.667,16h4A3.337,3.337,0,0,0,14,12.667V4h.667a.667.667,0,0,0,0-1.333ZM8,1.333H9.333a2,2,0,0,1,1.886,1.333H6.114A2,2,0,0,1,8,1.333Zm4.667,11.333a2,2,0,0,1-2,2h-4a2,2,0,0,1-2-2V4h8Z"
+                                    transform="translate(0)" fill="#ff5e57" />
+                                <path id="Path_1661" data-name="Path 1661"
+                                    d="M9.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,0,0-1.332,0v4A.666.666,0,0,0,9.666,15.33Z"
+                                    transform="translate(-2.333 -3.331)" fill="#ff5e57" />
+                                <path id="Path_1662" data-name="Path 1662"
+                                    d="M13.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,1,0-1.332,0v4A.666.666,0,0,0,13.666,15.33Z"
+                                    transform="translate(-3.666 -3.331)" fill="#ff5e57" />
+                            </g>
+                        </svg>
+                `
+            },
+            {
+                id: 2356,
+                productImg: `Thumbnails.svg`,
+                productTitle: `iPhone 12 Pro Max 256gb Ocean Blue...`,
+                productPrice: `৳ 78000`,
+                productBtn: `Add to cart`,
+                deleteIcon: `
+                        <svg id="" xmlns="http://www.w3.org/2000/svg" width="13.333" height="16"
+                            viewBox="0 0 13.333 16">
+                            <g id="fi-rr-trash" transform="translate(-2)">
+                                <path id="Path_1660" data-name="Path 1660"
+                                    d="M14.667,2.667H12.6A3.339,3.339,0,0,0,9.333,0H8A3.339,3.339,0,0,0,4.733,2.667H2.667A.667.667,0,1,0,2.667,4h.667v8.667A3.337,3.337,0,0,0,6.667,16h4A3.337,3.337,0,0,0,14,12.667V4h.667a.667.667,0,0,0,0-1.333ZM8,1.333H9.333a2,2,0,0,1,1.886,1.333H6.114A2,2,0,0,1,8,1.333Zm4.667,11.333a2,2,0,0,1-2,2h-4a2,2,0,0,1-2-2V4h8Z"
+                                    transform="translate(0)" fill="#ff5e57" />
+                                <path id="Path_1661" data-name="Path 1661"
+                                    d="M9.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,0,0-1.332,0v4A.666.666,0,0,0,9.666,15.33Z"
+                                    transform="translate(-2.333 -3.331)" fill="#ff5e57" />
+                                <path id="Path_1662" data-name="Path 1662"
+                                    d="M13.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,1,0-1.332,0v4A.666.666,0,0,0,13.666,15.33Z"
+                                    transform="translate(-3.666 -3.331)" fill="#ff5e57" />
+                            </g>
+                        </svg>
+                `
+            },
+            {
+                id: 2356,
+                productImg: `Thumbnails.svg`,
+                productTitle: `iPhone 12 Pro Max 256gb Ocean Blue...`,
+                productPrice: `৳ 78000`,
+                productBtn: `Add to cart`,
+                deleteIcon: `
+                        <svg id="" xmlns="http://www.w3.org/2000/svg" width="13.333" height="16"
+                            viewBox="0 0 13.333 16">
+                            <g id="fi-rr-trash" transform="translate(-2)">
+                                <path id="Path_1660" data-name="Path 1660"
+                                    d="M14.667,2.667H12.6A3.339,3.339,0,0,0,9.333,0H8A3.339,3.339,0,0,0,4.733,2.667H2.667A.667.667,0,1,0,2.667,4h.667v8.667A3.337,3.337,0,0,0,6.667,16h4A3.337,3.337,0,0,0,14,12.667V4h.667a.667.667,0,0,0,0-1.333ZM8,1.333H9.333a2,2,0,0,1,1.886,1.333H6.114A2,2,0,0,1,8,1.333Zm4.667,11.333a2,2,0,0,1-2,2h-4a2,2,0,0,1-2-2V4h8Z"
+                                    transform="translate(0)" fill="#ff5e57" />
+                                <path id="Path_1661" data-name="Path 1661"
+                                    d="M9.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,0,0-1.332,0v4A.666.666,0,0,0,9.666,15.33Z"
+                                    transform="translate(-2.333 -3.331)" fill="#ff5e57" />
+                                <path id="Path_1662" data-name="Path 1662"
+                                    d="M13.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,1,0-1.332,0v4A.666.666,0,0,0,13.666,15.33Z"
+                                    transform="translate(-3.666 -3.331)" fill="#ff5e57" />
+                            </g>
+                        </svg>
+                `
+            },
+            {
+                id: 2356,
+                productImg: `Thumbnails.svg`,
+                productTitle: `iPhone 12 Pro Max 256gb Ocean Blue...`,
+                productPrice: `৳ 78000`,
+                productBtn: `Add to cart`,
+                deleteIcon: `
+                        <svg id="" xmlns="http://www.w3.org/2000/svg" width="13.333" height="16"
+                            viewBox="0 0 13.333 16">
+                            <g id="fi-rr-trash" transform="translate(-2)">
+                                <path id="Path_1660" data-name="Path 1660"
+                                    d="M14.667,2.667H12.6A3.339,3.339,0,0,0,9.333,0H8A3.339,3.339,0,0,0,4.733,2.667H2.667A.667.667,0,1,0,2.667,4h.667v8.667A3.337,3.337,0,0,0,6.667,16h4A3.337,3.337,0,0,0,14,12.667V4h.667a.667.667,0,0,0,0-1.333ZM8,1.333H9.333a2,2,0,0,1,1.886,1.333H6.114A2,2,0,0,1,8,1.333Zm4.667,11.333a2,2,0,0,1-2,2h-4a2,2,0,0,1-2-2V4h8Z"
+                                    transform="translate(0)" fill="#ff5e57" />
+                                <path id="Path_1661" data-name="Path 1661"
+                                    d="M9.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,0,0-1.332,0v4A.666.666,0,0,0,9.666,15.33Z"
+                                    transform="translate(-2.333 -3.331)" fill="#ff5e57" />
+                                <path id="Path_1662" data-name="Path 1662"
+                                    d="M13.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,1,0-1.332,0v4A.666.666,0,0,0,13.666,15.33Z"
+                                    transform="translate(-3.666 -3.331)" fill="#ff5e57" />
+                            </g>
+                        </svg>
+                `
+            }
+        ]
+
+        wishlistProdcutObj.forEach(element => {
+            wishlistProductItHTML += `
+                    <div class="wishlistProductItem" id="wishlistProductItem">
+                        <div class="wishlistProductImgArea" id="wishlistProductImg">
+                            <img src="${element.productImg}" alt="">
+                        </div>
+                        <div class="wishlistProductContent">
+                            <p class="productHeadingText" id="productHeadingText"> ${element.productTitle}</p>
+                            <p class="productPricingText" id="productPricingText">${element.productPrice}</p>
+                            <button class="wishlistproductButton" id="wishlistproductButton">${element.productBtn}</button>
+                        </div>
+                        <div class="deleteIconArea" id="deleteIconArea">${element.deleteIcon} </div>
+                    </div>
+            `
+        });
+
+        wishlistProductItemWrapper.innerHTML = wishlistProductItHTML;
+
+    </script>
+</body>
+
+</html>
