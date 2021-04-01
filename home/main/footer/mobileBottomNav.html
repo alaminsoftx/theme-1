@@ -164,7 +164,6 @@
             width: 17px;
             height: 22px;
         }
-        
 
         @media(min-width:768px) {
             .container {
@@ -174,7 +173,7 @@
             }
 
             .moblieBottomNav {
-                /* display: none !important; */
+                display: none !important;
             }
         }
     </style>
@@ -190,44 +189,32 @@
                     <ul class="bottomNav">
                         <li class="navItem">
                             <div class="navItemInner">
-                                <div class="navIcon">
-                                    <img class="bottomNavIconSize " src="Cart.svg" alt="" />
-                                </div>
-                                
+                                <img class="bottomNavIconSize" src="Cart.svg" alt="" />
                                 <span class="bottomNavItemText">Cart</span>
                             </div>
                         </li>
                         <li class="navItem">
                             <div class="navItemInner">
-                                <div class="navIcon">
-                                    <img class="bottomNavIconSize " src="Wishlist.svg" alt="" />
-                                </div>
+                                <img class="bottomNavIconSize" src="Wishlist.svg" alt="" />
                                 <span class="bottomNavItemText">Wishlist</span>
                             </div>
                         </li>
-                        <li class="navItem navItemsHome" >
+                        <li class="navItem navItemsHome" id="navItemsHome">
                             <div class="navItemInner">
-                                <div class="navIcon" id="navItemsHome">
-                                    <img class="bottomNavIconSize " id="bottomNavHomeIconSize" src="Home.svg"
+                                <img class="bottomNavIconSize" id="bottomNavHomeIconSize" src="Home.svg"
                                     alt="" />
-                                </div>
                                 <span class="bottomNavItemText" id="bottomNavHomeItemText">Home</span>
                             </div>
                         </li>
                         <li class="navItem">
                             <div class="navItemInner">
-                                <div class="navIcon">
-                                    <img class="bottomNavIconSize " src="Notification.svg" alt="" />
-                                </div>
+                                <img class="bottomNavIconSize" src="Notification.svg" alt="" />
                                 <span class="bottomNavItemText">Notification</span>
                             </div>
                         </li>
                         <li class="navItem">
                             <div class="navItemInner">
-                                <div class="navIcon">
-                                    <img class="bottomNavIconSize " src="Account.svg" alt="" />
-                                </div>
-                                
+                                <img class="bottomNavIconSize" src="Account.svg" alt="" />
                                 <span class="bottomNavItemText">Account</span>
                             </div>
                         </li>
@@ -237,21 +224,21 @@
                 <div class="bottomNavItemArea2">
                     <ul class="bottomNav2">
                         <li class="navItem2">
-                            <img class="bottomNavIconSize navIcon2" src="Cart.svg" alt="" />
+                            <img class="bottomNavIconSize" src="Cart.svg" alt="" />
                         </li>
                         <li class="navItem2">
-                            <img class="bottomNavIconSize navIcon2" src="Wishlist.svg" alt="" />
+                            <img class="bottomNavIconSize" src="Wishlist.svg" alt="" />
                         </li>
                         <li class="navItem2  showNavItem2 ">
                             <span class="bottomNavItemText">
-                                <img class="bottomNavIconSize navIcon2" src="Home.svg" alt="" />
+                                <img class="bottomNavIconSize" src="Home.svg" alt="" />
                             </span>
                         </li>
                         <li class="navItem2">
-                            <img class="bottomNavIconSize navIcon2" src="Notification.svg" alt="" />
+                            <img class="bottomNavIconSize" src="Notification.svg" alt="" />
                         </li>
                         <li class="navItem2">
-                            <img class="bottomNavIconSize navIcon2" src="Account.svg" alt="" />
+                            <img class="bottomNavIconSize" src="Account.svg" alt="" />
                         </li>
                     </ul>
                 </div>
@@ -262,32 +249,7 @@
 
 
     <script>
-      
-
-
-
-        // let navIcon = document.getElementsByClassName("navIcon");
-        // let navItem2 = document.getElementsByClassName("navItem2");
-   
-
-        // for(let i = 0; i < navIcon.length; i++){
-        //     navIcon[i].addEventListener("click", function(){
-        //         for(let j = 0; j < navItem2; j++){
-        //             navItem2[j].classList.remove("showNavItem2");
-        //         }
-        //     })
-        // }
-
-        // for(let i = 0; i < navItem2.length; i++){
-        //     navIcon[i].addEventListener("click", function(){
-        //         navItem2[i].classList.add("showNavItem2");
-        //     })
-        // }
-
-
-
-
-        let navItem = document.getElementsByClassName("navIcon");
+        let navItem = document.getElementsByClassName("navItem");
         let navItem2 = document.getElementsByClassName("navItem2");
 
         let navItemsHome = document.getElementsByClassName("navItemsHome");

@@ -19,7 +19,7 @@
         }
 
         body {
-            background-color: #fff;
+            background-color: #F1F5FF;
         }
 
         ul {
@@ -46,11 +46,12 @@
         }
 
         .wishlistIconArea {
-            width: auto;
+            width: 15;
         }
 
         .wishlistHeadingTextArea {
-            width: 55%;
+            width: calc(100% - 15px);
+            text-align: center;
         }
 
         .wishlistHeader {
@@ -68,8 +69,11 @@
         }
 
         .addProductInWistlist {
+            background-color: #fff;
+        }
+
+        .addProductInWistlistInner {
             background-color: #F1F5FF;
-            /* height: calc(100vh - 60px); */
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
@@ -93,6 +97,7 @@
 
         .wishlistProductImgArea img {
             width: 100%;
+            cursor: pointer;
         }
 
         .wishlistProductImgArea {
@@ -105,6 +110,10 @@
             width: 15px;
         }
 
+        .deleteIconArea svg {
+            cursor: pointer;
+        }
+
         .wishlistProductContent {
             width: calc(100% - 120px);
             margin-left: 15px;
@@ -115,6 +124,7 @@
             font-weight: 600;
             color: #2C2C2C;
             line-height: 16px;
+            cursor: pointer;
         }
 
         .productPricingText {
@@ -138,6 +148,7 @@
             align-items: center;
             justify-content: center;
             margin-top: 12px;
+            cursor: pointer;
         }
 
         @media(min-width:768px) {
@@ -155,7 +166,32 @@
     <!-- start  wishlist header -->
     <div class="wishlistHeader">
         <div class="container">
-            <div class="wishlistHeaderInner">
+            <div class="wishlistHeaderInner" id="wishlistHeaderInner">
+
+            </div>
+        </div>
+    </div>
+    <!-- end  wishlist header -->
+
+    <!-- start add wishlist product -->
+    <div class="addProductInWistlist">
+        <div class="addProductInWistlistInner">
+            <div class="container">
+                <div class="addProudctArea">
+                    <div class="wishlistProductItemWrapper" id="wishlistProductItemWrapper">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start end wishlist product -->
+
+    <script>
+        // wishlist header
+        let wishlistHeaderInner = document.getElementById("wishlistHeaderInner");
+        let wishlistHeaderInnerObj = {
+            wishlistHeader:`
                 <div class="wishlistIconArea">
                     <svg class="leftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="5.123" height="10"
                         viewBox="0 0 5.123 10">
@@ -167,24 +203,13 @@
                 <div class="wishlistHeadingTextArea">
                     <p class="wishlistHeadingText">Wishlist</p>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- end  wishlist header -->
+            `
+        }
+        const {wishlistHeader} = wishlistHeaderInnerObj;
+        wishlistHeaderInner.innerHTML = wishlistHeader;
 
-    <!-- start add wishlist product -->
-    <div class="addProductInWistlist">
-        <div class="container">
-            <div class="addProudctArea">
-                <div class="wishlistProductItemWrapper" id="wishlistProductItemWrapper">
 
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- start end wishlist product -->
-
-    <script>
+        // wishllist body
         let wishlistProductItemWrapper = document.getElementById("wishlistProductItemWrapper");
         let wishlistProductItem = document.getElementById("wishlistProductItem");
 

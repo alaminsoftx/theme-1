@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soppiya theme || Notification</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background-color: #F1F5FF;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1550px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .notificationHeaderInner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .notificationIconArea {
+            width: 15px;
+        }
+
+        .notificationHeadingTextArea {
+            width: calc(100% - 15px);
+            text-align: center;
+        }
+
+        .notificationHeader {
+            background-color: #fff;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .notificationHeadingText {
+            font-weight: 700;
+            font-size: 18px;
+            color: #01126C;
+            display: inline-block;
+        }
+
+        .notificationBody {
+            background-color: #fff;
+        }
+
+        .notificationBodyInner {
+            background-color: #F1F5FF;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .notificationArea {
+            padding: 25px 0px;
+        }
+
+        .wishlistProductItem {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: #fff;
+            padding: 13px 16px;
+            border-radius: 5px;
+        }
+
+        .wishlistProductItem:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .wishlistProductImgArea img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .wishlistProductImgArea {
+            width: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .deleteIconArea {
+            width: 15px;
+        }
+
+        .deleteIconArea svg {
+            cursor: pointer;
+        }
+
+        .wishlistProductContent {
+            width: calc(100% - 120px);
+            margin-left: 15px;
+        }
+
+        .productHeadingText {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2C2C2C;
+            line-height: 16px;
+            cursor: pointer;
+        }
+
+        .productPricingText {
+            font-size: 11px;
+            font-weight: 500;
+            color: #778994;
+            margin-top: 8px;
+        }
+
+        .wishlistproductButton {
+            font-size: 11px;
+            font-weight: 500;
+            background-color: #2C2C2C;
+            border-radius: 3px;
+            color: #fff;
+            border: none;
+            outline: none;
+            width: 82px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+
+        @media(min-width:768px) {
+
+            .container {
+                padding: 0 30px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- start  wishlist header -->
+    <div class="notificationHeader">
+        <div class="container">
+            <div class="notificationHeaderInner" id="notificationHeaderInner">
+
+            </div>
+        </div>
+    </div>
+    <!-- end  wishlist header -->
+
+    <!-- start add wishlist product -->
+    <div class="notificationBody">
+        <div class="notificationBodyInner">
+            <div class="container">
+                <div class="notificationArea">
+                    <div class="notificationsWrapper" id="notificationsWrapper">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start end wishlist product -->
+
+    <script>
+        // wishlist header
+        let notificationHeaderInner = document.getElementById("notificationHeaderInner");
+        let notificationHeaderInnerObj = {
+            notificationHeader: `
+                <div class="notificationIconArea">
+                    <svg class="leftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="5.123" height="10"
+                        viewBox="0 0 5.123 10">
+                        <path id="fi-rr-angle-small-down"
+                            d="M14.791,8.123a.714.714,0,0,0-1.01,0L10.505,11.4a.729.729,0,0,1-1.01,0L6.219,8.123a.714.714,0,1,0-1.01,1.01l3.275,3.276a2.143,2.143,0,0,0,3.031,0l3.276-3.276a.714.714,0,0,0,0-1.01Z"
+                            transform="translate(-7.914 15) rotate(-90)" fill="#2c2c2c" />
+                    </svg>
+                </div>
+                <div class="notificationHeadingTextArea">
+                    <p class="notificationHeadingText">Notification</p>
+                </div>
+            `
+        }
+        const { notificationHeader } = notificationHeaderInnerObj;
+        notificationHeaderInner.innerHTML = notificationHeader;
+
+
+
+    </script>
+</body>
+
+</html>

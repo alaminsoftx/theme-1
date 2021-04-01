@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soppiya theme</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    body {
+      background-color: #f1f5ff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1550px;
+      width: 100%;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+
+    .DesktopBannerSectionInner {
+      position: relative;
+    }
+
+    .DesktopBannerImageSize {
+      width: 100%;
+    }
+
+    .fade {
+      animation: fade 3s infinite;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .sliderBtn {
+      border: 1px solid;
+      cursor: pointer;
+      width: 100px;
+      outline: none;
+    }
+
+    #imageCounter {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .counterItem {
+      color: #2C2C2C;
+      position: relative;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+
+    .active {
+      transform: translateX(-10px);
+      transition: .3s all;
+    }
+
+    .active::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 1px;
+      background-color: #2C2C2C;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -15px;
+    }
+
+    @media(min-width:768px) {
+      .container {
+        padding: 0 30px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="DesktopBannerSection" class="DesktopBannerSection">
+    <div class="DesktopBannerSectionInner">
+
+      <div class="DesktopBannerImageArea">
+        <img id="DesktopBannerSliderImg" src="https://i.ibb.co/SdrRWRr/1.jpg" alt="" />
+      </div>
+      <div id="imageCounter">
+        <ul id='counterList'></ul>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const DesktopBannerImages = [
+      "https://i.ibb.co/SdrRWRr/1.jpg",
+      "https://i.ibb.co/6sz7Yjh/2.jpg",
+      "https://i.ibb.co/GWVQPCV/3.jpg",
+      "https://i.ibb.co/S74tSvx/4.jpg",
+    ];
+    const DesktopBannerSliderImg = document.getElementById('DesktopBannerSliderImg');
+    const counterList = document.getElementById('counterList');
+    DesktopBannerImages.forEach((element, index) => {
+      counterList.innerHTML += `<li class="counterItem">${index + 1}</li>`;
+    })
+    let count = 0;
+    [...counterList.children].forEach(children => {
+      children.addEventListener('click', () => {
+        [...counterList.children].forEach(children => {
+          children.classList.remove('active');
+        })
+        DesktopBannerSliderImg.src = DesktopBannerImages[children.innerText - 1];
+        children.classList.add('active');
+        count = children.innerText - 1;
+      })
+    })
+    setInterval(() => {
+        DesktopBannerSliderImg.src = DesktopBannerImages[count < DesktopBannerImages.length ? count : count = 0];
+        let index = DesktopBannerImages.indexOf(DesktopBannerImages[count]);
+        [...counterList.children].forEach(children => {
+
+          if((children.innerText - 1) === index){
+            children.classList.add('active');
+
+          }else{
+            children.classList.remove('active');
+          }
+        })
+        count++;
+    }, 3000);
+  </script>
+</body>
+
+</html>
