@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soppiya theme</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background-color: #F1F5FF;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1550px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+
+        .addProductInWistlist {
+            background-color: #fff;
+        }
+
+        .addProductInWistlistInner {
+            background-color: #F1F5FF;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .addProudctArea {
+            padding: 25px 0px;
+        }
+
+
+        .contactInformationArea,
+        .cartTotalsArea {
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+
+
+        /* coupon code area */
+        .cartTotalsArea,
+        .contactInformationArea {
+            margin-top: 20px;
+        }
+
+        .mt0 {
+            margin-top: 0px;
+        }
+
+        .contactInformationHeading {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .editContactInfo svg {
+            width: 18px;
+            cursor: pointer;
+        }
+
+        .contactInformationHeadingText,
+        .cartTotalHeadingText {
+            font-size: 16px;
+            font-weight: 700;
+            color: #01126C;
+            margin-bottom: 20px;
+        }
+
+        .contactInformationHeadingText {
+            display: flex;
+            align-items: center;
+        }
+
+        .contactInformationForOfferInner {
+            position: relative;
+            width: 100%;
+        }
+
+        .labelText {
+            display: inline-block;
+            background: #fff;
+            padding: 0px 5px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+            position: absolute;
+            left: 6px;
+            top: -15px;
+        }
+
+        .inputFieldControl {
+            height: 36px;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(149 175 192 / 40%);
+            width: 100%;
+            outline: none;
+            background-color: transparent;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+        }
+
+        /* contact information */
+        .contactInformationForOffer:not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        .contactItemCol {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .contactItemCol:not(:last-child) {
+            border-bottom: 1px solid rgb(149 175 192 / 10%);
+            padding: 12px 0;
+            margin-bottom: 12px;
+        }
+
+        .userIcon {
+            width: 18px;
+        }
+
+        .userIconSize {
+            width: 16px;
+            height: 16px;
+        }
+
+        .contactForUser {
+            display: flex;
+            flex-direction: column;
+            margin-left: 13px;
+            width: calc(100% - 48px);
+        }
+
+
+
+        .contactForUserHeading {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2C2C2C;
+            display: inline-block;
+        }
+
+        .contactForUserText {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2C2C2C;
+            display: inline-block;
+        }
+
+        .userAddressText {
+            font-size: 13px;
+            font-weight: 400;
+            color: #95AFC0;
+        }
+
+        /* cart total */
+        .subTotalArea {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .subTotalArea:not(:last-child) {
+            border-bottom: 1px solid rgb(149 175 192 / 10%);
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        .subTotalLeftText,
+        .subTotalRightText {
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+        }
+
+        .subTotalRightText,
+        .totalBoldText {
+            font-weight: 600;
+        }
+
+        .moveOtherPageFormCartPage {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .moveToShoppingBtn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            background: transparent;
+            margin-bottom: 10px;
+            outline: none;
+        }
+
+        .continueShippingText {
+            font-size: 12px;
+            font-weight: 600;
+            color: #3E5570;
+            margin-left: 10px;
+        }
+
+        .moveToToCheckOutBtn {
+            width: 150px;
+            height: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            background: #00A5FF;
+            border: none;
+            color: #fff;
+            border-radius: 3px;
+            outline: none;
+
+        }
+
+        .mb5 {
+            margin-bottom: 5px;
+        }
+
+        .ml8 {
+            margin-left: 8px;
+        }
+
+        .checkoutLeftArrowIcon {
+            width: 7px;
+            height: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .addressItemCheckOutlogin {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .editIcon {
+            cursor: pointer;
+        }
+
+        .addAddressBtnArea {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .addAddressBtn {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #2C2C2C;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 112px;
+            height: 18px;
+            cursor: pointer;
+        }
+        .addAddressBtnInner{
+            display: flex;
+        }
+
+        @media(min-width:768px) {
+
+            .container {
+                padding: 0 30px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- start add cart product -->
+    <div class="addProductInWistlist">
+        <div class="addProductInWistlistInner">
+            <div class="container">
+                <div class="addProudctArea">
+                    <!-- Delivery Address -->
+                    <div class="contactInformationArea ">
+                        <div class="contactInformationHeading">
+                            <p class="contactInformationHeadingText">
+                                <span class="checkoutLeftArrowIcon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="7.171" height="14"
+                                        viewBox="0 0 7.171 14">
+                                        <path id="fi-rr-angle-small-left"
+                                            d="M10.6,12.707a1,1,0,0,1,0-1.414l4.585-4.586a1,1,0,1,0-1.414-1.414L9.189,9.879a3,3,0,0,0,0,4.242l4.586,4.586a1,1,0,1,0,1.414-1.414Z"
+                                            transform="translate(-8.311 -5)" fill="#2c2c2c" />
+                                    </svg>
+                                </span>
+                                <span class="ml8">Delivery Address</span>
+                            </p>
+
+                        </div>
+                        <!-- col -->
+                        <div class="contactItemCol ">
+                            <p class="userIcon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.99"
+                                    viewBox="0 0 16 15.99">
+                                    <path id="fi-rr-home"
+                                        d="M15.414,6.053,10.357,1A3.339,3.339,0,0,0,5.643,1L.586,6.053A1.985,1.985,0,0,0,0,7.467v6.545a2,2,0,0,0,2,2H14a2,2,0,0,0,2-2V7.467A1.985,1.985,0,0,0,15.414,6.053ZM10,14.678H6V12.056a2,2,0,0,1,4,0Zm4.667-.667a.667.667,0,0,1-.667.667H11.333V12.056a3.333,3.333,0,0,0-6.667,0v2.623H2a.667.667,0,0,1-.667-.667V7.467A.672.672,0,0,1,1.529,7L6.585,1.94a2.005,2.005,0,0,1,2.829,0L14.471,7a.672.672,0,0,1,.2.469Z"
+                                        transform="translate(0 -0.021)" fill="#6c63ff" />
+                                </svg>
+                            </p>
+                            <div class="contactForUser">
+                                <span class="contactForUserText mb5">Home</span>
+                                <p class="addressItemCheckOutlogin">
+                                    <span class="userAddressText">Flat #A5, House #668, Road #9, Avenue #5,
+                                        Mirpur DOHS, Dhaka-1216</span>
+                                    <span class="editIcon">
+                                        <svg id="fi-rr-edit" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 14 14">
+                                            <path id="Path_1663" data-name="Path 1663"
+                                                d="M12.966.561,5.854,7.673A2.9,2.9,0,0,0,5,9.735v.783a.583.583,0,0,0,.583.583h.783a2.9,2.9,0,0,0,2.062-.854l7.112-7.112a1.823,1.823,0,0,0,0-2.575,1.863,1.863,0,0,0-2.575,0Zm1.75,1.75L7.6,9.423a1.762,1.762,0,0,1-1.237.512h-.2v-.2A1.762,1.762,0,0,1,6.679,8.5l7.112-7.112a.67.67,0,0,1,.925,0,.655.655,0,0,1,0,.925Z"
+                                                transform="translate(-2.083 -0.019)" fill="#2c2c2c" />
+                                            <path id="Path_1664" data-name="Path 1664"
+                                                d="M13.417,5.238a.583.583,0,0,0-.583.583V8.75H10.5A1.75,1.75,0,0,0,8.75,10.5v2.333H2.917a1.75,1.75,0,0,1-1.75-1.75V2.917a1.75,1.75,0,0,1,1.75-1.75H8.191A.583.583,0,1,0,8.191,0H2.917A2.92,2.92,0,0,0,0,2.917v8.167A2.92,2.92,0,0,0,2.917,14H9.533a2.9,2.9,0,0,0,2.063-.854L13.145,11.6A2.9,2.9,0,0,0,14,9.533V5.821A.583.583,0,0,0,13.417,5.238Zm-2.645,7.083a1.735,1.735,0,0,1-.855.467V10.5a.583.583,0,0,1,.583-.583h2.29a1.759,1.759,0,0,1-.467.854Z"
+                                                fill="#2c2c2c" />
+                                        </svg>
+
+                                    </span>
+                                </p>
+
+                            </div>
+                        </div>
+                        <!-- col -->
+                        <div class="contactItemCol ">
+                            <p class="userIcon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                    <path id="fi-rr-building"
+                                        d="M4.667,9.333A.667.667,0,0,1,4,10H3.333a.667.667,0,0,1,0-1.333H4A.667.667,0,0,1,4.667,9.333Zm2.667-.667H6.667a.667.667,0,0,0,0,1.333h.667a.667.667,0,0,0,0-1.333ZM4,11.333H3.333a.667.667,0,1,0,0,1.333H4a.667.667,0,1,0,0-1.333Zm3.333,0H6.667a.667.667,0,1,0,0,1.333h.667a.667.667,0,1,0,0-1.333ZM4,3.333H3.333a.667.667,0,1,0,0,1.333H4A.667.667,0,0,0,4,3.333Zm3.333,0H6.667a.667.667,0,0,0,0,1.333h.667a.667.667,0,1,0,0-1.333ZM4,6H3.333a.667.667,0,1,0,0,1.333H4A.667.667,0,0,0,4,6ZM7.333,6H6.667a.667.667,0,0,0,0,1.333h.667A.667.667,0,1,0,7.333,6ZM16,6.667v6A3.337,3.337,0,0,1,12.667,16H3.333A3.337,3.337,0,0,1,0,12.667V3.333A3.337,3.337,0,0,1,3.333,0h4a3.337,3.337,0,0,1,3.333,3.333h2A3.337,3.337,0,0,1,16,6.667Zm-12.667,8h6V3.333a2,2,0,0,0-2-2h-4a2,2,0,0,0-2,2v9.333A2,2,0,0,0,3.333,14.667Zm11.333-8a2,2,0,0,0-2-2h-2v10h2a2,2,0,0,0,2-2Zm-2,2a.667.667,0,1,0,.667.667A.667.667,0,0,0,12.667,8.667Zm0,2.667a.667.667,0,1,0,.667.667A.667.667,0,0,0,12.667,11.333Zm0-5.333a.667.667,0,1,0,.667.667A.667.667,0,0,0,12.667,6Z"
+                                        fill="#ff9f43" />
+                                </svg>
+
+                            </p>
+                            <div class="contactForUser">
+                                <span class="contactForUserText mb5">Office</span>
+                                <p class="addressItemCheckOutlogin">
+                                    <span class="userAddressText">Flat #A5, House #668, Road #9, Avenue #5,
+                                        Mirpur DOHS, Dhaka-1216</span>
+                                    <span class="editIcon">
+                                        <svg id="fi-rr-edit" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                            viewBox="0 0 14 14">
+                                            <path id="Path_1663" data-name="Path 1663"
+                                                d="M12.966.561,5.854,7.673A2.9,2.9,0,0,0,5,9.735v.783a.583.583,0,0,0,.583.583h.783a2.9,2.9,0,0,0,2.062-.854l7.112-7.112a1.823,1.823,0,0,0,0-2.575,1.863,1.863,0,0,0-2.575,0Zm1.75,1.75L7.6,9.423a1.762,1.762,0,0,1-1.237.512h-.2v-.2A1.762,1.762,0,0,1,6.679,8.5l7.112-7.112a.67.67,0,0,1,.925,0,.655.655,0,0,1,0,.925Z"
+                                                transform="translate(-2.083 -0.019)" fill="#2c2c2c" />
+                                            <path id="Path_1664" data-name="Path 1664"
+                                                d="M13.417,5.238a.583.583,0,0,0-.583.583V8.75H10.5A1.75,1.75,0,0,0,8.75,10.5v2.333H2.917a1.75,1.75,0,0,1-1.75-1.75V2.917a1.75,1.75,0,0,1,1.75-1.75H8.191A.583.583,0,1,0,8.191,0H2.917A2.92,2.92,0,0,0,0,2.917v8.167A2.92,2.92,0,0,0,2.917,14H9.533a2.9,2.9,0,0,0,2.063-.854L13.145,11.6A2.9,2.9,0,0,0,14,9.533V5.821A.583.583,0,0,0,13.417,5.238Zm-2.645,7.083a1.735,1.735,0,0,1-.855.467V10.5a.583.583,0,0,1,.583-.583h2.29a1.759,1.759,0,0,1-.467.854Z"
+                                                fill="#2c2c2c" />
+                                        </svg>
+
+                                    </span>
+                                </p>
+
+                            </div>
+                        </div>
+                        <!-- col -->
+                        <div class="contactItemCol ">
+
+                            <div class="addAddressBtnArea">
+                                <button class="addAddressBtn">
+                                    <span class="addAddressBtnInner">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                            viewBox="0 0 13 13">
+                                            <path id="fi-rr-plus"
+                                                d="M11.5,5.5h-5V.5A.5.5,0,0,0,6,0H6a.5.5,0,0,0-.5.5v5H.5A.5.5,0,0,0,0,6H0a.5.5,0,0,0,.5.5h5v5A.5.5,0,0,0,6,12H6a.5.5,0,0,0,.5-.5v-5h5A.5.5,0,0,0,12,6h0A.5.5,0,0,0,11.5,5.5Z"
+                                                transform="translate(0.5 0.5)" fill="#2c2c2c" stroke="#2c2c2c"
+                                                stroke-width="1" />
+                                        </svg>
+
+                                    </span>
+                                    <span class="addAddressBtnInner">
+                                        Add Address
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start end cart product -->
+
+
+</body>
+
+</html>

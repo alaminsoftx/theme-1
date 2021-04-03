@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soppiya theme</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background-color: #F1F5FF;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1550px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+
+        .addProductInWistlist {
+            background-color: #fff;
+        }
+
+        .addProductInWistlistInner {
+            background-color: #F1F5FF;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .addProudctArea {
+            padding: 25px 0px;
+        }
+
+
+        .contactInformationArea,
+        .cartTotalsArea {
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+
+
+        /* coupon code area */
+        .cartTotalsArea,
+        .contactInformationArea {
+            margin-top: 20px;
+        }
+
+        .mt0 {
+            margin-top: 0px;
+        }
+
+        .contactInformationHeading {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .editContactInfo svg {
+            width: 18px;
+            cursor: pointer;
+        }
+
+        .contactInformationHeadingText,
+        .cartTotalHeadingText {
+            font-size: 16px;
+            font-weight: 700;
+            color: #01126C;
+            margin-bottom: 20px;
+        }
+
+        .contactInformationHeadingText {
+            display: flex;
+            align-items: center;
+        }
+
+        .contactInformationForOfferInner {
+            position: relative;
+            width: 100%;
+        }
+
+        .labelText {
+            display: inline-block;
+            background: #fff;
+            padding: 0px 5px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+            position: absolute;
+            left: 6px;
+            top: -15px;
+        }
+
+        .inputFieldControl {
+            height: 36px;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(149 175 192 / 40%);
+            width: 100%;
+            outline: none;
+            background-color: transparent;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+        }
+
+        /* contact information */
+        .contactInformationForOffer:not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        .contactItemCol {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .contactItemCol:not(:last-child) {
+            border-bottom: 1px solid rgb(149 175 192 / 10%);
+            padding: 12px 0;
+            margin-bottom: 12px;
+        }
+
+        .userIcon {
+            width: 18px;
+        }
+
+        .userIconSize {
+            width: 16px;
+            height: 16px;
+        }
+
+        .contactForUser {
+            display: flex;
+            flex-direction: column;
+            margin-left: 13px;
+            width: calc(100% - 48px);
+        }
+
+
+
+        .contactForUserHeading {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2C2C2C;
+            display: inline-block;
+        }
+
+        .contactForUserText {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2C2C2C;
+            display: inline-block;
+        }
+
+        .userAddressText {
+            font-size: 13px;
+            font-weight: 400;
+            color: #95AFC0;
+        }
+
+        /* cart total */
+        .subTotalArea {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .subTotalArea:not(:last-child) {
+            border-bottom: 1px solid rgb(149 175 192 / 10%);
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        .subTotalLeftText,
+        .subTotalRightText {
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+        }
+
+        .subTotalRightText,
+        .totalBoldText {
+            font-weight: 600;
+        }
+
+        .moveOtherPageFormCartPage {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .moveToShoppingBtn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            background: transparent;
+            margin-bottom: 10px;
+            outline: none;
+        }
+
+        .continueShippingText {
+            font-size: 12px;
+            font-weight: 600;
+            color: #3E5570;
+            margin-left: 10px;
+        }
+
+        .moveToToCheckOutBtn {
+            width: 150px;
+            height: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            background: #00A5FF;
+            border: none;
+            color: #fff;
+            border-radius: 3px;
+            outline: none;
+
+        }
+
+        .mb5 {
+            margin-bottom: 5px;
+        }
+
+        .ml8 {
+            margin-left: 8px;
+        }
+
+        .checkoutLeftArrowIcon {
+            width: 7px;
+            height: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .addressItemCheckOutlogin {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .editIcon {
+            cursor: pointer;
+        }
+
+        .addAddressBtnArea {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .addAddressBtn {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #2C2C2C;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 112px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .addAddressBtnInner {
+            display: flex;
+        }
+
+        @media(min-width:768px) {
+
+            .container {
+                padding: 0 30px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- start add cart product -->
+    <div class="addProductInWistlist">
+        <div class="addProductInWistlistInner">
+            <div class="container">
+                <div class="addProudctArea">
+                    <!-- Delivery Address -->
+                    <div class="contactInformationArea">
+                        <div class="contactInformationHeading">
+                            <p class="contactInformationHeadingText">Delivery Address</p>
+                        </div>
+
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">Full Name</span>
+                                <input type="text" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">Address</span>
+                                <input type="text" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">City</span>
+                                <input type="text" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">Postal Code (Optional)</span>
+                                <input type="text" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">Country</span>
+                                <input type="text" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start end cart product -->
+
+
+</body>
+
+</html>
