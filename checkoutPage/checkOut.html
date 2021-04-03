@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soppiya theme</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background-color: #F1F5FF;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1550px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .cartHeaderInner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .cartIconArea {
+            width: 15;
+        }
+
+        .cartHeadingTextArea {
+            width: calc(100% - 15px);
+            text-align: center;
+        }
+
+        .cartHeader {
+            background-color: #fff;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .cartHeadingText {
+            font-weight: 700;
+            font-size: 18px;
+            color: #01126C;
+            display: inline-block;
+        }
+
+        .addProductInWistlist {
+            background-color: #fff;
+        }
+
+        .addProductInWistlistInner {
+            background-color: #F1F5FF;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .addProudctArea {
+            padding: 25px 0px;
+        }
+
+
+        .contactInformationArea,
+        .cartTotalsArea {
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        /* alreay have an account */
+        .alreadyHaveAccountText {
+            font-size: 12px;
+            font-weight:600;
+            color: #3E5570;
+            line-height: 15px;
+            text-align: center;
+        }
+        .signInTextInCheckoutPage{
+            color:#00A5FF;
+        }
+
+        /* coupon code area */
+        .cartTotalsArea, .contactInformationArea {
+            margin-top: 20px;
+        }
+
+        .contactInformationHeading {
+            margin-bottom: 15px;
+        }
+
+        .contactInformationHeadingText,
+        .cartTotalHeadingText {
+            font-size: 16px;
+            font-weight: 700;
+            color: #01126C;
+            margin-bottom: 20px;
+        }
+
+        .contactInformationForOfferInner {
+            position: relative;
+            width: 100%;
+        }
+
+        .labelText {
+            display: inline-block;
+            background: #fff;
+            padding: 0px 5px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+            position: absolute;
+            left: 6px;
+            top: -15px;
+        }
+
+        .inputFieldControl {
+            height: 36px;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(149 175 192 / 40%);
+            width: 100%;
+            outline: none;
+            background-color: transparent;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+        }
+
+        /* contact information */
+        .contactInformationForOffer:not(:last-child){
+            margin-bottom: 30px;
+        }
+
+
+        /* cart total */
+        .subTotalArea {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .subTotalArea:not(:last-child) {
+            border-bottom: 1px solid rgb(149 175 192 / 10%);
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        .subTotalLeftText,
+        .subTotalRightText {
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+        }
+
+        .subTotalRightText,
+        .totalBoldText {
+            font-weight: 600;
+        }
+
+        .moveOtherPageFormCartPage {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .moveToShoppingBtn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+            background: transparent;
+            margin-bottom: 10px;
+        }
+
+        .continueShippingText {
+            font-size: 12px;
+            font-weight: 600;
+            color: #3E5570;
+            margin-left: 10px;
+        }
+
+        .moveToToCheckOutBtn {
+            width: 150px;
+            height: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            background: #00A5FF;
+            border: none;
+            color: #fff;
+            border-radius: 3px;
+
+        }
+
+        @media(min-width:768px) {
+
+            .container {
+                padding: 0 30px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- start  cart header -->
+    <div class="cartHeader">
+        <div class="container">
+            <div class="cartHeaderInner" id="cartHeaderInner">
+
+            </div>
+        </div>
+    </div>
+    <!-- end  cart header -->
+
+    <!-- start add cart product -->
+    <div class="addProductInWistlist">
+        <div class="addProductInWistlistInner">
+            <div class="container">
+                <div class="addProudctArea">
+
+                    <div class="alreadyHaveAccount">
+                        <p class="alreadyHaveAccountText">Already have an account? 
+                            <span class="signInTextInCheckoutPage">Sign in</span></p>
+                    </div>
+
+                    <!-- contact information -->
+                    <div class="contactInformationArea">
+                        <div class="contactInformationHeading">
+                            <p class="contactInformationHeadingText">Contact Information</p>
+                        </div>
+
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">Phone</span>
+                                <input type="tel" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">Email</span>
+                                <input type="email" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Delivery Address -->
+                    <div class="contactInformationArea">
+                        <div class="contactInformationHeading">
+                            <p class="contactInformationHeadingText">Delivery Address</p>
+                        </div>
+
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">Full Name</span>
+                                <input type="text" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">Address</span>
+                                <input type="text" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">City</span>
+                                <input type="text" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">Postal Code (Optional)</span>
+                                <input type="text" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                        <div class="contactInformationForOffer">
+                            <label for="" class="contactInformationForOfferInner">
+                                <span class="labelText">Country</span>
+                                <input type="text" class="inputFieldControl" autocomplete="off">
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- cart totals -->
+                    <div class="cartTotalsArea">
+                        <!-- heading -->
+                        <div class="cartTotalsHeading">
+                            <p class="cartTotalHeadingText">Cart Totals</p>
+                        </div>
+                        <div class="cartTotalsBody">
+                            <!-- subtotal -->
+                            <div class="subTotalArea">
+                                <div class="subTotalLeft">
+                                    <p class="subTotalLeftText">Subtotal</p>
+                                </div>
+                                <div class="subTotalRight">
+                                    <p class="subTotalRightText">৳ 156000</p>
+                                </div>
+                            </div>
+                            <!-- Shipping -->
+                            <div class="subTotalArea">
+                                <div class="subTotalLeft">
+                                    <p class="subTotalLeftText">Shipping</p>
+                                </div>
+                                <div class="subTotalRight">
+                                    <p class="subTotalRightText">Calculated at next step</p>
+                                </div>
+                            </div>
+                            <!-- Coupon -->
+                            <div class="subTotalArea">
+                                <div class="subTotalLeft">
+                                    <p class="subTotalLeftText">Coupon</p>
+                                </div>
+                                <div class="subTotalRight">
+                                    <p class="subTotalRightText">- ৳ 2000</p>
+                                </div>
+                            </div>
+                            <!-- Total -->
+                            <div class="subTotalArea">
+                                <div class="subTotalLeft">
+                                    <p class="subTotalLeftText totalBoldText">Total</p>
+                                </div>
+                                <div class="subTotalRight">
+                                    <p class="subTotalRightText">৳ 154000</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- move other page  from cart page -->
+                    <div class="moveOtherPageFormCartPage">
+                        <div class="moveToShopping">
+                            <button class="moveToShoppingBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="5.122" height="10"
+                                    viewBox="0 0 5.122 10">
+                                    <path id="fi-rr-angle-small-left"
+                                        d="M9.946,10.505a.714.714,0,0,1,0-1.01l3.275-3.276a.714.714,0,1,0-1.01-1.01L8.938,8.485a2.143,2.143,0,0,0,0,3.03l3.276,3.276a.714.714,0,1,0,1.01-1.01Z"
+                                        transform="translate(-8.311 -5)" fill="#3e5570" />
+                                </svg>
+                                <p class="continueShippingText">Return to cart</p>
+                            </button>
+                        </div>
+                        <div class="moveToProcessCheckout">
+                            <button class="moveToToCheckOutBtn">Place Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start end cart product -->
+
+    <script>
+        // cart header
+        let cartHeaderInner = document.getElementById("cartHeaderInner");
+        let cartHeaderInnerObj = {
+            cartHeader: `
+                <div class="cartIconArea">
+                    <svg class="leftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="5.123" height="10"
+                        viewBox="0 0 5.123 10">
+                        <path id="fi-rr-angle-small-down"
+                            d="M14.791,8.123a.714.714,0,0,0-1.01,0L10.505,11.4a.729.729,0,0,1-1.01,0L6.219,8.123a.714.714,0,1,0-1.01,1.01l3.275,3.276a2.143,2.143,0,0,0,3.031,0l3.276-3.276a.714.714,0,0,0,0-1.01Z"
+                            transform="translate(-7.914 15) rotate(-90)" fill="#2c2c2c" />
+                    </svg>
+                </div>
+                <div class="cartHeadingTextArea">
+                    <p class="cartHeadingText">Process to Checkout</p>
+                </div>
+            `
+        };
+        const { cartHeader } = cartHeaderInnerObj;
+        cartHeaderInner.innerHTML = cartHeader;
+
+
+
+    </script>
+</body>
+
+</html>
