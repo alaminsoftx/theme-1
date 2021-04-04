@@ -62,8 +62,8 @@
             align-items: center;
             position:fixed;
             left:0;
+            top:0;
             width:100%;
-            z-index: 99;
         }
 
         .cartHeadingText {
@@ -96,25 +96,26 @@
             padding: 20px;
         }
 
-        /* alreay have an account */
-        .alreadyHaveAccountText {
-            font-size: 12px;
-            font-weight:600;
-            color: #3E5570;
-            line-height: 15px;
-            text-align: center;
-        }
-        .signInTextInCheckoutPage{
-            color:#00A5FF;
-        }
+
 
         /* coupon code area */
-        .cartTotalsArea, .contactInformationArea {
+        .cartTotalsArea,
+        .contactInformationArea {
             margin-top: 20px;
         }
 
+        .mt0 {
+            margin-top: 0px;
+        }
+
         .contactInformationHeading {
-            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .editContactInfo svg {
+            width: 18px;
+            cursor: pointer;
         }
 
         .contactInformationHeadingText,
@@ -156,10 +157,58 @@
         }
 
         /* contact information */
-        .contactInformationForOffer:not(:last-child){
+        .contactInformationForOffer:not(:last-child) {
             margin-bottom: 30px;
         }
 
+        .contactItemCol {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .contactItemCol:not(:last-child) {
+            border-bottom: 1px solid rgb(149 175 192 / 10%);
+            padding: 0 0 12px 0;
+            margin-bottom: 12px;
+        }
+
+        .userIcon {
+            width: 18px;
+        }
+
+        .userIconSize {
+            width: 16px;
+            height: 16px;
+        }
+
+        .contactForUser {
+            display: flex;
+            flex-direction: column;
+            margin-left: 13px;
+            width: calc(100% - 48px);
+        }
+
+
+
+        .contactForUserHeading {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2C2C2C;
+            display: inline-block;
+        }
+
+        .contactForUserText {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2C2C2C;
+            display: inline-block;
+        }
+
+        .userAddressText {
+            font-size: 13px;
+            font-weight: 400;
+            color: #95AFC0;
+        }
 
         /* cart total */
         .subTotalArea {
@@ -200,6 +249,7 @@
             border: none;
             background: transparent;
             margin-bottom: 10px;
+            outline: none;
         }
 
         .continueShippingText {
@@ -218,9 +268,88 @@
             border: none;
             color: #fff;
             border-radius: 3px;
+            outline: none;
 
         }
 
+        .mb5 {
+            margin-bottom: 5px;
+        }
+
+        /* ==================== */
+        .customGenterItem {
+            display: flex;
+            align-items: center;
+        }
+
+        .genderText {
+            display: inline-block;
+            color: #3E5570;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .customGendeBtnLabel {
+            font-size: 13px;
+            color: #2C2C2C;
+            font-weight: 600;
+        }
+
+        .customGenderBtn:checked,
+        .customGenderBtn:not(:checked) {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .customGenderBtn:checked+label,
+        .customGenderBtn:not(:checked)+label {
+            position: relative;
+            padding-left: 24px;
+            padding-top: 2px;
+            cursor: pointer;
+            line-height: 12px;
+            display: inline-block;
+        }
+
+        .customGenderBtn:checked+label:before,
+        .customGenderBtn:not(:checked)+label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            border: 1px solid rgb(209 216 224);
+            border-radius: 100%;
+            background: #fff;
+        }
+
+        .customGenderBtn:checked+label:after,
+        .customGenderBtn:not(:checked)+label:after {
+            content: '';
+            width: 13px;
+            height: 13px;
+            background: #00a5ff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            border-radius: 100%;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+        .customGenderBtn:not(:checked)+label:after {
+            opacity: 0;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+
+        .customGenderBtn:checked+label:after {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        /* ==================== */
         @media(min-width:768px) {
 
             .container {
@@ -249,66 +378,82 @@
             <div class="container">
                 <div class="addProudctArea">
 
-                    <div class="alreadyHaveAccount">
-                        <p class="alreadyHaveAccountText">Already have an account? 
-                            <span class="signInTextInCheckoutPage">Sign in</span></p>
-                    </div>
 
                     <!-- contact information -->
-                    <div class="contactInformationArea">
+                    <div class="contactInformationArea mt0">
                         <div class="contactInformationHeading">
-                            <p class="contactInformationHeadingText">Contact Information</p>
+                            <p class="contactInformationHeadingText">Billing Information</p>
                         </div>
+                        <!-- col -->
+                        <div class="contactItemCol ">
+                            <p class="userIcon">
+                                <svg class="userIconSize" xmlns="http://www.w3.org/2000/svg" width="10.688"
+                                    height="16.031" viewBox="0 0 10.688 16.031">
+                                    <g id="fi-rr-smartphone" transform="translate(-4)">
+                                        <path id="Path_1667" data-name="Path 1667"
+                                            d="M11.348,0H7.34A3.344,3.344,0,0,0,4,3.34v9.352a3.344,3.344,0,0,0,3.34,3.34h4.008a3.344,3.344,0,0,0,3.34-3.34V3.34A3.344,3.344,0,0,0,11.348,0ZM7.34,1.336h4.008a2,2,0,0,1,2,2v7.348H5.336V3.34a2,2,0,0,1,2-2ZM11.348,14.7H7.34a2,2,0,0,1-2-2v-.668h8.016v.668A2,2,0,0,1,11.348,14.7Z"
+                                            fill="#ff9f43" />
+                                        <circle id="Ellipse_16" data-name="Ellipse 16" cx="1" cy="1" r="1"
+                                            transform="translate(8.344 12.35)" fill="#ff9f43" />
+                                    </g>
+                                </svg>
 
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Phone</span>
-                                <input type="tel" class="inputFieldControl" autocomplete="off">
-                            </label>
+                            </p>
+                            <p class="contactForUser">
+                                <span class="contactForUserText">+880 1700 000 000</span>
+                            </p>
                         </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Email</span>
-                                <input type="email" class="inputFieldControl" autocomplete="off">
-                            </label>
+                        <!-- col -->
+                        <div class="contactItemCol ">
+                            <p class="userIcon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13.333"
+                                    viewBox="0 0 16 13.333">
+                                    <path id="fi-rr-envelope"
+                                        d="M12.667,1H3.333A3.2,3.2,0,0,0,0,4.03V11.3a3.2,3.2,0,0,0,3.333,3.03h9.333A3.2,3.2,0,0,0,16,11.3V4.03A3.2,3.2,0,0,0,12.667,1ZM3.333,2.212h9.333A2.008,2.008,0,0,1,14.52,3.356L9.415,8A2.149,2.149,0,0,1,6.585,8L1.48,3.356A2.008,2.008,0,0,1,3.333,2.212Zm9.333,10.909H3.333a1.916,1.916,0,0,1-2-1.818V4.939L5.643,8.855a3.579,3.579,0,0,0,4.715,0l4.309-3.915V11.3A1.916,1.916,0,0,1,12.667,13.121Z"
+                                        transform="translate(0 -1)" fill="#ff5e57" />
+                                </svg>
+                            </p>
+                            <p class="contactForUser">
+                                <span class="contactForUserText">example@email.com</span>
+                            </p>
+                        </div>
+                        <!-- col -->
+                        <div class="contactItemCol ">
+                            <p class="userIcon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.99"
+                                    viewBox="0 0 16 15.99">
+                                    <path id="fi-rr-home"
+                                        d="M15.414,6.053,10.357,1A3.339,3.339,0,0,0,5.643,1L.586,6.053A1.985,1.985,0,0,0,0,7.467v6.545a2,2,0,0,0,2,2H14a2,2,0,0,0,2-2V7.467A1.985,1.985,0,0,0,15.414,6.053ZM10,14.678H6V12.056a2,2,0,0,1,4,0Zm4.667-.667a.667.667,0,0,1-.667.667H11.333V12.056a3.333,3.333,0,0,0-6.667,0v2.623H2a.667.667,0,0,1-.667-.667V7.467A.672.672,0,0,1,1.529,7L6.585,1.94a2.005,2.005,0,0,1,2.829,0L14.471,7a.672.672,0,0,1,.2.469Z"
+                                        transform="translate(0 -0.021)" fill="#6c63ff" />
+                                </svg>
+                            </p>
+                            <p class="contactForUser">
+                                <span class="contactForUserText mb5">Home</span>
+                                <span class="userAddressText">Flat #A5, House #668, Road #9, Avenue #5,
+                                    Mirpur DOHS, Dhaka-1216</span>
+                            </p>
                         </div>
                     </div>
                     <!-- Delivery Address -->
-                    <div class="contactInformationArea">
+                    <div class="contactInformationArea ">
                         <div class="contactInformationHeading">
-                            <p class="contactInformationHeadingText">Delivery Address</p>
+                            <p class="contactInformationHeadingText">Payment</p>
+                        </div>
+                        <!-- col -->
+                        <div class="contactItemCol ">
+                            <p class="customGenterItem">
+                                <input class="customGenderBtn" type="radio" id="gender1" name="gender" checked>
+                                <label class="customGendeBtnLabel" for="gender1">Cash on Delivery</label>
+                            </p>
+                        </div>
+                        <!-- col -->
+                        <div class="contactItemCol ">
+                            <p class="customGenterItem">
+                                <input class="customGenderBtn" type="radio" id="gender2" name="gender" checked>
+                                <label class="customGendeBtnLabel" for="gender2">Payment method name</label>
+                            </p>
                         </div>
 
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Full Name</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Address</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">City</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Postal Code (Optional)</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Country</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
                     </div>
 
                     <!-- cart totals -->
@@ -392,7 +537,7 @@
                     </svg>
                 </div>
                 <div class="cartHeadingTextArea">
-                    <p class="cartHeadingText">Process to Checkout</p>
+                    <p class="cartHeadingText">Payment</p>
                 </div>
             `
         };

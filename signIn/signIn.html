@@ -43,6 +43,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            align-items: center;
         }
 
         .signInIconArea {
@@ -65,6 +66,10 @@
             height: 60px;
             display: flex;
             align-items: center;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
         }
 
         .signInHeadingText {
@@ -76,6 +81,7 @@
 
         .signInBody {
             background-color: #fff;
+            padding-top:60px;
         }
 
         .signInBodyInner {
@@ -376,11 +382,8 @@
         let signInHeaderInnerObj = {
             signInHeader: `
                 <div class="signInIconArea">
-                    <svg class="leftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="5.123" height="10"
-                        viewBox="0 0 5.123 10">
-                        <path id="fi-rr-angle-small-down"
-                            d="M14.791,8.123a.714.714,0,0,0-1.01,0L10.505,11.4a.729.729,0,0,1-1.01,0L6.219,8.123a.714.714,0,1,0-1.01,1.01l3.275,3.276a2.143,2.143,0,0,0,3.031,0l3.276-3.276a.714.714,0,0,0,0-1.01Z"
-                            transform="translate(-7.914 15) rotate(-90)" fill="#2c2c2c" />
+                    <svg class="leftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="7.171" height="14" viewBox="0 0 7.171 14">
+                        <path id="fi-rr-angle-small-left" d="M10.6,12.707a1,1,0,0,1,0-1.414l4.585-4.586a1,1,0,1,0-1.414-1.414L9.189,9.879a3,3,0,0,0,0,4.242l4.586,4.586a1,1,0,1,0,1.414-1.414Z" transform="translate(-8.311 -5)" fill="#2c2c2c"/>
                     </svg>
                 </div>
                 <div class="signInHeadingTextArea">
