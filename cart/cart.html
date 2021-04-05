@@ -61,8 +61,8 @@
             display: flex;
             align-items: center;
             position: fixed;
-            width:100%;
-            left:0;
+            width: 100%;
+            left: 0;
         }
 
         .cartHeadingText {
@@ -74,7 +74,7 @@
 
         .addProductInWistlist {
             background-color: #fff;
-            padding-top:60px
+            padding-top: 60px
         }
 
         .addProductInWistlistInner {
@@ -251,6 +251,7 @@
             align-items: center;
             margin-top: 15px;
             outline: none;
+            cursor: pointer;
         }
 
         /* cart total */
@@ -281,7 +282,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top:20px;
+            margin-top: 20px;
             flex-wrap: wrap;
         }
 
@@ -291,7 +292,10 @@
             align-items: center;
             border: none;
             background: transparent;
-            margin-bottom:10px;
+            margin-bottom: 10px;
+            outline: none;
+            cursor: pointer;
+
         }
 
         .continueShippingText {
@@ -310,7 +314,9 @@
             border: none;
             color: #fff;
             border-radius: 3px;
-           
+            outline: none;
+            cursor: pointer;
+
         }
 
         @media(min-width:768px) {
@@ -319,7 +325,149 @@
                 padding: 0 30px;
             }
 
+            .cartHeader {
+                display: none;
+            }
 
+            .addProductInWistlist {
+                padding-top: 0px;
+                background-color: unset;
+            }
+
+            .addProductInWistlistInner {
+                background-color: unset;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+            .addProudctArea {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .cartProductItemWrapper {
+                width: calc(65% - 30px);
+            }
+
+            .couponCodeAndCartTotal {
+                display: flex;
+                flex-direction: column;
+                width: 35%;
+            }
+
+            .couponCodeArea {
+                margin-top: 0px;
+            }
+
+            .moveOtherPageFormCartPage {
+                width: 100%;
+            }
+
+            .cartTotalsArea {
+                margin-top: 30px;
+            }
+
+            .productHeadingText {
+                font-size: 14px;
+                line-height: 24px;
+                width: 272px;
+
+            }
+
+            .productPricingText {
+                font-size: 14px;
+            }
+
+            .quntityArea {
+                width: 100px;
+                height: 36px;
+
+            }
+
+            .cartProductItem {
+                align-items: center;
+            }
+
+
+            .incrementBtn svg tspan,
+            .decrementBtn svg tspan {
+                font-size: 24px;
+                font-weight: 400;
+            }
+
+            .incrementBtn svg,
+            .decrementBtn svg {
+                width: 20px;
+                margin-top: 5px;
+            }
+
+            .cartProductImgArea {
+                width: 100px;
+                height: 100px;
+            }
+
+            .cartProductContent {
+                width: calc(100% - 130px);
+                margin-left: 15px;
+            }
+
+            .couponCodeHeadingText,
+            .cartTotalHeadingText {
+                font-size: 18px;
+            }
+
+            .labelText {
+                font-size: 13px;
+            }
+
+            .applyCouponBtn {
+                font-size: 14px;
+                width: 130px;
+                height: 30px;
+            }
+
+            .subTotalLeftText,
+            .subTotalRightText {
+                font-size: 14px;
+            }
+
+            .continueShippingText {
+                font-size: 14px;
+            }
+
+            .moveToToCheckOutBtn {
+                width: 183px;
+                height: 36px;
+                font-size: 14px;
+            }
+
+        }
+
+        @media(min-width:1025px) {
+            .cartProductItemWrapper {
+                width: calc(68% - 50px);
+            }
+
+            .couponCodeAndCartTotal {
+                display: flex;
+                flex-direction: column;
+                width: 32%;
+            }
+
+            .cartProductItem {
+                flex-wrap: nowrap;
+            }
+
+            .cartProductContent {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                column-gap: 10px;
+                align-items: center;
+                width: calc(100% - 130px);
+                margin-left: 25px;
+            }
         }
     </style>
 </head>
@@ -345,68 +493,70 @@
 
                     </div>
 
-                    <!-- coupon code -->
-                    <div class="couponCodeArea">
-                        <div class="couponCodeHeading">
-                            <p class="couponCodeHeadingText">Have any coupon?</p>
-                        </div>
-
-                        <div class="couponCodeForOffer">
-                            <label for="" class="couponCodeForOfferInner">
-                                <span class="labelText">Coupon Code</span>
-                                <input type="email" class="inputFieldControl" autocomplete="off">
-                            </label>
-
-                            <button class="applyCouponBtn">Apply Coupon</button>
-                        </div>
-                    </div>
-
-                    <!-- cart totals -->
-                    <div class="cartTotalsArea">
-                        <!-- heading -->
-                        <div class="cartTotalsHeading">
-                            <p class="cartTotalHeadingText">Cart Totals</p>
-                        </div>
-                        <div class="cartTotalsBody">
-                            <!-- subtotal -->
-                            <div class="subTotalArea">
-                                <div class="subTotalLeft">
-                                    <p class="subTotalLeftText">Subtotal</p>
-                                </div>
-                                <div class="subTotalRight">
-                                    <p class="subTotalRightText">৳ 156000</p>
-                                </div>
-                            </div>
-                            <!-- Shipping -->
-                            <div class="subTotalArea">
-                                <div class="subTotalLeft">
-                                    <p class="subTotalLeftText">Shipping</p>
-                                </div>
-                                <div class="subTotalRight">
-                                    <p class="subTotalRightText">Calculated at next step</p>
-                                </div>
-                            </div>
-                            <!-- Coupon -->
-                            <div class="subTotalArea">
-                                <div class="subTotalLeft">
-                                    <p class="subTotalLeftText">Coupon</p>
-                                </div>
-                                <div class="subTotalRight">
-                                    <p class="subTotalRightText">- ৳ 2000</p>
-                                </div>
-                            </div>
-                            <!-- Total -->
-                            <div class="subTotalArea">
-                                <div class="subTotalLeft">
-                                    <p class="subTotalLeftText totalBoldText">Total</p>
-                                </div>
-                                <div class="subTotalRight">
-                                    <p class="subTotalRightText">৳ 154000</p>
-                                </div>
+                    <div class="couponCodeAndCartTotal">
+                        <!-- coupon code -->
+                        <div class="couponCodeArea">
+                            <div class="couponCodeHeading">
+                                <p class="couponCodeHeadingText">Have any coupon?</p>
                             </div>
 
+                            <div class="couponCodeForOffer">
+                                <label for="" class="couponCodeForOfferInner">
+                                    <span class="labelText">Coupon Code</span>
+                                    <input type="email" class="inputFieldControl" autocomplete="off">
+                                </label>
+
+                                <button class="applyCouponBtn">Apply Coupon</button>
+                            </div>
                         </div>
 
+                        <!-- cart totals -->
+                        <div class="cartTotalsArea">
+                            <!-- heading -->
+                            <div class="cartTotalsHeading">
+                                <p class="cartTotalHeadingText">Cart Totals</p>
+                            </div>
+                            <div class="cartTotalsBody">
+                                <!-- subtotal -->
+                                <div class="subTotalArea">
+                                    <div class="subTotalLeft">
+                                        <p class="subTotalLeftText">Subtotal</p>
+                                    </div>
+                                    <div class="subTotalRight">
+                                        <p class="subTotalRightText">৳ 156000</p>
+                                    </div>
+                                </div>
+                                <!-- Shipping -->
+                                <div class="subTotalArea">
+                                    <div class="subTotalLeft">
+                                        <p class="subTotalLeftText">Shipping</p>
+                                    </div>
+                                    <div class="subTotalRight">
+                                        <p class="subTotalRightText">Calculated at next step</p>
+                                    </div>
+                                </div>
+                                <!-- Coupon -->
+                                <div class="subTotalArea">
+                                    <div class="subTotalLeft">
+                                        <p class="subTotalLeftText">Coupon</p>
+                                    </div>
+                                    <div class="subTotalRight">
+                                        <p class="subTotalRightText">- ৳ 2000</p>
+                                    </div>
+                                </div>
+                                <!-- Total -->
+                                <div class="subTotalArea">
+                                    <div class="subTotalLeft">
+                                        <p class="subTotalLeftText totalBoldText">Total</p>
+                                    </div>
+                                    <div class="subTotalRight">
+                                        <p class="subTotalRightText">৳ 154000</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
                     <!-- move other page  from cart page -->
                     <div class="moveOtherPageFormCartPage">
@@ -497,7 +647,7 @@
             {
                 id: 2356,
                 productImg: `
-                    <svg class="cardItemImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="93" height="93" viewBox="0 0 93 93">
+                <svg class="cardItemImg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="93" height="93" viewBox="0 0 93 93">
                         <defs>
                             <clipPath id="clip-path">
                             <rect id="Rectangle_162" data-name="Rectangle 162" width="93" height="93" transform="translate(35 125)" fill="#f1f5ff"/>

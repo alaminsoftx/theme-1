@@ -85,10 +85,10 @@
             height: 60px;
             display: flex;
             align-items: center;
-            position:fixed;
-            left:0;
-            top:0;
-            width:100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
             z-index: 99;
         }
 
@@ -101,7 +101,7 @@
 
         .addProductArea {
             background-color: #fff;
-            padding-top:60px;
+            padding-top: 60px;
         }
 
         .addProductAreaInner {
@@ -117,10 +117,13 @@
         /* body */
 
         .singleProductImage {
-            background-color: #fff;
             border-radius: 10px;
             overflow: hidden;
             position: relative;
+        }
+
+        .singleProductImageInner {
+            background-color: #fff;
         }
 
         .singleProductImageSize {
@@ -439,7 +442,8 @@
             align-items: center;
             justify-content: center;
         }
-        .reviewWithProgressBarItem:not(:last-child){
+
+        .reviewWithProgressBarItem:not(:last-child) {
             margin-bottom: 6px;
         }
 
@@ -468,6 +472,200 @@
                 padding: 0 30px;
             }
 
+            .singleProductHeader {
+                display: none;
+            }
+
+            .addProudctArea {
+                max-width: 1260px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .addProductAreaInner {
+                background-color: unset;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+            .addProductArea {
+                background-color: unset;
+                padding-top: 0px;
+            }
+
+            .singleProductImgAndDetails {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .singleProductImage {
+                width: 50%;
+            }
+
+            .singleProductDetails {
+                width: calc(50% - 40px);
+            }
+
+            .descriptionTitleText,
+            .reviewsTitleText {
+                text-align: left;
+                font-size: 24px;
+                font-weight: 700;
+
+            }
+
+            .fourStartReview {
+                font-size: 48px;
+            }
+
+            .productReviewArea {
+                margin-top: 60px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .reviewsTop {
+                width: 340px;
+            }
+
+            .singleReviewsArea {
+                width: calc(100% - 340px);
+            }
+
+
+
+            .productRatingForReivewArea {
+                align-items: flex-start;
+            }
+
+            .reviewWithProgressBarItem {
+                justify-content: flex-start;
+            }
+
+            .brandNameText {
+                font-size: 14px;
+            }
+
+            .productTitleText {
+                font-size: 20px;
+                line-height: 32px;
+            }
+
+            .singleProdcutPriceText {
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            .swatchArea,
+            .storageArea,
+            .ramArea {
+                align-items: flex-start;
+                flex-direction: column;
+                margin-bottom: 30px;
+            }
+
+            .swatchColorText,
+            .storageColorText,
+            .ramText,
+            .storageNavItem,
+            .selectRamItem {
+                font-size: 14px;
+            }
+
+            .swatchLeft,
+            .storageLeft,
+            .ramLeft {
+                margin-right: 0px;
+                margin-bottom: 5px;
+            }
+
+            .brandName {
+                margin-bottom: 15px;
+            }
+
+            .productRating {
+                margin-top: 8px;
+            }
+
+            .singleProductPrice {
+                margin: 35px 0 38px 0;
+            }
+
+            .singleProductDescrition {
+                margin-top: 122px;
+            }
+
+            .swatchColorNavItem {
+                width: 25px;
+                height: 25px;
+            }
+
+            .singleProductAddToCartBtn {
+                font-size: 16px;
+                width: 140px;
+                height: 36px;
+            }
+
+            .quantityBtnArea {
+                width: 100px;
+                height: 36px;
+            }
+
+            .quantityBtnIncreament svg tspan,
+            .quantityBtnDecreament svg tspan {
+                font-size: 24px;
+                font-weight: 400;
+            }
+
+            .quantityBtnNumber, .personNameText {
+                font-size: 16px;
+            }
+
+            .wishListBtnArea {
+                width: 36px;
+                height: 36px;
+            }
+
+            .singleProductWishListBtn {
+                width: 17px;
+                height: 14px;
+            }
+
+            .productDescriptionText, .personComment {
+                font-size: 14px;
+                line-height: 24px;
+
+            }
+
+            .productRatingForReivewArea {
+                margin-top: 20px;
+            }
+
+            .productRatingForReivewArea .ratingLeft {
+                margin-top: 10px;
+            }
+
+            .ratingCount {
+                font-size: 14px;
+                margin-top: 3px;
+            }
+
+            .reviewWithProgressBarLeft {
+                width: 100px;
+            }
+
+            .showReviewProgressBar {
+                margin-top: 35px;
+            }
+        }
+
+        @media(min-width:1024px) {
+            .singleProductDetails {
+                width: calc(50% - 60px);
+            }
 
         }
     </style>
@@ -490,158 +688,170 @@
             <div class="container">
                 <div class="addProudctArea">
                     <div class="singleProductWrapper" id="singleProductWrapper">
-                        <!-- product item -->
-                        <div class="singleProductImage">
-                            <div class="singleProductImageInner">
-                                <img class="singleProductImageSize" src="Thumbnails.svg" alt="">
-                            </div>
-                            <div class="singleProductLablel">
-                                <span class="newLabelText">New</span>
-                            </div>
-                        </div>
 
-                        <!-- single product description -->
-                        <div class="singleProductDetails">
-                            <!-- top -->
-                            <div class="topDetails">
-                                <div class="brandName">
-                                    <p class="brandNameText">Apple</p>
-                                </div>
-                                <div class="productitle">
-                                    <p class="productTitleText">MacBook Pro 2020 13" m1 Silicon 512GB SSD 16GB Ram</p>
-                                </div>
-                                <!-- rating -->
-                                <div class="productRating">
-                                    <div class="ratingLeft">
-                                        <ul class="ratingNav">
-                                            <li class="ratingItem">
-                                                <svg class="ratingIconSize" xmlns="http://www.w3.org/2000/svg"
-                                                    width="14" height="14" viewBox="0 0 14 14">
-                                                    <path id="Path_18" data-name="Path 18"
-                                                        d="M61,75.254,65.326,78l-1.144-5.18L68,69.338l-5.034-.455L61,64l-1.966,4.883L54,69.338l3.819,3.483L56.674,78Z"
-                                                        transform="translate(-54 -64)" fill="#ff9f43" opacity="0.999" />
-                                                </svg>
-                                            </li>
-                                            <li class="ratingItem">
-                                                <svg class="ratingIconSize" xmlns="http://www.w3.org/2000/svg"
-                                                    width="14" height="14" viewBox="0 0 14 14">
-                                                    <path id="Path_18" data-name="Path 18"
-                                                        d="M61,75.254,65.326,78l-1.144-5.18L68,69.338l-5.034-.455L61,64l-1.966,4.883L54,69.338l3.819,3.483L56.674,78Z"
-                                                        transform="translate(-54 -64)" fill="#ff9f43" opacity="0.999" />
-                                                </svg>
-                                            </li>
-                                            <li class="ratingItem">
-                                                <svg class="ratingIconSize" xmlns="http://www.w3.org/2000/svg"
-                                                    width="14" height="14" viewBox="0 0 14 14">
-                                                    <path id="Path_18" data-name="Path 18"
-                                                        d="M61,75.254,65.326,78l-1.144-5.18L68,69.338l-5.034-.455L61,64l-1.966,4.883L54,69.338l3.819,3.483L56.674,78Z"
-                                                        transform="translate(-54 -64)" fill="#ff9f43" opacity="0.999" />
-                                                </svg>
-                                            </li>
-                                            <li class="ratingItem">
-                                                <svg class="ratingIconSize" xmlns="http://www.w3.org/2000/svg"
-                                                    width="14" height="14" viewBox="0 0 14 14">
-                                                    <path id="Path_18" data-name="Path 18"
-                                                        d="M61,75.254,65.326,78l-1.144-5.18L68,69.338l-5.034-.455L61,64l-1.966,4.883L54,69.338l3.819,3.483L56.674,78Z"
-                                                        transform="translate(-54 -64)" fill="#ff9f43" opacity="0.999" />
-                                                </svg>
-                                            </li>
-                                            <li class="ratingItem">
-                                                <svg class="ratingIconSize" xmlns="http://www.w3.org/2000/svg"
-                                                    width="14" height="14" viewBox="0 0 14 14">
-                                                    <path id="Path_22" data-name="Path 22"
-                                                        d="M61,75.254,65.326,78l-1.144-5.18L68,69.338l-5.034-.455L61,64l-1.966,4.883L54,69.338l3.819,3.483L56.674,78Z"
-                                                        transform="translate(-54 -64)" fill="#778994" opacity="0.3" />
-                                                </svg>
 
-                                            </li>
+                        <div class="singleProductImgAndDetails">
+                            <!-- product item -->
+                            <div class="singleProductImage">
+                                <div class="singleProductImageInner">
+                                    <img class="singleProductImageSize" src="Thumbnails.svg" alt="">
+                                </div>
+                                <div class="singleProductLablel">
+                                    <span class="newLabelText">New</span>
+                                </div>
+                            </div>
+
+                            <!-- single product description -->
+                            <div class="singleProductDetails">
+                                <!-- top -->
+                                <div class="topDetails">
+                                    <div class="brandName">
+                                        <p class="brandNameText">Apple</p>
+                                    </div>
+                                    <div class="productitle">
+                                        <p class="productTitleText">MacBook Pro 2020 13" m1 Silicon 512GB SSD 16GB Ram
+                                        </p>
+                                    </div>
+                                    <!-- rating -->
+                                    <div class="productRating">
+                                        <div class="ratingLeft">
+                                            <ul class="ratingNav">
+                                                <li class="ratingItem">
+                                                    <svg class="ratingIconSize" xmlns="http://www.w3.org/2000/svg"
+                                                        width="14" height="14" viewBox="0 0 14 14">
+                                                        <path id="Path_18" data-name="Path 18"
+                                                            d="M61,75.254,65.326,78l-1.144-5.18L68,69.338l-5.034-.455L61,64l-1.966,4.883L54,69.338l3.819,3.483L56.674,78Z"
+                                                            transform="translate(-54 -64)" fill="#ff9f43"
+                                                            opacity="0.999" />
+                                                    </svg>
+                                                </li>
+                                                <li class="ratingItem">
+                                                    <svg class="ratingIconSize" xmlns="http://www.w3.org/2000/svg"
+                                                        width="14" height="14" viewBox="0 0 14 14">
+                                                        <path id="Path_18" data-name="Path 18"
+                                                            d="M61,75.254,65.326,78l-1.144-5.18L68,69.338l-5.034-.455L61,64l-1.966,4.883L54,69.338l3.819,3.483L56.674,78Z"
+                                                            transform="translate(-54 -64)" fill="#ff9f43"
+                                                            opacity="0.999" />
+                                                    </svg>
+                                                </li>
+                                                <li class="ratingItem">
+                                                    <svg class="ratingIconSize" xmlns="http://www.w3.org/2000/svg"
+                                                        width="14" height="14" viewBox="0 0 14 14">
+                                                        <path id="Path_18" data-name="Path 18"
+                                                            d="M61,75.254,65.326,78l-1.144-5.18L68,69.338l-5.034-.455L61,64l-1.966,4.883L54,69.338l3.819,3.483L56.674,78Z"
+                                                            transform="translate(-54 -64)" fill="#ff9f43"
+                                                            opacity="0.999" />
+                                                    </svg>
+                                                </li>
+                                                <li class="ratingItem">
+                                                    <svg class="ratingIconSize" xmlns="http://www.w3.org/2000/svg"
+                                                        width="14" height="14" viewBox="0 0 14 14">
+                                                        <path id="Path_18" data-name="Path 18"
+                                                            d="M61,75.254,65.326,78l-1.144-5.18L68,69.338l-5.034-.455L61,64l-1.966,4.883L54,69.338l3.819,3.483L56.674,78Z"
+                                                            transform="translate(-54 -64)" fill="#ff9f43"
+                                                            opacity="0.999" />
+                                                    </svg>
+                                                </li>
+                                                <li class="ratingItem">
+                                                    <svg class="ratingIconSize" xmlns="http://www.w3.org/2000/svg"
+                                                        width="14" height="14" viewBox="0 0 14 14">
+                                                        <path id="Path_22" data-name="Path 22"
+                                                            d="M61,75.254,65.326,78l-1.144-5.18L68,69.338l-5.034-.455L61,64l-1.966,4.883L54,69.338l3.819,3.483L56.674,78Z"
+                                                            transform="translate(-54 -64)" fill="#778994"
+                                                            opacity="0.3" />
+                                                    </svg>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ratingRight">
+                                            <p class="ratingCount">16 Rating</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- pricing -->
+                                <div class="singleProductPrice">
+                                    <p class="singleProdcutPriceText">৳ 120000</p>
+                                </div>
+                                <!-- swatch -->
+                                <div class="swatchArea">
+                                    <div class="swatchLeft">
+                                        <p class="swatchColorText">Color:</p>
+                                    </div>
+                                    <div class="swatchRight">
+                                        <ul class="swatchColorNav">
+                                            <li class="swatchColorNavItem"></li>
+                                            <li class="swatchColorNavItem"></li>
+                                            <li class="swatchColorNavItem"></li>
                                         </ul>
                                     </div>
-                                    <div class="ratingRight">
-                                        <p class="ratingCount">16 Rating</p>
+                                </div>
+                                <!-- storage -->
+                                <div class="storageArea">
+                                    <div class="storageLeft">
+                                        <p class="storageColorText">Storage:</p>
+                                    </div>
+                                    <div class="storageRight">
+                                        <ul class="storageColorNav">
+                                            <li class="storageNavItem">256GB</li>
+                                            <li class="storageNavItem">512GB</li>
+                                            <li class="storageNavItem">1TB</li>
+                                        </ul>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- pricing -->
-                            <div class="singleProductPrice">
-                                <p class="singleProdcutPriceText">৳ 120000</p>
-                            </div>
-                            <!-- swatch -->
-                            <div class="swatchArea">
-                                <div class="swatchLeft">
-                                    <p class="swatchColorText">Color:</p>
+                                <!-- ram -->
+                                <div class="ramArea">
+                                    <div class="ramLeft">
+                                        <p class="ramText">Ram:</p>
+                                    </div>
+                                    <div class="storageRight">
+                                        <select class="selectRamItem" name="" id="">
+                                            <option value="">16GB</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="swatchRight">
-                                    <ul class="swatchColorNav">
-                                        <li class="swatchColorNavItem"></li>
-                                        <li class="swatchColorNavItem"></li>
-                                        <li class="swatchColorNavItem"></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- storage -->
-                            <div class="storageArea">
-                                <div class="storageLeft">
-                                    <p class="storageColorText">Storage:</p>
-                                </div>
-                                <div class="storageRight">
-                                    <ul class="storageColorNav">
-                                        <li class="storageNavItem">256GB</li>
-                                        <li class="storageNavItem">512GB</li>
-                                        <li class="storageNavItem">1TB</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- ram -->
-                            <div class="ramArea">
-                                <div class="ramLeft">
-                                    <p class="ramText">Ram:</p>
-                                </div>
-                                <div class="storageRight">
-                                    <select class="selectRamItem" name="" id="">
-                                        <option value="">16GB</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- prodcut quantity -->
-                            <div class="productQunatityAea">
-                                <p class="productQunatityText">Quantity :</p>
-                                <div class="productQunatityAeaInner">
-                                    <!-- quantity -->
-                                    <div class="quantityBtnArea">
-                                        <button class="quantityBtnIncreament">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="24"
-                                                viewBox="0 0 8 24">
-                                                <text id="_-" data-name="-" transform="translate(0 19)" fill="#778994"
-                                                    font-size="20" font-family="Montserrat-Regular, Montserrat">
-                                                    <tspan x="0" y="0">-</tspan>
-                                                </text>
+                                <!-- prodcut quantity -->
+                                <div class="productQunatityAea">
+                                    <p class="productQunatityText">Quantity :</p>
+                                    <div class="productQunatityAeaInner">
+                                        <!-- quantity -->
+                                        <div class="quantityBtnArea">
+                                            <button class="quantityBtnIncreament">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="24"
+                                                    viewBox="0 0 8 24">
+                                                    <text id="_-" data-name="-" transform="translate(0 19)"
+                                                        fill="#778994" font-size="20"
+                                                        font-family="Montserrat-Regular, Montserrat">
+                                                        <tspan x="0" y="0">-</tspan>
+                                                    </text>
+                                                </svg>
+                                            </button>
+                                            <span class="quantityBtnNumber">1</span>
+                                            <button class="quantityBtnDecreament">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="24"
+                                                    viewBox="0 0 12 24">
+                                                    <text id="_" data-name="+" transform="translate(0 19)"
+                                                        fill="#778994" font-size="20"
+                                                        font-family="Montserrat-Regular, Montserrat">
+                                                        <tspan x="0" y="0">+</tspan>
+                                                    </text>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <!-- add to cart -->
+                                        <div class="addToCartBtnArea">
+                                            <button class="singleProductAddToCartBtn">Add to cart</button>
+                                        </div>
+                                        <!-- wishlist -->
+                                        <div class="wishListBtnArea">
+                                            <svg class="singleProductWishListBtn" xmlns="http://www.w3.org/2000/svg"
+                                                width="13" height="11.422" viewBox="0 0 13 11.422">
+                                                <path id="Wishlist"
+                                                    d="M9.473,1.917A3.465,3.465,0,0,0,6.5,3.7,3.465,3.465,0,0,0,3.517,1.917,3.682,3.682,0,0,0,0,5.734C0,8.2,2.589,10.885,4.762,12.708a2.693,2.693,0,0,0,3.465,0C10.4,10.885,12.992,8.2,12.992,5.734A3.682,3.682,0,0,0,9.473,1.917ZM7.532,11.88a1.61,1.61,0,0,1-2.074,0C2.676,9.545,1.081,7.306,1.081,5.734A2.6,2.6,0,0,1,3.517,3,2.6,2.6,0,0,1,5.954,5.734a.541.541,0,1,0,1.083,0A2.6,2.6,0,0,1,9.473,3,2.6,2.6,0,0,1,11.91,5.734c0,1.572-1.6,3.811-4.378,6.143Z"
+                                                    transform="translate(0.005 -1.917)" fill="#2c2c2c" />
                                             </svg>
-                                        </button>
-                                        <span class="quantityBtnNumber">1</span>
-                                        <button class="quantityBtnDecreament">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="24"
-                                                viewBox="0 0 12 24">
-                                                <text id="_" data-name="+" transform="translate(0 19)" fill="#778994"
-                                                    font-size="20" font-family="Montserrat-Regular, Montserrat">
-                                                    <tspan x="0" y="0">+</tspan>
-                                                </text>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <!-- add to cart -->
-                                    <div class="addToCartBtnArea">
-                                        <button class="singleProductAddToCartBtn">Add to cart</button>
-                                    </div>
-                                    <!-- wishlist -->
-                                    <div class="wishListBtnArea">
-                                        <svg class="singleProductWishListBtn" xmlns="http://www.w3.org/2000/svg"
-                                            width="13" height="11.422" viewBox="0 0 13 11.422">
-                                            <path id="Wishlist"
-                                                d="M9.473,1.917A3.465,3.465,0,0,0,6.5,3.7,3.465,3.465,0,0,0,3.517,1.917,3.682,3.682,0,0,0,0,5.734C0,8.2,2.589,10.885,4.762,12.708a2.693,2.693,0,0,0,3.465,0C10.4,10.885,12.992,8.2,12.992,5.734A3.682,3.682,0,0,0,9.473,1.917ZM7.532,11.88a1.61,1.61,0,0,1-2.074,0C2.676,9.545,1.081,7.306,1.081,5.734A2.6,2.6,0,0,1,3.517,3,2.6,2.6,0,0,1,5.954,5.734a.541.541,0,1,0,1.083,0A2.6,2.6,0,0,1,9.473,3,2.6,2.6,0,0,1,11.91,5.734c0,1.572-1.6,3.811-4.378,6.143Z"
-                                                transform="translate(0.005 -1.917)" fill="#2c2c2c" />
-                                        </svg>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
