@@ -111,6 +111,8 @@
             width: 90px;
             display: flex;
             align-items: center;
+            min-width: 90px;
+            height: 90px;
         }
 
         .deleteIconArea {
@@ -164,6 +166,78 @@
                 padding: 0 30px;
             }
 
+            .wishlistHeader {
+                display: none;
+            }
+
+            .addProductInWistlist {
+                background-color: unset;
+                padding-top: 0px;
+            }
+
+            .addProductInWistlistInner {
+                background-color: unset;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+            .wishlistProductContent {
+                width: calc(100% - 190px);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-left: 0px;
+                margin-right: 14px;
+            }
+
+            .wishlistProductItem {
+                align-items: center;
+            }
+
+            .wishlistproductButton {
+                margin-top: 0px;
+                width: 110px;
+                height: 30px;
+                font-size: 12px;
+            }
+
+            .addProudctArea {
+                max-width: 960px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .productPricingText {
+                margin-top: 0px;
+                font-size: 14px;
+            }
+
+            .wishlistProductImgArea {
+                width: 100px;
+                min-width: 100px;
+                height: 100px;
+            }
+
+            .productHeadingText {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .wishlistProductItemWrapper {
+                background: #fff;
+                border-radius: 5px;
+                padding: 30px;
+            }
+
+            .wishlistProductItem {
+                padding: 0px;
+            }
+
+            .wishlistProductItem:not(:last-child) {
+                border-bottom: 1px solid rgb(149 175 192 / 10%);
+                margin-bottom: 13px;
+                padding-bottom: 13px;
+            }
 
         }
     </style>
@@ -319,16 +393,18 @@
 
         wishlistProdcutObj.forEach(element => {
             wishlistProductItHTML += `
-                    <div class="wishlistProductItem" id="wishlistProductItem">
-                        <div class="wishlistProductImgArea" id="wishlistProductImg">
+                    <div class="wishlistProductItem">
+                        <div class="wishlistProductImgArea" >
                             <img src="${element.productImg}" alt="">
                         </div>
                         <div class="wishlistProductContent">
-                            <p class="productHeadingText" id="productHeadingText"> ${element.productTitle}</p>
-                            <p class="productPricingText" id="productPricingText">${element.productPrice}</p>
-                            <button class="wishlistproductButton" id="wishlistproductButton">${element.productBtn}</button>
+                            <p class="productHeadingText" > ${element.productTitle}</p>
+                            <p class="productPricingText" >${element.productPrice}</p>
+                            <div class="wishlistButtonArea">
+                                <button class="wishlistproductButton" >${element.productBtn}</button>
+                            </div>
                         </div>
-                        <div class="deleteIconArea" id="deleteIconArea">${element.deleteIcon} </div>
+                        <div class="deleteIconArea" >${element.deleteIcon} </div>
                     </div>
             `
         });

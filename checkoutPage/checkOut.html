@@ -39,7 +39,7 @@
             margin: 0 auto;
         }
 
-        .cartHeaderInner {
+        .checkOutHeaderInner {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -60,9 +60,9 @@
             height: 60px;
             display: flex;
             align-items: center;
-            position:fixed;
-            left:0;
-            width:100%;
+            position: fixed;
+            left: 0;
+            width: 100%;
             z-index: 99;
         }
 
@@ -75,7 +75,7 @@
 
         .addProductInWistlist {
             background-color: #fff;
-            padding-top:60px;
+            padding-top: 60px;
         }
 
         .addProductInWistlistInner {
@@ -99,17 +99,19 @@
         /* alreay have an account */
         .alreadyHaveAccountText {
             font-size: 12px;
-            font-weight:600;
+            font-weight: 600;
             color: #3E5570;
             line-height: 15px;
             text-align: center;
         }
-        .signInTextInCheckoutPage{
-            color:#00A5FF;
+
+        .signInTextInCheckoutPage {
+            color: #00A5FF;
         }
 
         /* coupon code area */
-        .cartTotalsArea, .contactInformationArea {
+        .cartTotalsArea,
+        .contactInformationArea {
             margin-top: 20px;
         }
 
@@ -155,8 +157,22 @@
             color: #3E5570;
         }
 
+        .inputTextAreadField {
+            height: 80px;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(149 175 192 / 40%);
+            width: 100%;
+            outline: none;
+            background-color: transparent;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+            line-height: 36px;
+        }
+
         /* contact information */
-        .contactInformationForOffer:not(:last-child){
+        .contactInformationForOffer:not(:last-child) {
             margin-bottom: 30px;
         }
 
@@ -200,6 +216,8 @@
             border: none;
             background: transparent;
             margin-bottom: 10px;
+            outline: none;
+            cursor: pointer;
         }
 
         .continueShippingText {
@@ -210,7 +228,7 @@
         }
 
         .moveToToCheckOutBtn {
-            width: 150px;
+            width: 99px;
             height: 30px;
             font-size: 12px;
             font-weight: 500;
@@ -218,16 +236,144 @@
             border: none;
             color: #fff;
             border-radius: 3px;
+            outline: none;
+            cursor: pointer;
 
         }
 
+        .labelText.textAreaLabel {
+            top: -73px;
+        }
+        .mt30ForMobile{
+            margin-top:30px;
+        }
         @media(min-width:768px) {
 
             .container {
                 padding: 0 30px;
             }
 
+            .cartHeader {
+                display: none;
+            }
 
+            .addProductInWistlist {
+                background-color: unset;
+                padding-top: 0px;
+            }
+
+            .addProductInWistlistInner {
+                background-color: unset;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+            .addProudctAreaInner {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .alreadyHaveAccount {
+                width: 100%;
+            }
+
+            .cartTotalsArea,
+            .contactInformationArea {
+                margin-top: 30px;
+            }
+
+            .contactInformationArea {
+                width: 100%;
+            }
+
+            .contactInfoAndDeliveryAddress {
+                display: flex;
+                width: calc(65% - 30px);
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .contactInformationArea {
+                width: 100%;
+            }
+
+            .cartTotalWrapper {
+                width: 35%;
+            }
+
+            .alreadyHaveAccountText {
+                text-align: left;
+                font-size: 14px;
+            }
+
+            .contactInformationHeadingText,
+            .cartTotalHeadingText {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+
+            .labelText {
+                font-size: 13px;
+            }
+
+            .subTotalLeftText,
+            .subTotalRightText {
+                font-size: 14px;
+            }
+
+            .continueShippingText {
+                font-size: 14px;
+            }
+
+            .moveToToCheckOutBtn {
+                width: 123px;
+                height: 36px;
+                font-size: 14px;
+            }
+        }
+
+        @media(min-width:1024px) {
+
+            .contactInformationArea,
+            .cartTotalsArea {
+                padding: 30px;
+            }
+
+            .contactInfoAndDeliveryAddress {
+                width: calc(68% - 50px);
+            }
+
+            .contactInformationArea {
+                width: 100%;
+            }
+
+            .cartTotalWrapper {
+                width: 32%;
+            }
+
+            .phoneAndEmailFieldForCheckOut {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            }
+            .phoneAndEmailFieldForCheckOut .contactInformationForOffer{
+                width:calc(50% - 15px);
+                margin-bottom: 0px;
+            }
+            .dflexForDesktop{
+                display: flex;
+                width:100%;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .width50ForDesktop{
+                width:calc(33.33% - 20px);
+            }
+            .mt30ForMobile{
+                margin-top:0px;
+            }
         }
     </style>
 </head>
@@ -236,7 +382,7 @@
     <!-- start  cart header -->
     <div class="cartHeader">
         <div class="container">
-            <div class="cartHeaderInner" id="cartHeaderInner">
+            <div class="checkOutHeaderInner" id="checkOutHeaderInner">
 
             </div>
         </div>
@@ -248,132 +394,148 @@
         <div class="addProductInWistlistInner">
             <div class="container">
                 <div class="addProudctArea">
-
-                    <div class="alreadyHaveAccount">
-                        <p class="alreadyHaveAccountText">Already have an account? 
-                            <span class="signInTextInCheckoutPage">Sign in</span></p>
-                    </div>
-
-                    <!-- contact information -->
-                    <div class="contactInformationArea">
-                        <div class="contactInformationHeading">
-                            <p class="contactInformationHeadingText">Contact Information</p>
+                    <div class="addProudctAreaInner">
+                        <div class="alreadyHaveAccount">
+                            <p class="alreadyHaveAccountText">Already have an account?
+                                <span class="signInTextInCheckoutPage">Sign in</span>
+                            </p>
                         </div>
 
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Phone</span>
-                                <input type="tel" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Email</span>
-                                <input type="email" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                    </div>
-                    <!-- Delivery Address -->
-                    <div class="contactInformationArea">
-                        <div class="contactInformationHeading">
-                            <p class="contactInformationHeadingText">Delivery Address</p>
-                        </div>
-
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Full Name</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Address</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">City</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Postal Code (Optional)</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Country</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- cart totals -->
-                    <div class="cartTotalsArea">
-                        <!-- heading -->
-                        <div class="cartTotalsHeading">
-                            <p class="cartTotalHeadingText">Cart Totals</p>
-                        </div>
-                        <div class="cartTotalsBody">
-                            <!-- subtotal -->
-                            <div class="subTotalArea">
-                                <div class="subTotalLeft">
-                                    <p class="subTotalLeftText">Subtotal</p>
+                        <div class="contactInfoAndDeliveryAddress">
+                            <!-- contact information -->
+                            <div class="contactInformationArea">
+                                <div class="contactInformationHeading">
+                                    <p class="contactInformationHeadingText">Contact Information</p>
                                 </div>
-                                <div class="subTotalRight">
-                                    <p class="subTotalRightText">৳ 156000</p>
+
+                                <div class="phoneAndEmailFieldForCheckOut">
+                                    <div class="contactInformationForOffer">
+                                        <label for="" class="contactInformationForOfferInner">
+                                            <span class="labelText">Phone</span>
+                                            <input type="tel" class="inputFieldControl" autocomplete="off">
+                                        </label>
+                                    </div>
+                                    <div class="contactInformationForOffer">
+                                        <label for="" class="contactInformationForOfferInner">
+                                            <span class="labelText">Email</span>
+                                            <input type="email" class="inputFieldControl" autocomplete="off">
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- Shipping -->
-                            <div class="subTotalArea">
-                                <div class="subTotalLeft">
-                                    <p class="subTotalLeftText">Shipping</p>
+                            <!-- Delivery Address -->
+                            <div class="contactInformationArea">
+                                <div class="contactInformationHeading">
+                                    <p class="contactInformationHeadingText">Delivery Address</p>
                                 </div>
-                                <div class="subTotalRight">
-                                    <p class="subTotalRightText">Calculated at next step</p>
-                                </div>
-                            </div>
-                            <!-- Coupon -->
-                            <div class="subTotalArea">
-                                <div class="subTotalLeft">
-                                    <p class="subTotalLeftText">Coupon</p>
-                                </div>
-                                <div class="subTotalRight">
-                                    <p class="subTotalRightText">- ৳ 2000</p>
-                                </div>
-                            </div>
-                            <!-- Total -->
-                            <div class="subTotalArea">
-                                <div class="subTotalLeft">
-                                    <p class="subTotalLeftText totalBoldText">Total</p>
-                                </div>
-                                <div class="subTotalRight">
-                                    <p class="subTotalRightText">৳ 154000</p>
-                                </div>
-                            </div>
 
+                                <div class="contactInformationForOffer">
+                                    <label for="" class="contactInformationForOfferInner">
+                                        <span class="labelText">Full Name</span>
+                                        <input type="text" class="inputFieldControl" autocomplete="off">
+                                    </label>
+                                </div>
+                                <div class="dflexForDesktop">
+                                    <div class="contactInformationForOffer width50ForDesktop">
+                                        <label for="" class="contactInformationForOfferInner">
+                                            <span class="labelText">Country</span>
+                                            <input type="text" class="inputFieldControl" autocomplete="off">
+                                        </label>
+                                    </div>
+                                    <div class="contactInformationForOffer width50ForDesktop">
+                                        <label for="" class="contactInformationForOfferInner">
+                                            <span class="labelText">City</span>
+                                            <input type="text" class="inputFieldControl" autocomplete="off">
+                                        </label>
+                                    </div>
+                                    <div class="contactInformationForOffer width50ForDesktop">
+                                        <label for="" class="contactInformationForOfferInner">
+                                            <span class="labelText">Postal Code</span>
+                                            <input type="text" class="inputFieldControl" autocomplete="off">
+                                        </label>
+                                    </div>
+    
+                                </div>
+                                <div class="contactInformationForOffer mt30ForMobile">
+                                    <label for="" class="contactInformationForOfferInner">
+                                        <span class="labelText textAreaLabel">Address</span>
+                                        <!-- <input type="text"  autocomplete="off"> -->
+                                        <textarea class="inputTextAreadField" name="" id="" cols="30"
+                                            rows="10"></textarea>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
 
-                    </div>
-                    <!-- move other page  from cart page -->
-                    <div class="moveOtherPageFormCartPage">
-                        <div class="moveToShopping">
-                            <button class="moveToShoppingBtn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="5.122" height="10"
-                                    viewBox="0 0 5.122 10">
-                                    <path id="fi-rr-angle-small-left"
-                                        d="M9.946,10.505a.714.714,0,0,1,0-1.01l3.275-3.276a.714.714,0,1,0-1.01-1.01L8.938,8.485a2.143,2.143,0,0,0,0,3.03l3.276,3.276a.714.714,0,1,0,1.01-1.01Z"
-                                        transform="translate(-8.311 -5)" fill="#3e5570" />
-                                </svg>
-                                <p class="continueShippingText">Return to cart</p>
-                            </button>
+                        <!-- cart totals -->
+                        <div class="cartTotalWrapper">
+                            <div class="cartTotalsArea">
+                                <!-- heading -->
+                                <div class="cartTotalsHeading">
+                                    <p class="cartTotalHeadingText">Cart Totals</p>
+                                </div>
+                                <div class="cartTotalsBody">
+                                    <!-- subtotal -->
+                                    <div class="subTotalArea">
+                                        <div class="subTotalLeft">
+                                            <p class="subTotalLeftText">Subtotal</p>
+                                        </div>
+                                        <div class="subTotalRight">
+                                            <p class="subTotalRightText">৳ 156000</p>
+                                        </div>
+                                    </div>
+                                    <!-- Shipping -->
+                                    <div class="subTotalArea">
+                                        <div class="subTotalLeft">
+                                            <p class="subTotalLeftText">Shipping</p>
+                                        </div>
+                                        <div class="subTotalRight">
+                                            <p class="subTotalRightText">Calculated at next step</p>
+                                        </div>
+                                    </div>
+                                    <!-- Coupon -->
+                                    <div class="subTotalArea">
+                                        <div class="subTotalLeft">
+                                            <p class="subTotalLeftText">Coupon</p>
+                                        </div>
+                                        <div class="subTotalRight">
+                                            <p class="subTotalRightText">- ৳ 2000</p>
+                                        </div>
+                                    </div>
+                                    <!-- Total -->
+                                    <div class="subTotalArea">
+                                        <div class="subTotalLeft">
+                                            <p class="subTotalLeftText totalBoldText">Total</p>
+                                        </div>
+                                        <div class="subTotalRight">
+                                            <p class="subTotalRightText">৳ 154000</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- move other page  from cart page -->
+                            <div class="moveOtherPageFormCartPage">
+                                <div class="moveToShopping">
+                                    <button class="moveToShoppingBtn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="5.122" height="10"
+                                            viewBox="0 0 5.122 10">
+                                            <path id="fi-rr-angle-small-left"
+                                                d="M9.946,10.505a.714.714,0,0,1,0-1.01l3.275-3.276a.714.714,0,1,0-1.01-1.01L8.938,8.485a2.143,2.143,0,0,0,0,3.03l3.276,3.276a.714.714,0,1,0,1.01-1.01Z"
+                                                transform="translate(-8.311 -5)" fill="#3e5570" />
+                                        </svg>
+                                        <p class="continueShippingText">Return to cart</p>
+                                    </button>
+                                </div>
+                                <div class="moveToProcessCheckout">
+                                    <button class="moveToToCheckOutBtn">Place Order</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="moveToProcessCheckout">
-                            <button class="moveToToCheckOutBtn">Place Order</button>
-                        </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -383,8 +545,8 @@
 
     <script>
         // cart header
-        let cartHeaderInner = document.getElementById("cartHeaderInner");
-        let cartHeaderInnerObj = {
+        let checkOutHeaderInner = document.getElementById("checkOutHeaderInner");
+        let checkOutHeaderInnerObj = {
             cartHeader: `
                 <div class="cartIconArea">
                     <svg class="leftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="7.171" height="14" viewBox="0 0 7.171 14">
@@ -396,8 +558,8 @@
                 </div>
             `
         };
-        const { cartHeader } = cartHeaderInnerObj;
-        cartHeaderInner.innerHTML = cartHeader;
+        const { cartHeader } = checkOutHeaderInnerObj;
+        checkOutHeaderInner.innerHTML = cartHeader;
 
 
 

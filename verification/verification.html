@@ -66,10 +66,10 @@
             height: 60px;
             display: flex;
             align-items: center;
-            position:fixed;
-            left:0;
-            top:0;
-            width:100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
             z-index: 99;
         }
 
@@ -82,7 +82,7 @@
 
         .signInBody {
             background-color: #fff;
-            padding-top:60px;
+            padding-top: 60px;
         }
 
         .signInBodyInner {
@@ -196,6 +196,7 @@
             text-transform: uppercase;
             margin-top: 10px;
             outline: none;
+            cursor: pointer;
         }
 
 
@@ -210,6 +211,40 @@
                 padding: 0 30px;
             }
 
+            .signInHeader {
+                display: none;
+            }
+
+            .signInBody {
+                background-color: unset;
+                padding-top: 0px;
+            }
+
+            .signInContentArea {
+                padding: 0;
+                max-width: 380px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .signInButtonArea {
+                max-width: 335px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .signInSubHeadingText,
+            .didntRecieveEmail,
+            .getCodeDuration,
+            .newCode {
+                font-size: 14px;
+            }
+
+            .setCodeItem {
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
 
         }
     </style>

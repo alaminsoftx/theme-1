@@ -39,7 +39,43 @@
             margin: 0 auto;
         }
 
+        .addressEditHeaderInner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        .cartIconArea {
+            width: 15px;
+        }
+
+        .cartHeadingTextArea {
+            width: calc(100% - 15px);
+            text-align: center;
+        }
+
+        .addressEditHeader {
+            background-color: #fff;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            width: 100%;
+        }
+
+        .cartHeadingText {
+            font-weight: 700;
+            font-size: 18px;
+            color: #01126C;
+            display: inline-block;
+        }
+
+        .addProductInWistlist {
+            background-color: #fff;
+            padding-top: 60px;
+        }
 
         .addProductInWistlistInner {
             background-color: #F1F5FF;
@@ -47,13 +83,14 @@
             border-top-right-radius: 20px;
         }
 
+
+
         .addProudctArea {
             padding: 25px 0px;
         }
 
 
-        .contactInformationArea,
-        .cartTotalsArea {
+        .deliveryAddressArea {
             background: #fff;
             border-radius: 5px;
             padding: 20px;
@@ -62,10 +99,7 @@
 
 
         /* coupon code area */
-        .cartTotalsArea,
-        .contactInformationArea {
-            margin-top: 20px;
-        }
+
 
         .mt0 {
             margin-top: 0px;
@@ -285,7 +319,8 @@
             height: 18px;
             cursor: pointer;
         }
-        .addAddressBtnInner{
+
+        .addAddressBtnInner {
             display: flex;
         }
 
@@ -295,13 +330,44 @@
                 padding: 0 30px;
             }
 
+            .addressEditHeader {
+                display: none;
+            }
 
+            .addProductInWistlist {
+                background-color: unset;
+                padding-top: 0px;
+                max-width: 480px;
+                width:100%;
+              
+            }
+
+            .addProductInWistlistInner {
+                background-color: unset;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+        }
+        @media(min-width:1025px){
+           .deliveryAddressArea{
+               padding: 30px;
+           }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- start  cart header -->
+    <div class="addressEditHeader">
+        <div class="container">
+            <div class="addressEditHeaderInner" id="addressEditHeaderInner">
+
+            </div>
+        </div>
+    </div>
+    <!-- end  cart header -->
 
     <!-- start add cart product -->
     <div class="addProductInWistlist">
@@ -309,18 +375,10 @@
             <div class="container">
                 <div class="addProudctArea">
                     <!-- Delivery Address -->
-                    <div class="contactInformationArea ">
+                    <div class="deliveryAddressArea ">
                         <div class="contactInformationHeading">
                             <p class="contactInformationHeadingText">
-                                <span class="checkoutLeftArrowIcon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="7.171" height="14"
-                                        viewBox="0 0 7.171 14">
-                                        <path id="fi-rr-angle-small-left"
-                                            d="M10.6,12.707a1,1,0,0,1,0-1.414l4.585-4.586a1,1,0,1,0-1.414-1.414L9.189,9.879a3,3,0,0,0,0,4.242l4.586,4.586a1,1,0,1,0,1.414-1.414Z"
-                                            transform="translate(-8.311 -5)" fill="#2c2c2c" />
-                                    </svg>
-                                </span>
-                                <span class="ml8">Delivery Address</span>
+                                <span>Address Information</span>
                             </p>
 
                         </div>
@@ -414,7 +472,24 @@
     </div>
     <!-- start end cart product -->
 
-
+    <script>
+        // cart header
+        let addressEditHeaderInner = document.getElementById("addressEditHeaderInner");
+        let addressEditHeaderInnerObj = {
+            addressEditHeader: `
+                <div class="cartIconArea">
+                    <svg class="leftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="7.171" height="14" viewBox="0 0 7.171 14">
+                        <path id="fi-rr-angle-small-left" d="M10.6,12.707a1,1,0,0,1,0-1.414l4.585-4.586a1,1,0,1,0-1.414-1.414L9.189,9.879a3,3,0,0,0,0,4.242l4.586,4.586a1,1,0,1,0,1.414-1.414Z" transform="translate(-8.311 -5)" fill="#2c2c2c"/>
+                    </svg>
+                </div>
+                <div class="cartHeadingTextArea">
+                    <p class="cartHeadingText">Process to Checkout</p>
+                </div>
+            `
+        };
+        const { addressEditHeader } = addressEditHeaderInnerObj;
+        addressEditHeaderInner.innerHTML = addressEditHeader;
+    </script>
 </body>
 
 </html>

@@ -50,8 +50,7 @@
         }
 
 
-        .contactInformationArea,
-        .cartTotalsArea {
+        .contactInformationArea {
             background: #fff;
             border-radius: 5px;
             padding: 20px;
@@ -59,11 +58,8 @@
 
 
 
-        /* coupon code area */
-        .cartTotalsArea,
-        .contactInformationArea {
-            margin-top: 20px;
-        }
+
+
 
         .mt0 {
             margin-top: 0px;
@@ -79,12 +75,11 @@
             cursor: pointer;
         }
 
-        .contactInformationHeadingText,
-        .cartTotalHeadingText {
+        .contactInformationHeadingText {
             font-size: 16px;
             font-weight: 700;
             color: #01126C;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .contactInformationHeadingText {
@@ -120,6 +115,20 @@
             font-size: 12px;
             font-weight: 500;
             color: #3E5570;
+        }
+
+        .inputTextAreadField {
+            height: 80px;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(149 175 192 / 40%);
+            width: 100%;
+            outline: none;
+            background-color: transparent;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+            line-height: 36px;
         }
 
         /* contact information */
@@ -225,8 +234,8 @@
             margin-left: 10px;
         }
 
-        .moveToToCheckOutBtn {
-            width: 150px;
+        .saveAddressBtn {
+            width: 111px;
             height: 30px;
             font-size: 12px;
             font-weight: 500;
@@ -235,6 +244,7 @@
             color: #fff;
             border-radius: 3px;
             outline: none;
+            margin-top: 25px;
 
         }
 
@@ -288,19 +298,85 @@
             display: flex;
         }
 
+        .mt30ForMobile {
+            margin-top: 30px;
+        }
+
+        .labelText.textAreaLabel {
+            top: -73px;
+        }
+
         @media(min-width:768px) {
 
             .container {
                 padding: 0 30px;
             }
 
+            .dflexForDesktop {
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
 
+            .width50ForDesktop {
+                width: calc(33.33% - 20px);
+            }
+
+            .mt30ForMobile {
+                margin-top: 0px;
+            }
+
+            .saveAddressBtn {
+                width: 140px;
+                height: 36px;
+                font-size: 14px;
+            }
+
+            .contactInformationHeadingText {
+                font-size: 18px;
+            }
+
+            .labelText {
+                font-size: 13px;
+            }
+
+        }
+
+        @media(min-width:1025px) {
+
+            .dflexForDesktop {
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .width50ForDesktop {
+                width: calc(33.33% - 20px);
+            }
+
+            .mt30ForMobile {
+                margin-top: 0px;
+            }
+
+            .contactInformationArea {
+                padding: 30px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- start  cart header -->
+    <div class="addressEditHeader">
+        <div class="container">
+            <div class="deliveryAddressHeader" id="deliveryAddressHeader">
 
+            </div>
+        </div>
+    </div>
+    <!-- end  cart header -->
 
     <!-- start add cart product -->
     <div class="addProductInWistlist">
@@ -319,30 +395,36 @@
                                 <input type="text" class="inputFieldControl" autocomplete="off">
                             </label>
                         </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Address</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
+                        <div class="dflexForDesktop">
+                            <div class="contactInformationForOffer width50ForDesktop">
+                                <label for="" class="contactInformationForOfferInner">
+                                    <span class="labelText">Country</span>
+                                    <input type="text" class="inputFieldControl" autocomplete="off">
+                                </label>
+                            </div>
+                            <div class="contactInformationForOffer width50ForDesktop">
+                                <label for="" class="contactInformationForOfferInner">
+                                    <span class="labelText">City</span>
+                                    <input type="text" class="inputFieldControl" autocomplete="off">
+                                </label>
+                            </div>
+                            <div class="contactInformationForOffer width50ForDesktop">
+                                <label for="" class="contactInformationForOfferInner">
+                                    <span class="labelText">Postal Code</span>
+                                    <input type="text" class="inputFieldControl" autocomplete="off">
+                                </label>
+                            </div>
+
                         </div>
-                        <div class="contactInformationForOffer">
+                        <div class="contactInformationForOffer mt30ForMobile">
                             <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">City</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
+                                <span class="labelText textAreaLabel">Address</span>
+                                <!-- <input type="text"  autocomplete="off"> -->
+                                <textarea class="inputTextAreadField" name="" id="" cols="30" rows="10"></textarea>
                             </label>
+                            <button class="saveAddressBtn">Save Address</button>
                         </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Postal Code (Optional)</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-                        <div class="contactInformationForOffer">
-                            <label for="" class="contactInformationForOfferInner">
-                                <span class="labelText">Country</span>
-                                <input type="text" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
+
                     </div>
                 </div>
             </div>

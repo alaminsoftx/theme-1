@@ -39,18 +39,26 @@
             margin: 0 auto;
         }
 
-        .forgotPassHeaderInner {
+
+        .changePasswordAreabg {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+
+        .changePassHeaderInner {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
         }
 
-        .forgotPassIconArea {
+        .changePassIconArea {
             width: 15px;
         }
 
-        .forgotPassHeadingTextArea {
+        .changePassHeadingTextArea {
             width: calc(100% - 33px);
             text-align: center;
         }
@@ -61,40 +69,40 @@
             cursor: pointer;
         }
 
-        .forgotPassHeader {
+        .changePassHeader {
             background-color: #fff;
             height: 60px;
             display: flex;
             align-items: center;
             position: fixed;
-            left: 0;
-            top: 0;
             width: 100%;
+            left: 0;
         }
 
-        .forgotPassHeadingText {
+        .changePassHeadingText {
             font-weight: 700;
             font-size: 18px;
             color: #01126C;
             display: inline-block;
         }
 
-        .forgotPassBody {
+        .changePassBody {
             background-color: #fff;
+            padding-top: 60px;
         }
 
-        .forgotPassBodyInner {
+        .changePassBodyInner {
             background-color: #F1F5FF;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
 
-        .forgotPassContentArea {
+        .changePassContentArea {
             padding: 25px 20px;
         }
 
         /* sign in heading */
-        .forgotPassHeading {
+        .changePassHeading {
             text-align: center;
             max-width: 332px;
             width: 100%;
@@ -103,14 +111,14 @@
             margin-bottom: 40px;
         }
 
-        .forgotPassTitleText {
+        .changePassTitleText {
             font-size: 18px;
             font-weight: 700;
             color: #2C2C2C;
             text-transform: uppercase;
         }
 
-        .forgotPassSubHeadingText {
+        .changePassSubHeadingText {
             font-size: 12px;
             color: #95AFC0;
             font-weight: 400;
@@ -166,7 +174,7 @@
             height: 36px;
         }
 
-        .forgotPassbtn {
+        .changePassbtn {
             border: none;
             color: #fff;
             width: 100%;
@@ -180,42 +188,7 @@
             cursor: pointer;
         }
 
-        .forgotPassword {
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 500;
-            color: #3E5570;
-            margin-top: 15px;
-        }
 
-        /* create account */
-        .createAccount {
-            text-align: center;
-            margin-top: 16px;
-        }
-
-        .platFormText,
-        .createAccountText {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .platFormText {
-            color: #3E5570;
-        }
-
-        .createAccountText {
-            font-weight: 600;
-            cursor: pointer;
-            color: #00A5FF;
-        }
-        .dividerWithOrtext{
-            color:#95AFC0;
-            font-size: 12px;
-            font-weight: 500;
-            margin:15px 0;
-        }
 
 
 
@@ -225,39 +198,29 @@
                 padding: 0 30px;
             }
 
-            .forgotPassHeader {
+            .changePassHeader {
                 display: none;
             }
 
-            .forgotPassBody {
+            .changePassBody {
                 background-color: unset;
             }
 
-            .forgotPassBodyInner {
+            .changePassBodyInner {
                 background-color: unset;
                 border-top-left-radius: 0px;
                 border-top-right-radius: 0px;
             }
 
-            .forgotPassContentArea {
+            .changePassContentArea {
                 padding: 0;
                 max-width: 380px;
                 width: 100%;
                 margin: 0 auto;
             }
 
-            .forgotPassSubHeadingText {
-                font-size: 14px;
-                line-height: 24px;
-            }
-
             .labelText {
                 font-size: 13px;
-            }
-
-            .platFormText,
-            .createAccountText, .forgotPassword, .dividerWithOrtext {
-                font-size: 14px;
             }
 
         }
@@ -266,9 +229,9 @@
 
 <body>
     <!-- start  wishlist header -->
-    <div class="forgotPassHeader">
+    <div class="changePassHeader">
         <div class="container">
-            <div class="forgotPassHeaderInner" id="forgotPassHeaderInner">
+            <div class="changePassHeaderInner" id="changePassHeaderInner">
 
             </div>
         </div>
@@ -276,67 +239,82 @@
     <!-- end  wishlist header -->
 
     <!-- start add wishlist product -->
-    <div class="forgotPassBody">
-        <div class="forgotPassBodyInner">
+    <div class="changePassBody">
+        <div class="changePassBodyInner">
             <div class="container">
-                <div class="forgotPassContentArea">
-                    <!-- heading -->
-                    <div class="forgotPassHeading">
-                        <p class="forgotPassTitleText">Forgot your password?</p>
-                        <p class="forgotPassSubHeadingText">Enter your email address and we will send you instructions
-                            on how to reset your password.</p>
+                <div class="changePassContentArea ">
+                    <!-- password -->
+                    <div class="inputFieldItem">
+                        <label for="" class="inputFieldForEmailInner">
+                            <span class="labelText">New Password</span>
+                            <input type="email" class="inputFieldControl" autocomplete="off">
+                            <button class="showPassBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10.756"
+                                    viewBox="0 0 15 10.756">
+                                    <g id="fi-rr-eye" transform="translate(0.004 -2.655)">
+                                        <path id="Path_1765" data-name="Path 1765"
+                                            d="M14.537,6.548a8.315,8.315,0,0,0-14.084,0,2.637,2.637,0,0,0,0,2.971,8.315,8.315,0,0,0,14.084,0A2.637,2.637,0,0,0,14.537,6.548ZM13.472,8.916A7.137,7.137,0,0,1,7.5,12.26,7.137,7.137,0,0,1,1.519,8.916a1.568,1.568,0,0,1,0-1.766A7.137,7.137,0,0,1,7.5,3.806,7.132,7.132,0,0,1,13.472,7.15,1.568,1.568,0,0,1,13.472,8.916Z"
+                                            transform="translate(0 0)" fill="#2c2c2c" />
+                                        <path id="Path_1766" data-name="Path 1766"
+                                            d="M10.416,7C8.529,7,7,8.079,7,9.41s1.529,2.41,3.416,2.41,3.415-1.079,3.415-2.41S12.3,7,10.415,7Zm0,3.856c-1.132,0-2.049-.647-2.049-1.446s.918-1.446,2.049-1.446,2.049.647,2.049,1.446S11.547,10.856,10.416,10.856Z"
+                                            transform="translate(-2.92 -1.377)" fill="#2c2c2c" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </label>
                     </div>
-                    <!-- sign in Input field area -->
-                    <div class="forgotPassInputFieldArea">
-
-                        <!-- email -->
-                        <div class="inputFieldItem">
-                            <label for="" class="inputFieldForEmailInner">
-                                <span class="labelText">Email</span>
-                                <input type="email" class="inputFieldControl" autocomplete="off">
-                            </label>
-                        </div>
-
-                        <!-- sign button -->
-                        <div class="forgotPassButtonArea">
-                            <button class="forgotPassbtn">Recover Email</button>
-                        </div>
-
-                        <!-- create account -->
-                        <div class="createAccount">
-                            <span class="platFormText">New on our platform?</span>
-                            <span class="createAccountText">Create an account</span>
-                            <p class="dividerWithOrtext">or</p>
-                            <span class="platFormText">Already have an account?</span>
-                            <span class="createAccountText">Sign in</span>
-                        </div>
-
-                        <!-- forgot password-->
-
+                    <!-- confirm password -->
+                    <div class="inputFieldItem">
+                        <label for="" class="inputFieldForEmailInner">
+                            <span class="labelText">Confirm Password</span>
+                            <input type="email" class="inputFieldControl" autocomplete="off">
+                            <button class="showPassBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10.756"
+                                    viewBox="0 0 15 10.756">
+                                    <g id="fi-rr-eye" transform="translate(0.004 -2.655)">
+                                        <path id="Path_1765" data-name="Path 1765"
+                                            d="M14.537,6.548a8.315,8.315,0,0,0-14.084,0,2.637,2.637,0,0,0,0,2.971,8.315,8.315,0,0,0,14.084,0A2.637,2.637,0,0,0,14.537,6.548ZM13.472,8.916A7.137,7.137,0,0,1,7.5,12.26,7.137,7.137,0,0,1,1.519,8.916a1.568,1.568,0,0,1,0-1.766A7.137,7.137,0,0,1,7.5,3.806,7.132,7.132,0,0,1,13.472,7.15,1.568,1.568,0,0,1,13.472,8.916Z"
+                                            transform="translate(0 0)" fill="#2c2c2c" />
+                                        <path id="Path_1766" data-name="Path 1766"
+                                            d="M10.416,7C8.529,7,7,8.079,7,9.41s1.529,2.41,3.416,2.41,3.415-1.079,3.415-2.41S12.3,7,10.415,7Zm0,3.856c-1.132,0-2.049-.647-2.049-1.446s.918-1.446,2.049-1.446,2.049.647,2.049,1.446S11.547,10.856,10.416,10.856Z"
+                                            transform="translate(-2.92 -1.377)" fill="#2c2c2c" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </label>
                     </div>
+
+                    <!-- sign button -->
+                    <div class="changePassButtonArea">
+                        <button class="changePassbtn">Change Password</button>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- start end wishlist product -->
 
     <script>
         // profile header
-        let forgotPassHeaderInner = document.getElementById("forgotPassHeaderInner");
-        let forgotPassHeaderInnerObj = {
-            forgotPassHeader: `
-                <div class="forgotPassIconArea">
+        let changePassHeaderInner = document.getElementById("changePassHeaderInner");
+        let changePassHeaderInnerObj = {
+            changePassHeader: `
+                <div class="changePassIconArea">
                     <svg class="leftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="7.171" height="14" viewBox="0 0 7.171 14">
                         <path id="fi-rr-angle-small-left" d="M10.6,12.707a1,1,0,0,1,0-1.414l4.585-4.586a1,1,0,1,0-1.414-1.414L9.189,9.879a3,3,0,0,0,0,4.242l4.586,4.586a1,1,0,1,0,1.414-1.414Z" transform="translate(-8.311 -5)" fill="#2c2c2c"/>
                     </svg>
                 </div>
-                <div class="forgotPassHeadingTextArea">
-                    <p class="forgotPassHeadingText">Forgot Password</p>
+                <div class="changePassHeadingTextArea">
+                    <p class="changePassHeadingText">Change Password</p>
                 </div>
             `
         }
-        const { forgotPassHeader } = forgotPassHeaderInnerObj;
-        forgotPassHeaderInner.innerHTML = forgotPassHeader;
+        const { changePassHeader } = changePassHeaderInnerObj;
+        changePassHeaderInner.innerHTML = changePassHeader;
 
 
         ;

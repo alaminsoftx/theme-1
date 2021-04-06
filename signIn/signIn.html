@@ -66,10 +66,10 @@
             height: 60px;
             display: flex;
             align-items: center;
-            position:fixed;
-            top:0;
-            left:0;
-            width:100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
         }
 
         .signInHeadingText {
@@ -81,7 +81,7 @@
 
         .signInBody {
             background-color: #fff;
-            padding-top:60px;
+            padding-top: 60px;
         }
 
         .signInBodyInner {
@@ -181,6 +181,7 @@
             text-transform: uppercase;
             margin-top: 10px;
             outline: none;
+            cursor: pointer;
         }
 
         /* create account */
@@ -209,7 +210,6 @@
         }
 
         .forgotPassword {
-            margin-top: 15px;
             display: block;
             cursor: pointer;
 
@@ -283,6 +283,10 @@
             transform: rotate(45deg);
         }
 
+        .rememberMe {
+            display: flex;
+            justify-content: space-between;
+        }
 
         @media(min-width:768px) {
 
@@ -290,6 +294,42 @@
                 padding: 0 30px;
             }
 
+            .signInSubHeadingText {
+                font-size: 14px;
+            }
+
+            .signInContentArea {
+                width: 380px;
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            .signInHeader {
+                display: none;
+            }
+
+            .signInBody {
+                background-color: unset;
+                padding-top: 0px;
+            }
+
+            .signInBodyInner {
+                background-color: unset;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+            .labelText{
+                font-size: 13px;
+            }
+            .platFormText, .createAccountText, .checkboxText, .forgotPassword{
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .customCheckBoxContainer {
+                width: 135px;
+            }
 
         }
     </style>
@@ -353,6 +393,7 @@
                                 <input type="checkbox" />
                                 <span class="checkmark"></span>
                             </label>
+                            <p class="forgotPassword">Forgot Password</p>
                         </div>
 
                         <!-- sign button -->
@@ -364,7 +405,7 @@
                         <div class="createAccount">
                             <span class="platFormText">New on our platform?</span>
                             <span class="createAccountText">Create an account</span>
-                            <p class="forgotPassword">Forgot Password</p>
+
                         </div>
 
                         <!-- forgot password-->

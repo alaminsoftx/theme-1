@@ -67,11 +67,11 @@
             display: flex;
             align-items: center;
             position: fixed;
-            width:100%;
-            left:0;
-            top:0;
+            width: 100%;
+            left: 0;
+            top: 0;
             z-index: 99;
-           
+
         }
 
         .signUpHeadingText {
@@ -83,7 +83,7 @@
 
         .signUpBody {
             background-color: #fff;
-            padding-top:60px;
+            padding-top: 60px;
         }
 
         .signUpBodyInner {
@@ -181,6 +181,7 @@
             text-transform: uppercase;
             margin-top: 10px;
             outline: none;
+            cursor: pointer;
         }
 
         /* create account */
@@ -287,7 +288,7 @@
             transform: scale(1);
         }
 
-        
+
 
         @media(min-width:768px) {
 
@@ -295,7 +296,37 @@
                 padding: 0 30px;
             }
 
+            .signUpHeader {
+                display: none;
+            }
 
+            .signUpBody {
+                background-color: unset;
+                padding-top: 0px;
+            }
+
+            .signUpBodyInner {
+                background-color: unset;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+            .signUpContentArea {
+                padding: 0;
+                max-width: 380px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .signUpSubHeadingText, .genderText, .platFormText, .createAccountText{
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .labelText, .customGendeBtnLabel {
+                font-size: 13px;
+            }
+          
         }
     </style>
 </head>
@@ -405,6 +436,10 @@
                             <p class="customGenterItem">
                                 <input class="customGenderBtn" type="radio" id="gender2" name="gender" checked>
                                 <label class="customGendeBtnLabel" for="gender2">Female</label>
+                            </p>
+                            <p class="customGenterItem">
+                                <input class="customGenderBtn" type="radio" id="gender3" name="gender" checked>
+                                <label class="customGendeBtnLabel" for="gender3">Others</label>
                             </p>
                         </div>
 
