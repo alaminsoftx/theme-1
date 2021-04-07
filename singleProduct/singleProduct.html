@@ -124,20 +124,28 @@
 
         .singleProductImageInner {
             background-color: #fff;
+            position: relative;
         }
 
         .singleProductImageSize {
             width: 100%;
         }
 
+
         .singleProductLablel {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
+        
+        /* .singleProductLablel {
             position: absolute;
             top: 50%;
             left: 50%;
             width: calc(100% - 30px);
             height: calc(100% - 30px);
             transform: translate(-50%, -50%);
-        }
+        } */
 
         .newLabelText {
             font-size: 13px;
@@ -265,6 +273,7 @@
             font-weight: 600;
             color: #2C2C2C;
             padding: 0 2px;
+            outline: none;
         }
 
         /* quntity */
@@ -300,6 +309,7 @@
             background: transparent;
             display: flex;
             align-items: center;
+            cursor: pointer;
         }
 
         .productQunatityText {
@@ -466,6 +476,35 @@
             border-radius: 40px;
         }
 
+        .buttonArea {
+            position: absolute;
+            /* z-index: 999; */
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        #previousProduct, #nextProduct {
+            display: inline-block;
+            border: none;
+            outline: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        #previousProduct svg, #nextProduct svg{
+            width:18px;
+            height:18px;
+            background-color: transparent;
+        }
+
+
+
         @media(min-width:768px) {
 
             .container {
@@ -620,7 +659,8 @@
                 font-weight: 400;
             }
 
-            .quantityBtnNumber, .personNameText {
+            .quantityBtnNumber,
+            .personNameText {
                 font-size: 16px;
             }
 
@@ -634,7 +674,8 @@
                 height: 14px;
             }
 
-            .productDescriptionText, .personComment {
+            .productDescriptionText,
+            .personComment {
                 font-size: 14px;
                 line-height: 24px;
 
@@ -694,7 +735,29 @@
                             <!-- product item -->
                             <div class="singleProductImage">
                                 <div class="singleProductImageInner">
-                                    <img class="singleProductImageSize" src="Thumbnails.svg" alt="">
+                                    <img class="singleProductImageSize fade" id="prodcutCarousel" src="Thumbnails.svg"
+                                        alt="">
+                                    <div class="buttonArea">
+                                        <button id="previousProduct">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6.49" height="12.6"
+                                                viewBox="0 0 6.49 12.6">
+                                                <path id="fi-rr-angle-left"
+                                                    d="M12,12a.5.5,0,0,1-.353-.146L7.561,7.768a2.5,2.5,0,0,1,0-3.535L11.647.147a.5.5,0,1,1,.707.707L8.268,4.94a1.5,1.5,0,0,0,0,2.121l4.086,4.086A.5.5,0,0,1,12,12Z"
+                                                    transform="translate(-6.359 0.3)" fill="#3e5570" stroke="#3e5570"
+                                                    stroke-width="0.6" />
+                                            </svg>
+                                        </button>
+                                        <button id="nextProduct">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6.49" height="12.6"
+                                                viewBox="0 0 6.49 12.6">
+                                                <path id="fi-rr-angle-left"
+                                                    d="M7.329,12a.5.5,0,0,0,.353-.146l4.086-4.086a2.5,2.5,0,0,0,0-3.535L7.683.147a.5.5,0,1,0-.707.707L11.062,4.94a1.5,1.5,0,0,1,0,2.121L6.976,11.147A.5.5,0,0,0,7.329,12Z"
+                                                    transform="translate(-6.481 0.3)" fill="#3e5570" stroke="#3e5570"
+                                                    stroke-width="0.6" />
+                                            </svg>
+
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="singleProductLablel">
                                     <span class="newLabelText">New</span>
@@ -1293,6 +1356,43 @@
     <!-- start end singleProduct product -->
 
     <script>
+
+        let prodcutCarousel = document.getElementById("prodcutCarousel");
+        let previousProduct = document.getElementById('previousProduct');
+        let nextProduct = document.getElementById('nextProduct');
+        let carouselArr = [
+            "Thumbnails.svg",
+            "Thumbnails.svg",
+            "Thumbnails.svg",
+            "Thumbnails.svg",
+        ];
+        let carouselArrLenght = carouselArr.length;
+        let counterItem = 0;
+
+        nextProduct.addEventListener("click", function () {
+            counterItem++;
+
+            if (counterItem >= carouselArrLenght) {
+                counterItem = 0;
+                prodcutCarousel.src = carouselArr[counterItem];
+            } else {
+                prodcutCarousel.src = carouselArr[counterItem];
+            }
+        });
+
+        previousProduct.addEventListener("click", function () {
+            counterItem--;
+
+            if (counterItem < 0) {
+                counterItem = carouselArrLenght - 1;
+                prodcutCarousel.src = carouselArr[counterItem];
+
+            } else {
+                prodcutCarousel.src = carouselArr[counterItem];
+            }
+        });
+
+
         // singleProduct header
         let singleProductHeaderInner = document.getElementById("singleProductHeaderInner");
         let singleProductHeaderInnerObj = {
@@ -1320,6 +1420,9 @@
         }
         const { singleProductHeader } = singleProductHeaderInnerObj;
         singleProductHeaderInner.innerHTML = singleProductHeader;
+
+
+
 
 
 

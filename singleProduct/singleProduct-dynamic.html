@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soppiya theme</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background-color: #F1F5FF;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1550px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        /* bread crumb */
+        .sinlgePageBreadCrumb {
+            background-color: rgb(167 186 235 / 20%);
+        }
+
+        .sinlgePageBreadCrumbInner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 160px;
+        }
+
+        .breadCrumbItemName {
+            max-width: 450px;
+        }
+
+        .breadCrumbMenu {
+            width: calc(100% - 450px);
+        }
+
+        .breadCrumbItemText {
+            font-size: 32px;
+            font-weight: 700;
+            color: #01126C;
+            line-height: 39px;
+        }
+
+        .breadCrumbNav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .breadCrumbNavItem {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .breadCrumbNavIcon {
+            margin-left: 20px;
+        }
+
+        .breadCrumbNavItem:not(:last-child) {
+            margin-right: 20px
+        }
+
+        .breadCrumbNavText {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19px;
+            color: #95AFC0;
+            cursor: pointer;
+        }
+
+        /* bread crumb */
+        .singleProductHeaderInner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .singleProductIconArea {
+            width: 15px;
+        }
+
+        .singleProductHeadingTextArea {
+            width: calc(100% - 33px);
+            text-align: center;
+        }
+
+        .singleProdcutWishlist {
+            width: 18px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .wishListCount {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-image: linear-gradient(to right, #00a5ff, #58c5ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            top: -4px;
+            right: -2px;
+        }
+
+        .wishListCountText {
+            color: #fff;
+            font-size: 8px;
+            font-weight: 500;
+        }
+
+        .singleProductHeader {
+            background-color: #fff;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 99;
+        }
+
+        .singleProductHeadingText {
+            font-weight: 700;
+            font-size: 18px;
+            color: #01126C;
+            display: inline-block;
+        }
+
+        .addProductArea {
+            background-color: #fff;
+            padding-top: 60px;
+        }
+
+        .addProductAreaInner {
+            background-color: #F1F5FF;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .addProudctArea {
+            padding: 25px 0px;
+        }
+
+        /* body */
+
+        .singleProductImage {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .singleProductImageInner {
+            background-color: #fff;
+            position: relative;
+        }
+
+        .singleProductImageSize {
+            width: 100%;
+        }
+
+
+
+        .singleProductLablel {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
+
+        .newLabelText {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2C2C2C;
+            border: 1px solid #2C2C2C;
+            border-radius: 3px;
+            padding: 2px 10px;
+        }
+
+        /* top details */
+        .topDetails {
+            margin-top: 23px;
+        }
+
+        .brandNameText {
+            font-size: 12px;
+            font-weight: 500;
+            color: #2C2C2C;
+            text-transform: uppercase;
+            line-height: 15px;
+        }
+
+        .productTitleText {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2C2C2C;
+            line-height: 24px;
+        }
+
+        .productRating {
+            display: flex;
+            margin-top: 5px;
+        }
+
+        .ratingLeft {
+            margin-right: 12px;
+        }
+
+        .ratingNav {
+            display: flex;
+        }
+
+        .ratingItem {
+            margin-right: 3px;
+        }
+
+        .ratingIconSize {
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+        }
+
+        .ratingCount {
+            font-size: 13px;
+            font-weight: 500;
+            color: #778994;
+        }
+
+        /* price */
+        .singleProductPrice {
+            margin: 30px 0;
+        }
+
+        .singleProdcutPriceText {
+            font-size: 17px;
+            font-weight: 500;
+            color: #00A5FF;
+        }
+
+        /* swatch */
+        .swatchArea,
+        .storageArea,
+        .ramArea {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .swatchLeft,
+        .storageLeft,
+        .ramLeft {
+            margin-right: 12px;
+        }
+
+        .swatchColorNav,
+        .storageColorNav {
+            display: flex;
+            align-items: center;
+        }
+
+        .swatchColorText,
+        .storageColorText,
+        .ramText {
+            font-size: 12px;
+            font-weight: 600;
+            color: #95AFC0;
+        }
+
+        .swatchColorNavItem {
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 3px 10px rgba(1 18 108 / 10%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* storage */
+        .storageNavItem {
+            font-size: 12px;
+            font-weight: 600;
+            color: #2C2C2C;
+            margin-right: 15px;
+        }
+
+        /* ram */
+        .selectRamItem {
+            width: 92px;
+            height: 24px;
+            border: 1px solid #95AFC0;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #2C2C2C;
+            padding: 0 2px;
+            outline: none;
+        }
+
+        /* quntity */
+        .quantityBtnArea {
+            width: 81px;
+            height: 30px;
+            border: 1px solid #95AFC0;
+            border-radius: 3px;
+            justify-content: space-between;
+            display: flex;
+            padding: 0 8px;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .quantityBtnIncreament svg tspan,
+        .quantityBtnDecreament svg tspan {
+            font-size: 16px;
+            font-weight: 700;
+            color: #778994;
+        }
+
+        .quantityBtnNumber {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2C2C2C;
+        }
+
+        .quantityBtnIncreament,
+        .quantityBtnDecreament {
+            border: none;
+            outline: none;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .productQunatityText {
+            font-size: 12px;
+            font-weight: 600;
+            color: #95AFC0;
+        }
+
+        .addToCartBtnArea {
+            margin-right: 15px;
+        }
+
+        .singleProductAddToCartBtn {
+            font-size: 14px;
+            font-weight: 500;
+            background-color: #00A5FF;
+            border-radius: 3px;
+            color: #fff;
+            border: none;
+            outline: none;
+            width: 115px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+        }
+
+        .wishListBtnArea {
+            border: 1px solid #95AFC0;
+            width: 30px;
+            height: 30px;
+            border-radius: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+        }
+
+        .productQunatityAeaInner {
+            display: flex;
+            align-items: center;
+            margin-top: 7px;
+        }
+
+        /* description */
+        .singleProductDescrition {
+            margin-top: 60px;
+        }
+
+        .descriptionTitleText {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2C2C2C;
+            text-transform: capitalize;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .productDescriptionText {
+            font-size: 12px;
+            font-weight: 500;
+            color: #95AFC0;
+            line-height: 24px;
+        }
+
+        /* reviews */
+        .productReviewArea {
+            margin-top: 60px;
+        }
+
+        .productRatingForReivewArea .ratingLeft {
+            margin-right: 0px;
+        }
+
+        .reviewsTitleText {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2C2C2C;
+            text-align: center;
+        }
+
+        .productRatingForReivewArea {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 16px;
+        }
+
+        .fourStartReview {
+            font-size: 40px;
+            font-weight: 600;
+            color: #000000;
+            line-height: 49px;
+        }
+
+        .singleReviewsArea {
+            display: flex;
+            margin-top: 40px;
+
+        }
+
+        .singleReviewsArea:not(:last-child) {
+            border-bottom: 1px solid rgba(149 175 192 / 15%);
+        }
+
+        .giveReviewPersonImage {
+            margin-right: 15px;
+        }
+
+        .personRatingNav {
+            display: flex;
+        }
+
+        .personNameText {
+            font-size: 14px;
+            font-weight: 600;
+            color: #000000;
+            line-height: 18px;
+        }
+
+        .personComment {
+            font-size: 12px;
+            font-weight: 500;
+            color: #95AFC0;
+            line-height: 20px;
+            margin-top: 15px;
+        }
+
+
+        /* review progressbar */
+        .showReviewProgressBar {
+            margin-top: 20px;
+        }
+
+        .reviewWithProgressBarItem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reviewWithProgressBarItem:not(:last-child) {
+            margin-bottom: 6px;
+        }
+
+        .reviewWithProgressBarLeft {
+            width: 95px;
+        }
+
+        .reviewWithProgressBarRight {
+            width: 142px;
+            height: 5px;
+            background-color: rgb(119 137 148 / 20%);
+            border-radius: 40px;
+            overflow: hidden;
+        }
+
+        .reviewProgressBarInner {
+            width: 100px;
+            height: 5px;
+            background-color: #FF9F43;
+            border-radius: 40px;
+        }
+
+        .buttonArea {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        #previousProduct,
+        #nextProduct {
+            display: inline-block;
+            border: none;
+            outline: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        #previousProduct svg,
+        #nextProduct svg {
+            width: 18px;
+            height: 18px;
+            background-color: transparent;
+        }
+
+
+
+        @media(min-width:768px) {
+
+            .container {
+                padding: 0 30px;
+            }
+
+            .singleProductHeader {
+                display: none;
+            }
+
+            .addProudctArea {
+                max-width: 1260px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .addProductAreaInner {
+                background-color: unset;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+            .addProductArea {
+                background-color: unset;
+                padding-top: 0px;
+            }
+
+            .singleProductImgAndDetails {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .singleProductImage {
+                width: 50%;
+            }
+
+            .singleProductDetails {
+                width: calc(50% - 40px);
+            }
+
+            .descriptionTitleText,
+            .reviewsTitleText {
+                text-align: left;
+                font-size: 24px;
+                font-weight: 700;
+
+            }
+
+            .fourStartReview {
+                font-size: 48px;
+            }
+
+            .productReviewArea {
+                margin-top: 60px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .reviewsTop {
+                width: 340px;
+            }
+
+            .singleReviewsArea {
+                width: calc(100% - 340px);
+            }
+
+
+
+            .productRatingForReivewArea {
+                align-items: flex-start;
+            }
+
+            .reviewWithProgressBarItem {
+                justify-content: flex-start;
+            }
+
+            .brandNameText {
+                font-size: 14px;
+            }
+
+            .productTitleText {
+                font-size: 20px;
+                line-height: 32px;
+            }
+
+            .singleProdcutPriceText {
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            .swatchArea,
+            .storageArea,
+            .ramArea {
+                align-items: flex-start;
+                flex-direction: column;
+                margin-bottom: 30px;
+            }
+
+            .swatchColorText,
+            .storageColorText,
+            .ramText,
+            .storageNavItem,
+            .selectRamItem {
+                font-size: 14px;
+            }
+
+            .swatchLeft,
+            .storageLeft,
+            .ramLeft {
+                margin-right: 0px;
+                margin-bottom: 5px;
+            }
+
+            .brandName {
+                margin-bottom: 15px;
+            }
+
+            .productRating {
+                margin-top: 8px;
+            }
+
+            .singleProductPrice {
+                margin: 35px 0 38px 0;
+            }
+
+            .singleProductDescrition {
+                margin-top: 122px;
+            }
+
+            .swatchColorNavItem {
+                width: 25px;
+                height: 25px;
+            }
+
+            .singleProductAddToCartBtn {
+                font-size: 16px;
+                width: 140px;
+                height: 36px;
+            }
+
+            .quantityBtnArea {
+                width: 100px;
+                height: 36px;
+            }
+
+            .quantityBtnIncreament svg tspan,
+            .quantityBtnDecreament svg tspan {
+                font-size: 24px;
+                font-weight: 400;
+            }
+
+            .quantityBtnNumber,
+            .personNameText {
+                font-size: 16px;
+            }
+
+            .wishListBtnArea {
+                width: 36px;
+                height: 36px;
+            }
+
+            .singleProductWishListBtn {
+                width: 17px;
+                height: 14px;
+            }
+
+            .productDescriptionText,
+            .personComment {
+                font-size: 14px;
+                line-height: 24px;
+
+            }
+
+            .productRatingForReivewArea {
+                margin-top: 20px;
+            }
+
+            .productRatingForReivewArea .ratingLeft {
+                margin-top: 10px;
+            }
+
+            .ratingCount {
+                font-size: 14px;
+                margin-top: 3px;
+            }
+
+            .reviewWithProgressBarLeft {
+                width: 100px;
+            }
+
+            .showReviewProgressBar {
+                margin-top: 35px;
+            }
+        }
+
+        @media(min-width:1024px) {
+            .singleProductDetails {
+                width: calc(50% - 60px);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- start  singleProduct header -->
+    <div class="sinlgePageBreadCrumb">
+        <div class="container">
+            <div class="sinlgePageBreadCrumbInner">
+                <div class="breadCrumbItemName" id="sinlePageBreadCrumbProductTitle">
+                    <p class="breadCrumbItemText">MacBook Pro 2020 13" m1...</p>
+                </div>
+                <div class="breadCrumbMenu">
+                    <ul class="breadCrumbNav" id="singlePageBreadCrumbMenu">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="singleProductHeader">
+        <div class="container">
+            <div class="singleProductHeaderInner" id="singleProductHeaderInner">
+                <div class="singleProductIconArea">
+                    <svg class="leftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="7.171" height="14"
+                        viewBox="0 0 7.171 14">
+                        <path id="fi-rr-angle-small-left"
+                            d="M10.6,12.707a1,1,0,0,1,0-1.414l4.585-4.586a1,1,0,1,0-1.414-1.414L9.189,9.879a3,3,0,0,0,0,4.242l4.586,4.586a1,1,0,1,0,1.414-1.414Z"
+                            transform="translate(-8.311 -5)" fill="#2c2c2c" />
+                    </svg>
+                </div>
+                <div class="singleProductHeadingTextArea">
+                    <p class="singleProductHeadingText">Single Product</p>
+                </div>
+                <div class="singleProdcutWishlist">
+                    <svg class="singleProductWishListBtn" xmlns="http://www.w3.org/2000/svg" width="13" height="11.422"
+                        viewBox="0 0 13 11.422">
+                        <path id="Wishlist"
+                            d="M9.473,1.917A3.465,3.465,0,0,0,6.5,3.7,3.465,3.465,0,0,0,3.517,1.917,3.682,3.682,0,0,0,0,5.734C0,8.2,2.589,10.885,4.762,12.708a2.693,2.693,0,0,0,3.465,0C10.4,10.885,12.992,8.2,12.992,5.734A3.682,3.682,0,0,0,9.473,1.917ZM7.532,11.88a1.61,1.61,0,0,1-2.074,0C2.676,9.545,1.081,7.306,1.081,5.734A2.6,2.6,0,0,1,3.517,3,2.6,2.6,0,0,1,5.954,5.734a.541.541,0,1,0,1.083,0A2.6,2.6,0,0,1,9.473,3,2.6,2.6,0,0,1,11.91,5.734c0,1.572-1.6,3.811-4.378,6.143Z"
+                            transform="translate(0.005 -1.917)" fill="#2c2c2c" />
+                    </svg>
+                    <div class="wishListCount">
+                        <p class="wishListCountText" id="wishListCountText">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end  singleProduct header -->
+
+    <!-- start add singleProduct product -->
+    <div class="addProductArea">
+        <div class="addProductAreaInner">
+            <div class="container">
+                <div class="addProudctArea">
+                    <div class="singleProductWrapper" id="singleProductWrapper">
+
+
+                        <div class="singleProductImgAndDetails">
+                            <!-- product item -->
+                            <div class="singleProductImage">
+                                <div class="singleProductImageInner">
+                                    <div id="DTProductCarouselShow">
+
+                                    </div>
+                                    <div class="buttonArea">
+                                        <button id="previousProduct">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6.49" height="12.6"
+                                                viewBox="0 0 6.49 12.6">
+                                                <path id="fi-rr-angle-left"
+                                                    d="M12,12a.5.5,0,0,1-.353-.146L7.561,7.768a2.5,2.5,0,0,1,0-3.535L11.647.147a.5.5,0,1,1,.707.707L8.268,4.94a1.5,1.5,0,0,0,0,2.121l4.086,4.086A.5.5,0,0,1,12,12Z"
+                                                    transform="translate(-6.359 0.3)" fill="#3e5570" stroke="#3e5570"
+                                                    stroke-width="0.6" />
+                                            </svg>
+                                        </button>
+                                        <button id="nextProduct">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6.49" height="12.6"
+                                                viewBox="0 0 6.49 12.6">
+                                                <path id="fi-rr-angle-left"
+                                                    d="M7.329,12a.5.5,0,0,0,.353-.146l4.086-4.086a2.5,2.5,0,0,0,0-3.535L7.683.147a.5.5,0,1,0-.707.707L11.062,4.94a1.5,1.5,0,0,1,0,2.121L6.976,11.147A.5.5,0,0,0,7.329,12Z"
+                                                    transform="translate(-6.481 0.3)" fill="#3e5570" stroke="#3e5570"
+                                                    stroke-width="0.6" />
+                                            </svg>
+
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="singleProductLablel">
+                                    <span class="newLabelText">New</span>
+                                </div>
+                            </div>
+
+                            <!-- single product description -->
+                            <div class="singleProductDetails">
+                                <!-- top -->
+                                <div class="topDetails">
+                                    <div class="brandName">
+                                        <p class="brandNameText">Apple</p>
+                                    </div>
+                                    <div class="productitle" id="DTsingleProductName">
+
+                                    </div>
+                                    <!-- rating -->
+
+                                </div>
+                                <!-- pricing -->
+                                <div class="singleProductPrice" id="DTsingleProductPrice">
+
+                                </div>
+                                <!-- swatch -->
+
+                                <!-- storage -->
+
+                                <!-- ram -->
+
+                                <!-- prodcut quantity -->
+                                <div class="productQunatityAea">
+                                    <p class="productQunatityText">Quantity :</p>
+                                    <div class="productQunatityAeaInner">
+                                        <!-- quantity -->
+                                        <div class="quantityBtnArea">
+                                            <button class="quantityBtnIncreament">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="24"
+                                                    viewBox="0 0 8 24">
+                                                    <text id="_-" data-name="-" transform="translate(0 19)"
+                                                        fill="#778994" font-size="20"
+                                                        font-family="Montserrat-Regular, Montserrat">
+                                                        <tspan x="0" y="0">-</tspan>
+                                                    </text>
+                                                </svg>
+                                            </button>
+                                            <span class="quantityBtnNumber">1</span>
+                                            <button class="quantityBtnDecreament">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="24"
+                                                    viewBox="0 0 12 24">
+                                                    <text id="_" data-name="+" transform="translate(0 19)"
+                                                        fill="#778994" font-size="20"
+                                                        font-family="Montserrat-Regular, Montserrat">
+                                                        <tspan x="0" y="0">+</tspan>
+                                                    </text>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <!-- add to cart -->
+                                        <div class="addToCartBtnArea">
+                                            <button class="singleProductAddToCartBtn">Add to cart</button>
+                                        </div>
+                                        <!-- wishlist -->
+                                        <div class="wishListBtnArea">
+                                            <svg class="singleProductWishListBtn" xmlns="http://www.w3.org/2000/svg"
+                                                width="13" height="11.422" viewBox="0 0 13 11.422">
+                                                <path id="Wishlist"
+                                                    d="M9.473,1.917A3.465,3.465,0,0,0,6.5,3.7,3.465,3.465,0,0,0,3.517,1.917,3.682,3.682,0,0,0,0,5.734C0,8.2,2.589,10.885,4.762,12.708a2.693,2.693,0,0,0,3.465,0C10.4,10.885,12.992,8.2,12.992,5.734A3.682,3.682,0,0,0,9.473,1.917ZM7.532,11.88a1.61,1.61,0,0,1-2.074,0C2.676,9.545,1.081,7.306,1.081,5.734A2.6,2.6,0,0,1,3.517,3,2.6,2.6,0,0,1,5.954,5.734a.541.541,0,1,0,1.083,0A2.6,2.6,0,0,1,9.473,3,2.6,2.6,0,0,1,11.91,5.734c0,1.572-1.6,3.811-4.378,6.143Z"
+                                                    transform="translate(0.005 -1.917)" fill="#2c2c2c" />
+                                            </svg>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single product description -->
+                        <div class="singleProductDescrition">
+                            <!-- title -->
+                            <p class="descriptionTitleText">description</p>
+                            <!-- descriptionText -->
+                            <div id="DTSingleProductDescription">
+
+                            </div>
+                        </div>
+
+                        <!-- Reviews -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start end singleProduct product -->
+
+    <script>
+        let carouselArr = '';
+        const singleProductBusinessId = `60654c639def603148352475`;
+        const DtProdcutDetailsImageUrl = `http://www.edusea.xyz/media/images`;
+        const singleProductCurrencySymbol = `BDT`;
+
+        async function getSingleProductData() {
+            const res = await fetch("http://api.edusea.xyz/dashboard/product/public/60654c639def603148352475/60697298949c0b2d8c036a0b");
+            const data = res.json();
+            return data;
+        }
+        // breadCrumb
+        getSingleProductData()
+        .then(({product})=>{
+            let sinlePageBreadCrumbProductTitle = document.getElementById("sinlePageBreadCrumbProductTitle");
+            let singlePageBreadCrumbMenu = document.getElementById("singlePageBreadCrumbMenu");
+            sinlePageBreadCrumbProductTitle.innerHTML = `<p class="breadCrumbItemText">${product.name}</p>`;
+
+            singlePageBreadCrumbMenu.innerHTML = `
+                        <li class="breadCrumbNavItem">
+                            <p class="breadCrumbNavText">Home</p>
+                            <p class="breadCrumbNavIcon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="6.147" height="12"
+                                    viewBox="0 0 6.147 12">
+                                    <path id="fi-rr-angle-small-left"
+                                        d="M12.5,11.606a.857.857,0,0,0,0-1.212L8.565,6.463A.857.857,0,1,1,9.777,5.251L13.7,9.182a2.571,2.571,0,0,1,0,3.636L9.774,16.749a.857.857,0,1,1-1.212-1.212Z"
+                                        transform="translate(-8.311 -5)" fill="#95afc0" />
+                                </svg>
+                            </p>
+                        </li>
+                        <li class="breadCrumbNavItem">
+                            <p class="breadCrumbNavText">${product.name}</p>
+                        </li>
+            `;
+            
+        });
+
+        getSingleProductData()
+            .then(({ product }) => {
+                let DTsingleProductName = document.getElementById("DTsingleProductName");
+                let DTSingleProductDescription = document.getElementById("DTSingleProductDescription");
+                let DTsingleProductPrice = document.getElementById("DTsingleProductPrice");
+
+                DTsingleProductName.innerHTML = `
+                    <p class="productTitleText">${product.name} </p>
+                `;
+
+                DTSingleProductDescription.innerHTML = `
+                    <p class="productDescriptionText"> ${product.description ? product.description : ` `} </p>
+                `;
+                DTsingleProductPrice.innerHTML = ` <p class="singleProdcutPriceText"> ${singleProductCurrencySymbol} ${product.salesPrice}</p>`;
+
+            });
+
+
+        // product carousel
+        getSingleProductData()
+            .then(({ product }) => {
+
+                carouselArr = Object.values(product.images);
+                console.log(carouselArr)
+
+                let carouselArrLenght = carouselArr.length;
+                let DTProductCarouselShow = document.getElementById("DTProductCarouselShow")
+                DTProductCarouselShow.innerHTML = `<img class="singleProductImageSize " id="prodcutCarousel" src="${DtProdcutDetailsImageUrl}/product/${singleProductBusinessId}/${carouselArr[0]}" alt="">`;
+
+                let prodcutCarousel = document.getElementById("prodcutCarousel");
+
+                let previousProduct = document.getElementById('previousProduct');
+                let nextProduct = document.getElementById('nextProduct');
+                let counterItem = 0;
+
+                nextProduct.addEventListener("click", function () {
+                    counterItem++;
+
+                    if (counterItem >= carouselArrLenght) {
+                        counterItem = 0;
+                        prodcutCarousel.src = `${DtProdcutDetailsImageUrl}/product/${singleProductBusinessId}/${carouselArr[counterItem]}`;
+
+                    } else {
+                        prodcutCarousel.src = `${DtProdcutDetailsImageUrl}/product/${singleProductBusinessId}/${carouselArr[counterItem]}`;
+                    }
+                });
+
+                previousProduct.addEventListener("click", function () {
+                    counterItem--;
+
+                    if (counterItem < 0) {
+                        counterItem = carouselArrLenght - 1;
+                        prodcutCarousel.src = `${DtProdcutDetailsImageUrl}/product/${singleProductBusinessId}/${carouselArr[counterItem]}`;
+
+                    } else {
+                        prodcutCarousel.src = `${DtProdcutDetailsImageUrl}/product/${singleProductBusinessId}/${carouselArr[counterItem]}`;
+                    }
+                });
+
+
+            })
+
+
+
+
+
+    </script>
+</body>
+
+</html>
