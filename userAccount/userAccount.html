@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body {
+            background-color: #F1F5FF;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1550px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .userAccountHeaderInner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .userAccountHeadingIconArea {
+            width: 15px;
+        }
+
+        .userAccountHeadingTextArea {
+            width: calc(100% - 30px);
+            text-align: center;
+        }
+
+        .userAccountHeaderuserAccountDashBoarditemBtn {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .userAccountHeader {
+            background-color: #fff;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 99;
+            width: 100%;
+        }
+
+        .userAccountHeadingText {
+            font-weight: 700;
+            font-size: 18px;
+            color: #01126C;
+            display: inline-block;
+        }
+
+        .userAccountBody {
+            background-color: #fff;
+            padding-top: 60px;
+        }
+
+        .userAccountBodyInner {
+            background-color: #F1F5FF;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .userAccountArea {
+            padding: 25px 0px;
+            max-width: 307px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+
+        .userDetails {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        #userName {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2C2C2C;
+            margin-bottom: 8px;
+        }
+
+        #userNumber {
+            font-size: 13px;
+            color: #95AFC0;
+        }
+
+        .userAction {
+            padding: 20px;
+        }
+
+        .singleAction {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .singleAction:not(:last-child) {
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(149, 175, 192, 20%);
+            margin-bottom: 20px;
+        }
+
+        .actionIconAndTitle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .actionTitle {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2C2C2C;
+            margin-left: 30px;
+        }
+        .userAccountDashBoarditemBtn{
+            border:none;
+            outline: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        @media(min-width:768px) {
+
+            .container {
+                padding: 0 30px;
+            }
+
+            .userAccountHeader {
+                display: none;
+            }
+
+            .userAccountBody {
+                background-color: unset;
+                padding-top: 00px;
+            }
+
+            .userAccountBodyInner {
+                background-color: unset;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="userAccountHeader">
+        <div class="container">
+            <div class="userAccountHeaderInner" id="userAccountHeaderInner">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="userAccountBody">
+        <div class="userAccountBodyInner">
+            <div class="container">
+                <div class="userAccountArea">
+                    <div class="userDetails">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90"
+                            height="90" viewBox="0 0 90 90">
+                            <defs>
+                                <clipPath id="clip-path">
+                                    <circle id="Ellipse_10" data-name="Ellipse 10" cx="45" cy="45" r="45" fill="#fff" />
+                                </clipPath>
+                            </defs>
+                            <g id="Profile_Pic" data-name="Profile Pic" transform="translate(-145 -135)">
+                                <circle id="Ellipse_11" data-name="Ellipse 11" cx="45" cy="45" r="45"
+                                    transform="translate(145 135)" fill="#fff" />
+                                <g id="Mask_Group_2" data-name="Mask Group 2" transform="translate(145 135)"
+                                    clip-path="url(#clip-path)">
+                                    <circle id="Ellipse_12" data-name="Ellipse 12" cx="45" cy="45" r="45" fill="#fff" />
+                                    <path id="User_Icon" data-name="User Icon"
+                                        d="M166.9,174.775c-.7-1.424-5.791-5.093-8.543-5.927a55.35,55.35,0,0,1-7.387-2.725L151,166.1l-.334-.5c.108-.1.13-.167.051-.188-.811-.2-2.137-7.691-2.137-7.691a.969.969,0,0,0-.011.138v-.138c-1.334-.312-2.585-.584-3.875-.822a42.328,42.328,0,0,1-.623-6.64,15.162,15.162,0,0,0,2.925-4.537,50.122,50.122,0,0,0,1.316-4.934,2.035,2.035,0,0,0,1.464-.726c.584-.725.731-5.368,1.168-6.672s.732-3.482-.732-3.336a1.546,1.546,0,0,0-.751.3,15.206,15.206,0,0,1,1.757-3.4s1.354-8.2,1.084-8.746,1.354-1.229-1.084-5.739-13.26-11.068-17.729-11.615-10.692,0-13.26,7.105c0,0-6.767,1.5-7.714,8.608s4.331,12.162,4.331,14.344v.027c-.288-.756-.6-1.363-.9-1.462-.879-.29-2.49-.29-2.2,3.192s.649.786,1.9,7.256c.732,3.772,2.05.87,2.05.87a33.047,33.047,0,0,0,4.161,10.31c.009,1.5.034,3.877.1,5.789q-1.873.355-3.748.834v.159a.645.645,0,0,0-.018-.089s-1.278,7.506-2.095,7.713c-.113.029-.022.148.229.334l-.944.716a7.7,7.7,0,0,1-1.359.824l-2.5,1.178-2.044.53a10.453,10.453,0,0,0-4.615,2.577l-4.2,4.029h66.606S167.3,175.592,166.9,174.775Z"
+                                        transform="translate(-88.67 -85.439)" fill="#2c2c2c" opacity="0.5" />
+                                </g>
+                            </g>
+                        </svg>
+                        <p id="userName"></p>
+                        <p id="userNumber"></p>
+                    </div>
+                    <div class="userAction">
+                        <div class="singleAction">
+                            <div class="actionIconAndTitle">
+                                <svg id="Document" xmlns="http://www.w3.org/2000/svg" width="18" height="20"
+                                    viewBox="0 0 18 20">
+                                    <path id="Path"
+                                        d="M13.191,0H4.81C1.77,0,0,1.78,0,4.83V15.16C0,18.26,1.77,20,4.81,20h8.381C16.28,20,18,18.26,18,15.16V4.83C18,1.78,16.28,0,13.191,0"
+                                        fill="#6c63ff" opacity="0.4" />
+                                    <path id="Combined_Shape" data-name="Combined Shape"
+                                        d="M.12,10.3a.8.8,0,0,1,0-.84A.785.785,0,0,1,.87,9.09H8.71a.79.79,0,0,1,0,1.57H.87a.732.732,0,0,1-.1.007A.783.783,0,0,1,.12,10.3ZM.87,6.09a.781.781,0,0,1,0-1.562H8.71a.781.781,0,0,1,0,1.562Zm0-4.521A.78.78,0,1,1,.87.01V0H3.859a.785.785,0,0,1,0,1.57Z"
+                                        transform="translate(4.21 4.65)" fill="#6c63ff" />
+                                </svg>
+                                <p class="actionTitle">Pending Order Status</p>
+                            </div>
+                            <div>
+                                <button class="userAccountDashBoarditemBtn" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.122" height="10"
+                                        viewBox="0 0 5.122 10">
+                                        <path id="fi-rr-angle-small-left"
+                                            d="M11.8,10.505a.714.714,0,0,0,0-1.01L8.523,6.219a.714.714,0,1,1,1.01-1.01l3.273,3.276a2.143,2.143,0,0,1,0,3.03L9.53,14.791a.714.714,0,1,1-1.01-1.01Z"
+                                            transform="translate(-8.311 -5)" fill="#2c2c2c" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="singleAction">
+                            <div class="actionIconAndTitle">
+                                <svg id="Time_Circle" data-name="Time Circle" xmlns="http://www.w3.org/2000/svg"
+                                    width="20" height="20" viewBox="0 0 20 20">
+                                    <path id="Fill_1" data-name="Fill 1" d="M20,10A10,10,0,1,1,10,0,10,10,0,0,1,20,10"
+                                        fill="#ff9f43" opacity="0.4" />
+                                    <path id="Fill_4" data-name="Fill 4"
+                                        d="M4.675,8.889a.756.756,0,0,1-.384-.1L.365,6.442A.754.754,0,0,1,0,5.8V.75a.75.75,0,0,1,1.5,0V5.371L5.06,7.494a.75.75,0,0,1-.385,1.395"
+                                        transform="translate(8.899 4.925)" fill="#ff9f43" />
+                                </svg>
+                                <p class="actionTitle">Order History</p>
+                            </div>
+                            <div>
+                                <button class="userAccountDashBoarditemBtn" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.122" height="10"
+                                        viewBox="0 0 5.122 10">
+                                        <path id="fi-rr-angle-small-left"
+                                            d="M11.8,10.505a.714.714,0,0,0,0-1.01L8.523,6.219a.714.714,0,1,1,1.01-1.01l3.273,3.276a2.143,2.143,0,0,1,0,3.03L9.53,14.791a.714.714,0,1,1-1.01-1.01Z"
+                                            transform="translate(-8.311 -5)" fill="#2c2c2c" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="singleAction">
+                            <div class="actionIconAndTitle">
+                                <svg id="Heart" xmlns="http://www.w3.org/2000/svg" width="20" height="19"
+                                    viewBox="0 0 20 19">
+                                    <path id="Path_34179"
+                                        d="M9.754,18.837A36.258,36.258,0,0,1,3.426,13.88,12.668,12.668,0,0,1,.4,9.075C-.742,5.535.582,1.489,4.279.288A6.282,6.282,0,0,1,9.985,1.3h0A6.291,6.291,0,0,1,15.691.288c3.7,1.2,5.03,5.247,3.893,8.787a12.67,12.67,0,0,1-3.013,4.8,36.587,36.587,0,0,1-6.328,4.958L9.994,19Z"
+                                        transform="translate(0.022)" fill="#ff5e57" opacity="0.4" />
+                                    <path id="Path_34178"
+                                        d="M10.011,19l-.235-.163a36.319,36.319,0,0,1-6.337-4.958,12.667,12.667,0,0,1-3.048-4.8C-.738,5.535.586,1.489,4.283.288A6.3,6.3,0,0,1,10.011,1.31Z"
+                                        transform="translate(0 0)" fill="#ff5e57" />
+                                    <path id="Path_34180"
+                                        d="M2.23,4h0a.719.719,0,0,1-.517-.278.818.818,0,0,1-.167-.591h0A1.647,1.647,0,0,0,.552,1.54.787.787,0,0,1,.022.592.725.725,0,0,1,.886.019a.383.383,0,0,1,.139.052A3.2,3.2,0,0,1,3,3.226a.807.807,0,0,1-.229.56A.708.708,0,0,1,2.23,4Z"
+                                        transform="translate(14 3)" fill="#ff5e57" />
+                                </svg>
+                                <p class="actionTitle">My Wishlist</p>
+                            </div>
+                            <div>
+                                <button class="userAccountDashBoarditemBtn" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.122" height="10"
+                                        viewBox="0 0 5.122 10">
+                                        <path id="fi-rr-angle-small-left"
+                                            d="M11.8,10.505a.714.714,0,0,0,0-1.01L8.523,6.219a.714.714,0,1,1,1.01-1.01l3.273,3.276a2.143,2.143,0,0,1,0,3.03L9.53,14.791a.714.714,0,1,1-1.01-1.01Z"
+                                            transform="translate(-8.311 -5)" fill="#2c2c2c" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="singleAction">
+                            <div class="actionIconAndTitle">
+                                <svg id="Notification" xmlns="http://www.w3.org/2000/svg" width="17" height="20"
+                                    viewBox="0 0 17 20">
+                                    <path id="Fill_1" data-name="Fill 1"
+                                        d="M16.27,9.645A3.884,3.884,0,0,1,15.207,6.8V6.37a5.546,5.546,0,0,0-1.2-3.746A7.041,7.041,0,0,0,8.544,0H8.456A7.071,7.071,0,0,0,3.077,2.513,5.623,5.623,0,0,0,1.793,6.37V6.8A3.8,3.8,0,0,1,.73,9.645,3.363,3.363,0,0,0,0,11.956a3.608,3.608,0,0,0,.864,2.378,4.532,4.532,0,0,0,2.9,1.413,41.646,41.646,0,0,0,4.737.247c1.593,0,3.164-.113,4.737-.247a4.532,4.532,0,0,0,2.9-1.413A3.614,3.614,0,0,0,17,11.956a3.363,3.363,0,0,0-.73-2.31"
+                                        transform="translate(0)" fill="#2ecc71" />
+                                    <path id="Fill_4" data-name="Fill 4"
+                                        d="M4.936.08A25.6,25.6,0,0,0,.89.08C.462.179,0,.408,0,.912A1.55,1.55,0,0,0,.7,2.085h0a3.635,3.635,0,0,0,1.714.732,3.836,3.836,0,0,0,1.008,0A3.636,3.636,0,0,0,5.13,2.086h0a1.55,1.55,0,0,0,.7-1.173c0-.5-.462-.733-.89-.832"
+                                        transform="translate(5.573 17.148)" fill="#2ecc71" opacity="0.4" />
+                                </svg>
+                                <p class="actionTitle"> Notification</p>
+                            </div>
+                            <div>
+                                <button class="userAccountDashBoarditemBtn" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.122" height="10"
+                                        viewBox="0 0 5.122 10">
+                                        <path id="fi-rr-angle-small-left"
+                                            d="M11.8,10.505a.714.714,0,0,0,0-1.01L8.523,6.219a.714.714,0,1,1,1.01-1.01l3.273,3.276a2.143,2.143,0,0,1,0,3.03L9.53,14.791a.714.714,0,1,1-1.01-1.01Z"
+                                            transform="translate(-8.311 -5)" fill="#2c2c2c" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="singleAction">
+                            <div class="actionIconAndTitle">
+                                <svg id="Profile" xmlns="http://www.w3.org/2000/svg" width="15.994" height="20"
+                                    viewBox="0 0 15.994 20">
+                                    <path id="Fill_1" data-name="Fill 1"
+                                        d="M8,0C3.684,0,0,.68,0,3.4S3.661,6.825,8,6.825c4.313,0,8-.679,8-3.4S12.334,0,8,0"
+                                        transform="translate(0 13.175)" fill="#00a5ff" />
+                                    <path id="Fill_4" data-name="Fill 4"
+                                        d="M5.292,10.584A5.292,5.292,0,1,0,0,5.292a5.273,5.273,0,0,0,5.292,5.292"
+                                        transform="translate(2.705 0)" fill="#00a5ff" opacity="0.4" />
+                                </svg>
+                                <p class="actionTitle">Profile Information</p>
+                            </div>
+                            <div>
+                                <button class="userAccountDashBoarditemBtn" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.122" height="10"
+                                        viewBox="0 0 5.122 10">
+                                        <path id="fi-rr-angle-small-left"
+                                            d="M11.8,10.505a.714.714,0,0,0,0-1.01L8.523,6.219a.714.714,0,1,1,1.01-1.01l3.273,3.276a2.143,2.143,0,0,1,0,3.03L9.53,14.791a.714.714,0,1,1-1.01-1.01Z"
+                                            transform="translate(-8.311 -5)" fill="#2c2c2c" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="singleAction">
+                            <div class="actionIconAndTitle">
+                                <svg id="Lock" xmlns="http://www.w3.org/2000/svg" width="17" height="20"
+                                    viewBox="0 0 17 20">
+                                    <path id="Fill_1" data-name="Fill 1"
+                                        d="M12.731,13.286H4.269A4.227,4.227,0,0,1,0,9.112V4.175A4.227,4.227,0,0,1,4.269,0h8.463A4.227,4.227,0,0,1,17,4.175V9.112A4.227,4.227,0,0,1,12.731,13.286ZM8.5,4.67a.875.875,0,0,0-.884.865V7.741a.889.889,0,0,0,1.778,0V5.535A.881.881,0,0,0,8.5,4.67Z"
+                                        transform="translate(0 6.714)" fill="#01126c" />
+                                    <path id="Fill_4" data-name="Fill 4"
+                                        d="M11.045,5.4V6.867a4.153,4.153,0,0,0-1.118-.149h-.66V5.4A3.7,3.7,0,0,0,5.528,1.739a3.707,3.707,0,0,0-3.75,3.637V6.718h-.65A3.817,3.817,0,0,0,0,6.877V5.4A5.467,5.467,0,0,1,5.507,0a5.461,5.461,0,0,1,5.538,5.4"
+                                        transform="translate(2.977 0)" fill="#01126c" opacity="0.4" />
+                                </svg>
+                                <p class="actionTitle">Password Change</p>
+                            </div>
+                            <div>
+                                <button class="userAccountDashBoarditemBtn" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="5.122" height="10"
+                                        viewBox="0 0 5.122 10">
+                                        <path id="fi-rr-angle-small-left"
+                                            d="M11.8,10.505a.714.714,0,0,0,0-1.01L8.523,6.219a.714.714,0,1,1,1.01-1.01l3.273,3.276a2.143,2.143,0,0,1,0,3.03L9.53,14.791a.714.714,0,1,1-1.01-1.01Z"
+                                            transform="translate(-8.311 -5)" fill="#2c2c2c" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        let userAccountHeaderInner = document.getElementById("userAccountHeaderInner");
+        let userAccountHeaderInnerObj = {
+            userAccountHeader: `
+                <div class="userAccountHeadingIconArea">
+                    <svg class="userAccountleftArrowIcon" xmlns="http://www.w3.org/2000/svg" width="7.171" height="14" viewBox="0 0 7.171 14">
+                        <path id="fi-rr-angle-small-left" d="M10.6,12.707a1,1,0,0,1,0-1.414l4.585-4.586a1,1,0,1,0-1.414-1.414L9.189,9.879a3,3,0,0,0,0,4.242l4.586,4.586a1,1,0,1,0,1.414-1.414Z" transform="translate(-8.311 -5)" fill="#2c2c2c"/>
+                    </svg>
+                </div>
+                <div class="userAccountHeadingTextArea">
+                    <p class="userAccountHeadingText">Account</p>
+                </div>
+                <div>
+                    <button class="userAccountHeaderuserAccountDashBoarditemBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="4" height="20" viewBox="0 0 4 20">
+                            <g id="fi-rr-menu-dots-vertical" transform="translate(-10 -2)">
+                                <circle id="Ellipse_7" data-name="Ellipse 7" cx="2" cy="2" r="2"
+                                    transform="translate(10 2)" fill="#2c2c2c" />
+                                <circle id="Ellipse_8" data-name="Ellipse 8" cx="2" cy="2" r="2"
+                                    transform="translate(10 10)" fill="#2c2c2c" />
+                                <circle id="Ellipse_9" data-name="Ellipse 9" cx="2" cy="2" r="2"
+                                    transform="translate(10 18)" fill="#2c2c2c" />
+                            </g>
+                        </svg>
+                    </button>
+                </div>
+            `
+        }
+
+        const { userAccountHeader } = userAccountHeaderInnerObj;
+        userAccountHeaderInner.innerHTML = userAccountHeader;
+        const user = {
+            name: 'Estiaq',
+            number: '+880 1700 000 000'
+        }
+        const userName = document.getElementById('userName');
+        const userNumber = document.getElementById('userNumber');
+        userName.innerText = user.name;
+        userNumber.innerText = user.number;
+    </script>
+</body>
+
+</html>
