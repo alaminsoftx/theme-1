@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account || user account</title>
+    <title>Account || Order Profile</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -152,79 +152,7 @@
             cursor: pointer;
         }
 
-        /* order status */
-        .singleStatus {
-            position: relative;
-            display: flex;
-            margin-bottom: 10px;
-        }
 
-        .singleStatusSkeleton {
-            position: absolute;
-            width: 100%;
-            height: 66px;
-            background-color: #eaeaea;
-            z-index: 1;
-            top: 0;
-            border-radius: 5px;
-            background: #f6f7f8;
-            background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
-            background-repeat: no-repeat;
-            background-size: 800px 104px;
-            display: inline-block;
-            position: relative;
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-            animation-iteration-count: infinite;
-            animation-name: skeleton;
-            animation-timing-function: linear;
-        }
-
-        .statusCheckMark {
-            position: relative;
-            width: 20px;
-            height: 20px;
-            border: 1px solid rgba(149 175 192 / 30%);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .statusCheckMark::after {
-            content: '';
-            position: absolute;
-            top: 25px;
-            width: 1px;
-            height: 40px;
-            background-color: rgba(149 175 192 / 30%);
-        }
-
-        .orderStatusDetails {
-            margin-left: 35px;
-            width: calc(100% - 55px);
-        }
-
-        .orderStatusTitle {
-            font-size: 14px;
-            font-weight: 700;
-            color: #2C2C2C;
-            margin-bottom: 8px;
-        }
-
-        .orderStatusInfo {
-            font-size: 12px;
-            color: #95AFC0;
-            font-weight: 400;
-            line-height: 22px;
-        }
-
-        .orderNo {
-            font-size: 18px;
-            font-weight: 700;
-            color: #01126C;
-            margin-bottom: 30px;
-        }
 
         @keyframes skeleton {
             0% {
@@ -303,26 +231,96 @@
         }
 
         .userAccountColumn {
-            max-width: 300px;
-            width:100%;
+            width: 300px;
             margin: 0 auto;
             padding-top: 50px;
-            display: block;
+            display: none;
         }
 
         .userAccountPageNavArea {
             display: none;
         }
 
-        .orderStatusColumn {
-            padding-top: 50px;
-            max-width: 365px;
+        .userProfileColumn {
+            padding-top: 25px;
             width: 100%;
             margin: 0 auto;
-            display: none;
         }
 
         /* breadCrumb */
+
+
+
+        /* wishlist */
+
+        .wishlistProductItem {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: #fff;
+            padding: 13px 16px;
+            border-radius: 5px;
+        }
+
+        .wishlistProductImgArea {
+            width: 90px;
+            display: flex;
+            align-items: center;
+            min-width: 90px;
+            height: 90px;
+        }
+
+        .wishlistProductContent {
+            width: calc(100% - 120px);
+            margin-left: 15px;
+        }
+
+        .productHeadingText {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2C2C2C;
+            line-height: 16px;
+            cursor: pointer;
+        }
+
+        .productPricingText {
+            font-size: 11px;
+            font-weight: 500;
+            color: #778994;
+            margin-top: 8px;
+        }
+
+        .wishlistproductButton {
+            font-size: 11px;
+            font-weight: 500;
+            background-color: #00A5FF;
+            border-radius: 3px;
+            color: #fff;
+            border: none;
+            outline: none;
+            width: 82px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+
+        .deleteIconArea {
+            width: 15px;
+        }
+
+        .deleteIconArea svg {
+            cursor: pointer;
+        }
+
+        .wishlistProductItem:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        /* wishlist */
+
         @media(min-width:768px) {
 
             .container {
@@ -337,9 +335,8 @@
                 display: flex;
             }
 
-            .orderStatusColumn {
+            .userProfileColumn {
                 padding-top: 0px;
-                display: block;
             }
 
             .userAccountHeader {
@@ -363,9 +360,7 @@
                 margin: 0;
             }
 
-            .userAccountColumn{
-                display: none;
-            }
+
 
             .userAccountPageNavArea {
                 margin-bottom: 85px;
@@ -397,25 +392,13 @@
                 display: block;
             }
 
-            .orderStatusColumn {
+            .userProfileColumn {
                 max-width: unset;
                 width: calc(100% - 400px);
-                margin:unset;
+                margin: unset;
                 margin-left: 100px;
             }
-    
 
-            div#orderProcess {
-                padding-left: 15px;
-            }
-
-            .orderStatusTitle {
-                font-size: 16px;
-            }
-
-            .orderStatusInfo {
-                font-size: 14px;
-            }
 
             .userAccountProfileImage {
                 width: 65px;
@@ -426,6 +409,67 @@
                 padding-left: 0px;
                 margin-top: 20px
             }
+
+            
+        }
+        @media(min-width:1025px){
+            /* wishlist */
+
+            .wishlistProductItemWrapper {
+                background: #fff;
+                border-radius: 5px;
+                padding: 30px;
+            }
+
+            .wishlistProductItem {
+                align-items: center;
+                padding: 0;
+            }
+
+            .wishlistProductImgArea {
+                width: 100px;
+                min-width: 100px;
+                height: 100px;
+            }
+
+            .wishlistProductImgArea img {
+                width: 100%;
+                cursor: pointer;
+            }
+
+            .wishlistProductContent {
+                width: calc(100% - 190px);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-left: 0px;
+                margin-right: 14px;
+            }
+
+            .productHeadingText {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .productPricingText {
+                margin-top: 0px;
+                font-size: 14px;
+            }
+
+            .wishlistproductButton {
+                margin-top: 0px;
+                width: 110px;
+                height: 30px;
+                font-size: 12px;
+            }
+
+            .wishlistProductItem:not(:last-child) {
+                border-bottom: 1px solid rgb(149 175 192 / 10%);
+                margin-bottom: 13px;
+                padding-bottom: 13px;
+            }
+
+            /* wishlist */
         }
     </style>
 </head>
@@ -452,7 +496,7 @@
                             </p>
                         </li>
                         <li class="breadCrumbNavItem">
-                            <p class="breadCrumbNavText">Order Status</p>
+                            <p class="breadCrumbNavText">Wishlist</p>
                         </li>
                     </ul>
                 </div>
@@ -654,11 +698,11 @@
                         </div>
                     </div>
                     <!-- user order status column -->
-                    <div class="orderStatusColumn ">
+                    <div class="userProfileColumn">
                         <div class="userAccountPageNavArea">
                             <ul class="userAccountNav">
                                 <li class="userAccountNavItem">
-                                    <p class="userAccountNavText">Home</p>
+                                    <p class="userAccountNavText">Account</p>
                                     <p class="userAccountNavIcon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="6.147" height="12"
                                             viewBox="0 0 6.147 12">
@@ -669,25 +713,15 @@
                                     </p>
                                 </li>
                                 <li class="userAccountNavItem">
-                                    <p class="userAccountNavText">Account</p>
+                                    <p class="userAccountNavText">Notification</p>
                                 </li>
                             </ul>
                         </div>
-                        <p class="orderNo">ORDER #21412</p>
-                        <div id="orderProcess">
-                            <div class="singleStatus">
-                                <div class="singleStatusSkeleton"></div>
-                            </div>
-                            <div class="singleStatus">
-                                <div class="singleStatusSkeleton"></div>
-                            </div>
-                            <div class="singleStatus">
-                                <div class="singleStatusSkeleton"></div>
-                            </div>
-                            <div class="singleStatus">
-                                <div class="singleStatusSkeleton"></div>
-                            </div>
+                        <!-- =========== -->
+                        <div class="wishlistProductItemWrapper" id="wishlistProductItemWrapper">
+
                         </div>
+                        <!-- ==========  -->
                     </div>
 
                 </div>
@@ -705,22 +739,9 @@
                     </svg>
                 </div>
                 <div class="userAccountHeadingTextArea">
-                    <p class="userAccountHeadingText">Account</p>
+                    <p class="userAccountHeadingText">Notification</p>
                 </div>
-                <div>
-                    <button class="userAccountHeaderuserAccountDashBoarditemBtn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="4" height="20" viewBox="0 0 4 20">
-                            <g id="fi-rr-menu-dots-vertical" transform="translate(-10 -2)">
-                                <circle id="Ellipse_7" data-name="Ellipse 7" cx="2" cy="2" r="2"
-                                    transform="translate(10 2)" fill="#2c2c2c" />
-                                <circle id="Ellipse_8" data-name="Ellipse 8" cx="2" cy="2" r="2"
-                                    transform="translate(10 10)" fill="#2c2c2c" />
-                                <circle id="Ellipse_9" data-name="Ellipse 9" cx="2" cy="2" r="2"
-                                    transform="translate(10 18)" fill="#2c2c2c" />
-                            </g>
-                        </svg>
-                    </button>
-                </div>
+
             `
         }
 
@@ -736,64 +757,128 @@
         userNumber.innerText = user.number;
 
 
-        // usr status
-        const processing = [
+        // wishllist body
+        let wishlistProductItemWrapper = document.getElementById("wishlistProductItemWrapper");
+        let wishlistProductItem = document.getElementById("wishlistProductItem");
+
+        let wishlistProductItHTML = "";
+
+        const wishlistProdcutObj = [
             {
-                status: 'Pending',
-                checked: true
+                id: 2356,
+                productImg: `Thumbnails.svg`,
+                productTitle: `iPhone 12 Pro Max 256gb Ocean Blue...`,
+                productPrice: `৳ 78000`,
+                productBtn: `Add to cart`,
+                deleteIcon: `
+                        <svg id="" xmlns="http://www.w3.org/2000/svg" width="13.333" height="16"
+                            viewBox="0 0 13.333 16">
+                            <g id="fi-rr-trash" transform="translate(-2)">
+                                <path id="Path_1660" data-name="Path 1660"
+                                    d="M14.667,2.667H12.6A3.339,3.339,0,0,0,9.333,0H8A3.339,3.339,0,0,0,4.733,2.667H2.667A.667.667,0,1,0,2.667,4h.667v8.667A3.337,3.337,0,0,0,6.667,16h4A3.337,3.337,0,0,0,14,12.667V4h.667a.667.667,0,0,0,0-1.333ZM8,1.333H9.333a2,2,0,0,1,1.886,1.333H6.114A2,2,0,0,1,8,1.333Zm4.667,11.333a2,2,0,0,1-2,2h-4a2,2,0,0,1-2-2V4h8Z"
+                                    transform="translate(0)" fill="#ff5e57" />
+                                <path id="Path_1661" data-name="Path 1661"
+                                    d="M9.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,0,0-1.332,0v4A.666.666,0,0,0,9.666,15.33Z"
+                                    transform="translate(-2.333 -3.331)" fill="#ff5e57" />
+                                <path id="Path_1662" data-name="Path 1662"
+                                    d="M13.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,1,0-1.332,0v4A.666.666,0,0,0,13.666,15.33Z"
+                                    transform="translate(-3.666 -3.331)" fill="#ff5e57" />
+                            </g>
+                        </svg>
+                `
             },
             {
-                status: 'Processing',
-                checked: true
+                id: 2356,
+                productImg: `Thumbnails.svg`,
+                productTitle: `iPhone 12 Pro Max 256gb Ocean Blue...`,
+                productPrice: `৳ 78000`,
+                productBtn: `Add to cart`,
+                deleteIcon: `
+                        <svg id="" xmlns="http://www.w3.org/2000/svg" width="13.333" height="16"
+                            viewBox="0 0 13.333 16">
+                            <g id="fi-rr-trash" transform="translate(-2)">
+                                <path id="Path_1660" data-name="Path 1660"
+                                    d="M14.667,2.667H12.6A3.339,3.339,0,0,0,9.333,0H8A3.339,3.339,0,0,0,4.733,2.667H2.667A.667.667,0,1,0,2.667,4h.667v8.667A3.337,3.337,0,0,0,6.667,16h4A3.337,3.337,0,0,0,14,12.667V4h.667a.667.667,0,0,0,0-1.333ZM8,1.333H9.333a2,2,0,0,1,1.886,1.333H6.114A2,2,0,0,1,8,1.333Zm4.667,11.333a2,2,0,0,1-2,2h-4a2,2,0,0,1-2-2V4h8Z"
+                                    transform="translate(0)" fill="#ff5e57" />
+                                <path id="Path_1661" data-name="Path 1661"
+                                    d="M9.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,0,0-1.332,0v4A.666.666,0,0,0,9.666,15.33Z"
+                                    transform="translate(-2.333 -3.331)" fill="#ff5e57" />
+                                <path id="Path_1662" data-name="Path 1662"
+                                    d="M13.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,1,0-1.332,0v4A.666.666,0,0,0,13.666,15.33Z"
+                                    transform="translate(-3.666 -3.331)" fill="#ff5e57" />
+                            </g>
+                        </svg>
+                `
             },
             {
-                status: 'Shipped',
-                checked: false
+                id: 2356,
+                productImg: `Thumbnails.svg`,
+                productTitle: `iPhone 12 Pro Max 256gb Ocean Blue...`,
+                productPrice: `৳ 78000`,
+                productBtn: `Add to cart`,
+                deleteIcon: `
+                        <svg id="" xmlns="http://www.w3.org/2000/svg" width="13.333" height="16"
+                            viewBox="0 0 13.333 16">
+                            <g id="fi-rr-trash" transform="translate(-2)">
+                                <path id="Path_1660" data-name="Path 1660"
+                                    d="M14.667,2.667H12.6A3.339,3.339,0,0,0,9.333,0H8A3.339,3.339,0,0,0,4.733,2.667H2.667A.667.667,0,1,0,2.667,4h.667v8.667A3.337,3.337,0,0,0,6.667,16h4A3.337,3.337,0,0,0,14,12.667V4h.667a.667.667,0,0,0,0-1.333ZM8,1.333H9.333a2,2,0,0,1,1.886,1.333H6.114A2,2,0,0,1,8,1.333Zm4.667,11.333a2,2,0,0,1-2,2h-4a2,2,0,0,1-2-2V4h8Z"
+                                    transform="translate(0)" fill="#ff5e57" />
+                                <path id="Path_1661" data-name="Path 1661"
+                                    d="M9.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,0,0-1.332,0v4A.666.666,0,0,0,9.666,15.33Z"
+                                    transform="translate(-2.333 -3.331)" fill="#ff5e57" />
+                                <path id="Path_1662" data-name="Path 1662"
+                                    d="M13.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,1,0-1.332,0v4A.666.666,0,0,0,13.666,15.33Z"
+                                    transform="translate(-3.666 -3.331)" fill="#ff5e57" />
+                            </g>
+                        </svg>
+                `
             },
             {
-                status: 'Delivered',
-                checked: false
+                id: 2356,
+                productImg: `Thumbnails.svg`,
+                productTitle: `iPhone 12 Pro Max 256gb Ocean Blue...`,
+                productPrice: `৳ 78000`,
+                productBtn: `Add to cart`,
+                deleteIcon: `
+                        <svg id="" xmlns="http://www.w3.org/2000/svg" width="13.333" height="16"
+                            viewBox="0 0 13.333 16">
+                            <g id="fi-rr-trash" transform="translate(-2)">
+                                <path id="Path_1660" data-name="Path 1660"
+                                    d="M14.667,2.667H12.6A3.339,3.339,0,0,0,9.333,0H8A3.339,3.339,0,0,0,4.733,2.667H2.667A.667.667,0,1,0,2.667,4h.667v8.667A3.337,3.337,0,0,0,6.667,16h4A3.337,3.337,0,0,0,14,12.667V4h.667a.667.667,0,0,0,0-1.333ZM8,1.333H9.333a2,2,0,0,1,1.886,1.333H6.114A2,2,0,0,1,8,1.333Zm4.667,11.333a2,2,0,0,1-2,2h-4a2,2,0,0,1-2-2V4h8Z"
+                                    transform="translate(0)" fill="#ff5e57" />
+                                <path id="Path_1661" data-name="Path 1661"
+                                    d="M9.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,0,0-1.332,0v4A.666.666,0,0,0,9.666,15.33Z"
+                                    transform="translate(-2.333 -3.331)" fill="#ff5e57" />
+                                <path id="Path_1662" data-name="Path 1662"
+                                    d="M13.666,15.33a.666.666,0,0,0,.666-.666v-4a.666.666,0,1,0-1.332,0v4A.666.666,0,0,0,13.666,15.33Z"
+                                    transform="translate(-3.666 -3.331)" fill="#ff5e57" />
+                            </g>
+                        </svg>
+                `
             }
-        ];
-        const orderProcess = document.getElementById('orderProcess');
-        const statusCancelCheckMark = (checked) => (`
-                <div ${checked ? `style="border: none; background-color: #FF5E57;"` : ''} class="statusCheckMark">
-                    ${checked ? `<svg xmlns="http://www.w3.org/2000/svg" width="10.687" height="10.687" viewBox="0 0 10.687 10.687">
-                        <path id="fi-rr-cross" d="M9.878.122h0a.417.417,0,0,0-.589,0L5,4.411.711.122a.417.417,0,0,0-.589,0h0a.417.417,0,0,0,0,.589L4.411,5,.122,9.289a.417.417,0,0,0,0,.589h0a.417.417,0,0,0,.589,0L5,5.589,9.289,9.878a.417.417,0,0,0,.589,0h0a.417.417,0,0,0,0-.589L5.589,5,9.878.711a.417.417,0,0,0,0-.589Z" transform="translate(0.343 0.343)" fill="#fff" stroke="#fff" stroke-width="0.6"/>
-                        </svg>` : ''}
-                </div>
-        `);
-        processing.forEach(({ status, checked }, index) => {
-            setTimeout(() => {
-                if (orderProcess?.children[index]?.innerHTML) {
-                    orderProcess.children[index].innerHTML = `
-                    ${status === 'Cancel' ? statusCancelCheckMark(checked) : `
-                     <div ${checked ? `style="border: none; background-color: #2ECC71;"` : ''} class="statusCheckMark">
-                     ${checked ? `<svg xmlns="http://www.w3.org/2000/svg" width="10" height="7.059" viewBox="0 0 10 7.059">
-                        <path id="Path"
-                            d="M8.494.258A.882.882,0,0,1,9.742,1.506L4.447,6.8A.882.882,0,0,1,3.2,6.8L.258,3.859A.882.882,0,0,1,1.506,2.611L3.824,4.929Z"
-                            fill="#fff" />
-                     </svg>` : ''}
-                     </div>
-                     `}
-                     <div class="orderStatusDetails">
-                        <p ${status === 'Cancel' ? `id="cancel"` : ''} class="orderStatusTitle">${status}</p>
-                         <span class="orderStatusInfo">
-                             Your order #21412 is pending
-                        </span>
-                </div>
-            `;
-                    orderProcess.children[index].style.marginBottom = '25px';
-                    const orderStatusTitle = document.getElementById('cancel')?.innerText;
-                    if (orderStatusTitle === 'Cancel') {
-                        for (let i = 2; i < orderProcess.children.length; i++) {
-                            orderProcess.removeChild(orderProcess.children[i]);
-                        }
-                    }
-                }
-            }, 2000);
+        ]
+
+        wishlistProdcutObj.forEach(element => {
+            wishlistProductItHTML += `
+                    <div class="wishlistProductItem">
+                        <div class="wishlistProductImgArea" >
+                            <img src="${element.productImg}" alt="">
+                        </div>
+                        <div class="wishlistProductContent">
+                            <p class="productHeadingText" > ${element.productTitle}</p>
+                            <p class="productPricingText" >${element.productPrice}</p>
+                            <div class="wishlistButtonArea">
+                                <button class="wishlistproductButton" >${element.productBtn}</button>
+                            </div>
+                        </div>
+                        <div class="deleteIconArea" >${element.deleteIcon} </div>
+                    </div>
+            `
         });
-        console.log(orderProcess.children);
+
+        wishlistProductItemWrapper.innerHTML = wishlistProductItHTML;
+
+
     </script>
 </body>
 

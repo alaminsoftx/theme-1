@@ -1,0 +1,7 @@
+Accounts:
+	1.  order status
+	2. order history
+	3. My wishlist
+	4. Notification
+	5. profile
+	6. change passoword
