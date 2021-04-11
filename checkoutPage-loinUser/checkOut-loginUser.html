@@ -268,6 +268,7 @@
             color: #fff;
             border-radius: 3px;
             outline: none;
+            cursor: pointer;
 
         }
 
@@ -275,7 +276,57 @@
             margin-bottom: 5px;
         }
 
+        /* breadCrumb */
+        .sinlgePageBreadCrumb {
+            background-color: rgb(167 186 235 / 20%);
+            height: 160px;
+            display: none;
+            align-items: center;
+        }
 
+        .sinlgePageBreadCrumbInner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .breadCrumbItemText {
+            font-size: 32px;
+            font-weight: 700;
+            color: #01126C;
+            line-height: 39px;
+        }
+
+        .breadCrumbNav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .breadCrumbNavItem {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .breadCrumbNavIcon {
+            margin-left: 20px;
+        }
+
+        .breadCrumbNavItem:not(:last-child) {
+            margin-right: 20px
+        }
+
+        .breadCrumbNavText {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19px;
+            color: #95AFC0;
+            cursor: pointer;
+        }
+
+        /* breadCrumb */
         @media(min-width:768px) {
 
             .container {
@@ -288,7 +339,8 @@
 
             .addProductInWistlist {
                 background-color: unset;
-                padding-top: 0px;
+                padding-top: 100px;
+                padding-bottom: 120px;
             }
 
             .addProductInWistlistInner {
@@ -341,6 +393,9 @@
                 height: 36px;
                 font-size: 14px;
             }
+            .sinlgePageBreadCrumb{
+                display: flex;
+            }
         }
 
         @media(min-width:1025px) {
@@ -361,6 +416,46 @@
 </head>
 
 <body>
+    <!-- breadCrumb -->
+    <div class="sinlgePageBreadCrumb">
+        <div class="container">
+            <div class="sinlgePageBreadCrumbInner">
+                <div class="breadCrumbItemName">
+                    <p class="breadCrumbItemText">Process to Checkout</p>
+                </div>
+                <div class="breadCrumbMenu">
+                    <ul class="breadCrumbNav">
+                        <li class="breadCrumbNavItem">
+                            <p class="breadCrumbNavText">Home</p>
+                            <p class="breadCrumbNavIcon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="6.147" height="12"
+                                    viewBox="0 0 6.147 12">
+                                    <path id="fi-rr-angle-small-left"
+                                        d="M12.5,11.606a.857.857,0,0,0,0-1.212L8.565,6.463A.857.857,0,1,1,9.777,5.251L13.7,9.182a2.571,2.571,0,0,1,0,3.636L9.774,16.749a.857.857,0,1,1-1.212-1.212Z"
+                                        transform="translate(-8.311 -5)" fill="#95afc0" />
+                                </svg>
+                            </p>
+                        </li>
+                        <li class="breadCrumbNavItem">
+                            <p class="breadCrumbNavText">Cart</p>
+                            <p class="breadCrumbNavIcon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="6.147" height="12"
+                                    viewBox="0 0 6.147 12">
+                                    <path id="fi-rr-angle-small-left"
+                                        d="M12.5,11.606a.857.857,0,0,0,0-1.212L8.565,6.463A.857.857,0,1,1,9.777,5.251L13.7,9.182a2.571,2.571,0,0,1,0,3.636L9.774,16.749a.857.857,0,1,1-1.212-1.212Z"
+                                        transform="translate(-8.311 -5)" fill="#95afc0" />
+                                </svg>
+                            </p>
+                        </li>
+                        <li class="breadCrumbNavItem">
+                            <p class="breadCrumbNavText">Process to Checkout</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadCrumb -->
     <!-- start  cart header -->
     <div class="cartHeader">
         <div class="container">
