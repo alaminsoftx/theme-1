@@ -132,6 +132,10 @@
             margin-bottom: 20px;
         }
 
+        .personalEditIcon {
+            cursor: pointer;
+        }
+
         .actionIconAndTitle {
             display: flex;
             justify-content: center;
@@ -255,7 +259,7 @@
         .personalInformationArea {
             background-color: #fff;
             border-radius: 5px;
-            padding: 18px;
+            padding: 20px;
         }
 
         .addressInformationArea {
@@ -264,11 +268,13 @@
         }
 
         .addressInformationAreaInner {
-            padding: 18px;
+            padding: 20px;
             background: #fff;
+            border-radius: 5px;
         }
 
-        .informationHeadingText {
+        .informationHeadingText,
+        .contactInformationHeadingText {
             font-size: 16px;
             font-weight: 700;
             color: #01126C;
@@ -322,6 +328,69 @@
             justify-content: space-between;
         }
 
+        /* address informatin */
+        .contactItemCol {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .contactItemCol:not(:last-child) {
+            border-bottom: 1px solid rgb(149 175 192 / 10%);
+            padding: 12px 0;
+            margin-bottom: 12px;
+        }
+
+        .contactForUser {
+            display: flex;
+            flex-direction: column;
+            margin-left: 13px;
+            width: calc(100% - 48px);
+        }
+
+        .contactForUserText {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2C2C2C;
+            display: inline-block;
+        }
+
+        .addressItemCheckOutlogin {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .userAddressText {
+            font-size: 13px;
+            font-weight: 400;
+            color: #95AFC0;
+        }
+
+        .editIcon {
+            cursor: pointer;
+        }
+
+        .addAddressBtnArea {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .addAddressBtn {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #2C2C2C;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 112px;
+            height: 18px;
+            cursor: pointer;
+        }
+
         /* popup */
         .inputFieldControl {
             height: 36px;
@@ -345,7 +414,182 @@
             color: #3E5570;
             position: absolute;
             left: 6px;
-            top: -15px;
+            top: -8px;
+        }
+
+        .userProfileNameInputWrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .editPersonalInformation {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .editPersonalInformation:not(:last-child) {
+            /* border-bottom: 1px solid rgb(149 175 192 / 10%); */
+            padding-bottom: 15px;
+        }
+
+        .profilePopupCloseBtn {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .closeBtn {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            line-height: 10px;
+            font-size: 26px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .popupBtn {
+            width: 111px;
+            height: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            background: #00A5FF;
+            border: none;
+            color: #fff;
+            border-radius: 3px;
+            outline: none;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+
+
+        .popupWrapper {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgb(44 44 44 / 70%);
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            z-index: -1;
+            transition: all .3s;
+
+
+        }
+
+
+
+
+
+        .popupArea {
+            max-width: 630px;
+            width: 100%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            transition: all .3s;
+            position: absolute;
+            transition: all .3s;
+        }
+
+        /* popup */
+        /* ==================== */
+        .customGenterItem {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .genderText {
+            display: inline-block;
+            color: #3E5570;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .customGendeBtnLabel {
+            font-size: 13px;
+            color: #2C2C2C;
+            font-weight: 600;
+        }
+
+        .customGenderBtn:checked,
+        .customGenderBtn:not(:checked) {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .customGenderBtn:checked+label,
+        .customGenderBtn:not(:checked)+label {
+            position: relative;
+            padding-left: 24px;
+            padding-top: 2px;
+            cursor: pointer;
+            line-height: 12px;
+            display: inline-block;
+        }
+
+        .customGenderBtn:checked+label:before,
+        .customGenderBtn:not(:checked)+label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            border: 1px solid rgb(209 216 224);
+            border-radius: 100%;
+            background: #fff;
+        }
+
+        .customGenderBtn:checked+label:after,
+        .customGenderBtn:not(:checked)+label:after {
+            content: '';
+            width: 13px;
+            height: 13px;
+            background: #00a5ff;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            border-radius: 100%;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+        .customGenderBtn:not(:checked)+label:after {
+            opacity: 0;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+
+        .customGenderBtn:checked+label:after {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+
+        /* address info popup */
+        .contactInformationArea {
+            width: 100%;
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+
+        }
+
+        .addProudctArea {
+            max-width: 960px;
+            width: 100%;
+            padding: 25px;
+        }
+
+        .contactInformationForOffer:not(:last-child) {
+            margin-bottom: 30px;
         }
 
         .contactInformationForOfferInner {
@@ -353,7 +597,70 @@
             width: 100%;
         }
 
-        /* popup */
+        .labelText {
+            display: inline-block;
+            background: #fff;
+            padding: 0px 5px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+            position: absolute;
+            left: 6px;
+            top: -15px;
+        }
+
+        .inputTextAreadField {
+            height: 80px;
+            padding: 0 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(149 175 192 / 40%);
+            width: 100%;
+            outline: none;
+            background-color: transparent;
+            font-size: 12px;
+            font-weight: 500;
+            color: #3E5570;
+            line-height: 36px;
+        }
+
+        .labelText.textAreaLabel {
+            top: -73px;
+        }
+
+        .mt30ForMobile {
+            margin-top: 30px;
+        }
+
+        .contactInformationHeadingText {
+            margin-bottom: 30px;
+        }
+
+        .addressInfoofficePopupWrapper {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(44 44 44 / 70%);
+            z-index: -1;
+            opacity: 0;
+            transition: all .3s;
+        }
+
+
+
+        .showPopup {
+            width: 100%;
+            height: 100vh;
+            opacity: 1;
+            z-index: 9;
+
+        }
+
+        /* address info popup */
 
         /* user profile */
         @media(min-width:768px) {
@@ -418,6 +725,7 @@
             .userAccountPage {
                 display: flex;
                 padding-top: 70px;
+                padding-bottom: 70px;
             }
 
             .userAccountColumn {
@@ -445,12 +753,54 @@
                 margin-top: 20px
             }
 
+            /* address informatin */
+
             /* popup */
             .labelText {
                 font-size: 13px;
             }
 
+            .popupBtn {
+                width: 140px;
+                height: 36px;
+                font-size: 14px;
+            }
+
+            .popupArea {
+                padding: 30px;
+            }
+
             /* popup */
+            .addressInformationAreaInner,
+            .personalInformationArea {
+                padding: 30px;
+            }
+
+            /* address info popup */
+            .dflexForDesktop {
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .mt30ForMobile {
+                margin-top: 0px;
+            }
+
+            .width50ForDesktop {
+                width: calc(33.33% - 20px);
+            }
+
+            .contactInformationArea {
+                padding: 30px;
+            }
+
+            .addProudctArea {
+                padding: 30px;
+            }
+
+            /* address info popup */
 
         }
 
@@ -718,13 +1068,13 @@
                         <!-- =========== -->
                         <div class="profileWrapper" id="profileWrapper">
                             <!-- personal information -->
-                            <div class="personalInformationArea" id="personalInformationArea">
+                            <div class="personalInformationArea">
                                 <div class="personalInformationTop">
                                     <!-- heading -->
                                     <div class="personalInformationHeading">
                                         <p class="informationHeadingText">Personal Information</p>
                                         <div>
-                                            <span class="personalEditIcon">
+                                            <span class="personalEditIcon" id="personalInformationUpdateBtn">
                                                 <svg id="fi-rr-edit" xmlns="http://www.w3.org/2000/svg" width="15"
                                                     height="15" viewBox="0 0 15 15">
                                                     <path id="Path_1663" data-name="Path 1663"
@@ -840,73 +1190,223 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="personalInformationBottom" id="">
-                                    <!-- name -->
-                                    <div class="editPersonalInformation">
-                                        <label for="" class="JSROTYO[YSOJ">
-                                            <span class="labelText">Full Name</span>
-                                            <input type="text" class="inputFieldControl" autocomplete="off">
-                                        </label>
+                                <div class="popupWrapper" id="popupWrapper">
+                                    <div class="popupArea">
+                                        <div class="profilePopupCloseBtn">
+                                            <p class="closeBtn" id="closeBtn">&times;</p>
+                                        </div>
+                                        <!-- name -->
+                                        <div class="editPersonalInformation">
+                                            <label for="" class="userProfileNameInputWrapper">
+                                                <span class="labelText">Full Name</span>
+                                                <input type="text" class="inputFieldControl" autocomplete="off">
+                                            </label>
+                                        </div>
+                                        <!-- phone -->
+                                        <div class="editPersonalInformation">
+                                            <label for="" class="userProfileNameInputWrapper">
+                                                <span class="labelText">Phone Number</span>
+                                                <input type="tel" class="inputFieldControl" autocomplete="off">
+                                            </label>
+                                        </div>
+                                        <!-- email -->
+                                        <div class="editPersonalInformation">
+                                            <label for="" class="userProfileNameInputWrapper">
+                                                <span class="labelText">Email</span>
+                                                <input type="email" class="inputFieldControl" autocomplete="off">
+                                            </label>
+                                        </div>
+                                        <!-- date of birth -->
+                                        <div class="editPersonalInformation">
+                                            <label for="" class="userProfileNameInputWrapper">
+                                                <span class="labelText">Date of Birth</span>
+                                                <input type="text" class="inputFieldControl" autocomplete="off">
+                                            </label>
+                                        </div>
+                                        <!-- gender -->
+                                        <div class="editPersonalInformation">
+                                            <label for="" class="userProfileNameInputWrapper">
+                                                <span class="labelText">Date of Birth</span>
+                                                <input type="text" class="inputFieldControl" autocomplete="off">
+                                            </label>
+                                        </div>
+                                        <!-- gender -->
+                                        <div class="editPersonalInformation">
+                                            <p class="customGenterItem">
+                                                <input class="customGenderBtn" type="radio" id="profilePageGender1"
+                                                    name="gender" checked>
+                                                <label class="customGendeBtnLabel" for="profilePageGender1">Male</label>
+                                            </p>
+                                            <p class="customGenterItem">
+                                                <input class="customGenderBtn" type="radio" id="profilePageGender2"
+                                                    name="gender" checked>
+                                                <label class="customGendeBtnLabel"
+                                                    for="profilePageGender2">Female</label>
+                                            </p>
+                                        </div>
+                                        <div class="popupBtnArea">
+                                            <button class="popupBtn" type="button">Submit</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-
                             <!-- address information -->
                             <div class="addressInformationArea" id="addressInformation">
                                 <div class="addressInformationAreaInner">
-                                    <!-- heading -->
-                                    <div class="addressInfoHeading">
-                                        <p class="addressInfoHeadingText">Address Information</p>
-                                        <div>
-                                            <span class="personalEditIcon">
-                                                <svg id="fi-rr-edit" xmlns="http://www.w3.org/2000/svg" width="15"
-                                                    height="15" viewBox="0 0 15 15">
-                                                    <path id="Path_1663" data-name="Path 1663"
-                                                        d="M13.544.6,5.916,8.227A3.107,3.107,0,0,0,5,10.439v.84a.626.626,0,0,0,.626.626h.84a3.107,3.107,0,0,0,2.212-.916L16.306,3.36a1.955,1.955,0,0,0,0-2.762,2,2,0,0,0-2.762,0Zm1.877,1.877L7.793,10.1a1.89,1.89,0,0,1-1.327.549H6.251v-.215A1.89,1.89,0,0,1,6.8,9.112l7.628-7.628a.718.718,0,0,1,.992,0,.7.7,0,0,1,0,.992Z"
-                                                        transform="translate(-1.888 -0.017)" fill="#2c2c2c" />
-                                                    <path id="Path_1664" data-name="Path 1664"
-                                                        d="M14.375,5.612a.625.625,0,0,0-.625.625V9.375h-2.5A1.875,1.875,0,0,0,9.375,11.25v2.5H3.125A1.875,1.875,0,0,1,1.25,11.875V3.125A1.875,1.875,0,0,1,3.125,1.25H8.776a.625.625,0,0,0,0-1.25H3.125A3.129,3.129,0,0,0,0,3.125v8.75A3.129,3.129,0,0,0,3.125,15h7.089a3.105,3.105,0,0,0,2.21-.915l1.66-1.661A3.105,3.105,0,0,0,15,10.214V6.237A.625.625,0,0,0,14.375,5.612ZM11.541,13.2a1.859,1.859,0,0,1-.916.5V11.25a.625.625,0,0,1,.625-.625H13.7a1.885,1.885,0,0,1-.5.915Z"
-                                                        fill="#2c2c2c" />
-                                                </svg>
+                                    <div class="contactInformationHeading">
+                                        <p class="contactInformationHeadingText">
+                                            <span>Address Information</span>
+                                        </p>
 
-                                            </span>
-                                        </div>
                                     </div>
-                                    <!-- address -->
-                                    <div class="userNameArea">
+                                    <!-- col -->
+                                    <div class="contactItemCol ">
                                         <p class="userIcon">
-                                            <svg class="userIconSize" xmlns="http://www.w3.org/2000/svg" width="18"
-                                                height="17.989" viewBox="0 0 18 17.989">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15.99"
+                                                viewBox="0 0 16 15.99">
                                                 <path id="fi-rr-home"
-                                                    d="M17.341,6.807,11.652,1.118a3.756,3.756,0,0,0-5.3,0L.659,6.807A2.233,2.233,0,0,0,0,8.4v7.363a2.25,2.25,0,0,0,2.25,2.25h13.5A2.25,2.25,0,0,0,18,15.761V8.4A2.234,2.234,0,0,0,17.341,6.807Zm-6.091,9.7H6.75V13.56a2.25,2.25,0,0,1,4.5,0Zm5.25-.75a.75.75,0,0,1-.75.75h-3V13.56a3.75,3.75,0,0,0-7.5,0v2.95h-3a.75.75,0,0,1-.75-.75V8.4a.756.756,0,0,1,.22-.53L7.408,2.18a2.256,2.256,0,0,1,3.183,0L16.28,7.87a.756.756,0,0,1,.22.528Z"
-                                                    transform="translate(0 -0.021)" />
+                                                    d="M15.414,6.053,10.357,1A3.339,3.339,0,0,0,5.643,1L.586,6.053A1.985,1.985,0,0,0,0,7.467v6.545a2,2,0,0,0,2,2H14a2,2,0,0,0,2-2V7.467A1.985,1.985,0,0,0,15.414,6.053ZM10,14.678H6V12.056a2,2,0,0,1,4,0Zm4.667-.667a.667.667,0,0,1-.667.667H11.333V12.056a3.333,3.333,0,0,0-6.667,0v2.623H2a.667.667,0,0,1-.667-.667V7.467A.672.672,0,0,1,1.529,7L6.585,1.94a2.005,2.005,0,0,1,2.829,0L14.471,7a.672.672,0,0,1,.2.469Z"
+                                                    transform="translate(0 -0.021)" fill="#6c63ff" />
                                             </svg>
                                         </p>
-                                        <p class="userName">
-                                            <span class="userNameHeading">Home</span>
-                                            <span class="userNameText">Flat #A5, House #668, Road #9, Avenue #5,
-                                                Mirpur DOHS, Dhaka-1216</span>
-                                        </p>
+                                        <div class="contactForUser">
+                                            <span class="contactForUserText mb5">Home</span>
+                                            <p class="addressItemCheckOutlogin">
+                                                <span class="userAddressText">Flat #A5, House #668, Road #9, Avenue #5,
+                                                    Mirpur DOHS, Dhaka-1216</span>
+                                                <span class="editIcon" id="addressInfoOfficePopupWrapper">
+                                                    <svg id="fi-rr-edit" xmlns="http://www.w3.org/2000/svg" width="14"
+                                                        height="14" viewBox="0 0 14 14">
+                                                        <path id="Path_1663" data-name="Path 1663"
+                                                            d="M12.966.561,5.854,7.673A2.9,2.9,0,0,0,5,9.735v.783a.583.583,0,0,0,.583.583h.783a2.9,2.9,0,0,0,2.062-.854l7.112-7.112a1.823,1.823,0,0,0,0-2.575,1.863,1.863,0,0,0-2.575,0Zm1.75,1.75L7.6,9.423a1.762,1.762,0,0,1-1.237.512h-.2v-.2A1.762,1.762,0,0,1,6.679,8.5l7.112-7.112a.67.67,0,0,1,.925,0,.655.655,0,0,1,0,.925Z"
+                                                            transform="translate(-2.083 -0.019)" fill="#2c2c2c" />
+                                                        <path id="Path_1664" data-name="Path 1664"
+                                                            d="M13.417,5.238a.583.583,0,0,0-.583.583V8.75H10.5A1.75,1.75,0,0,0,8.75,10.5v2.333H2.917a1.75,1.75,0,0,1-1.75-1.75V2.917a1.75,1.75,0,0,1,1.75-1.75H8.191A.583.583,0,1,0,8.191,0H2.917A2.92,2.92,0,0,0,0,2.917v8.167A2.92,2.92,0,0,0,2.917,14H9.533a2.9,2.9,0,0,0,2.063-.854L13.145,11.6A2.9,2.9,0,0,0,14,9.533V5.821A.583.583,0,0,0,13.417,5.238Zm-2.645,7.083a1.735,1.735,0,0,1-.855.467V10.5a.583.583,0,0,1,.583-.583h2.29a1.759,1.759,0,0,1-.467.854Z"
+                                                            fill="#2c2c2c" />
+                                                    </svg>
+
+                                                </span>
+                                            </p>
+
+                                        </div>
+                                        
                                     </div>
-                                    <div class="userNameArea">
-                                        <p class="userIcon">
-                                            <svg class="userIconSize" xmlns="http://www.w3.org/2000/svg" width="18"
-                                                height="18" viewBox="0 0 18 18">
+                                    <!-- col -->
+                                    <div class="contactItemCol ">
+                                        <p class="userIcon" >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16">
                                                 <path id="fi-rr-building"
-                                                    d="M5.25,10.5a.75.75,0,0,1-.75.75H3.75a.75.75,0,0,1,0-1.5H4.5A.75.75,0,0,1,5.25,10.5Zm3-.75H7.5a.75.75,0,0,0,0,1.5h.75a.75.75,0,0,0,0-1.5Zm-3.75,3H3.75a.75.75,0,0,0,0,1.5H4.5a.75.75,0,0,0,0-1.5Zm3.75,0H7.5a.75.75,0,0,0,0,1.5h.75a.75.75,0,0,0,0-1.5Zm-3.75-9H3.75a.75.75,0,0,0,0,1.5H4.5a.75.75,0,0,0,0-1.5Zm3.75,0H7.5a.75.75,0,0,0,0,1.5h.75a.75.75,0,0,0,0-1.5Zm-3.75,3H3.75a.75.75,0,0,0,0,1.5H4.5a.75.75,0,0,0,0-1.5Zm3.75,0H7.5a.75.75,0,0,0,0,1.5h.75a.75.75,0,0,0,0-1.5ZM18,7.5v6.75A3.755,3.755,0,0,1,14.25,18H3.75A3.755,3.755,0,0,1,0,14.25V3.75A3.754,3.754,0,0,1,3.75,0h4.5A3.755,3.755,0,0,1,12,3.75h2.25A3.755,3.755,0,0,1,18,7.5Zm-14.25,9H10.5V3.75A2.25,2.25,0,0,0,8.25,1.5H3.75A2.25,2.25,0,0,0,1.5,3.75v10.5A2.25,2.25,0,0,0,3.75,16.5Zm12.75-9a2.25,2.25,0,0,0-2.25-2.25H12V16.5h2.25a2.25,2.25,0,0,0,2.25-2.25ZM14.25,9.75a.75.75,0,1,0,.75.75A.75.75,0,0,0,14.25,9.75Zm0,3a.75.75,0,1,0,.75.75A.75.75,0,0,0,14.25,12.75Zm0-6A.75.75,0,1,0,15,7.5.75.75,0,0,0,14.25,6.75Z" />
+                                                    d="M4.667,9.333A.667.667,0,0,1,4,10H3.333a.667.667,0,0,1,0-1.333H4A.667.667,0,0,1,4.667,9.333Zm2.667-.667H6.667a.667.667,0,0,0,0,1.333h.667a.667.667,0,0,0,0-1.333ZM4,11.333H3.333a.667.667,0,1,0,0,1.333H4a.667.667,0,1,0,0-1.333Zm3.333,0H6.667a.667.667,0,1,0,0,1.333h.667a.667.667,0,1,0,0-1.333ZM4,3.333H3.333a.667.667,0,1,0,0,1.333H4A.667.667,0,0,0,4,3.333Zm3.333,0H6.667a.667.667,0,0,0,0,1.333h.667a.667.667,0,1,0,0-1.333ZM4,6H3.333a.667.667,0,1,0,0,1.333H4A.667.667,0,0,0,4,6ZM7.333,6H6.667a.667.667,0,0,0,0,1.333h.667A.667.667,0,1,0,7.333,6ZM16,6.667v6A3.337,3.337,0,0,1,12.667,16H3.333A3.337,3.337,0,0,1,0,12.667V3.333A3.337,3.337,0,0,1,3.333,0h4a3.337,3.337,0,0,1,3.333,3.333h2A3.337,3.337,0,0,1,16,6.667Zm-12.667,8h6V3.333a2,2,0,0,0-2-2h-4a2,2,0,0,0-2,2v9.333A2,2,0,0,0,3.333,14.667Zm11.333-8a2,2,0,0,0-2-2h-2v10h2a2,2,0,0,0,2-2Zm-2,2a.667.667,0,1,0,.667.667A.667.667,0,0,0,12.667,8.667Zm0,2.667a.667.667,0,1,0,.667.667A.667.667,0,0,0,12.667,11.333Zm0-5.333a.667.667,0,1,0,.667.667A.667.667,0,0,0,12.667,6Z"
+                                                    fill="#ff9f43" />
                                             </svg>
+
                                         </p>
-                                        <p class="userName">
-                                            <span class="userNameHeading">Office</span>
-                                            <span class="userNameText">Flat #A5, House #668, Road #9, Avenue #5,
-                                                Mirpur DOHS, Dhaka-1216</span>
-                                        </p>
+                                        <div class="contactForUser">
+                                            <span class="contactForUserText mb5">Office</span>
+                                            <p class="addressItemCheckOutlogin">
+                                                <span class="userAddressText">Flat #A5, House #668, Road #9, Avenue #5,
+                                                    Mirpur DOHS, Dhaka-1216</span>
+                                                <span class="editIcon" id="addressInformationOfficePopup">
+                                                    <svg id="fi-rr-edit" xmlns="http://www.w3.org/2000/svg" width="14"
+                                                        height="14" viewBox="0 0 14 14">
+                                                        <path id="Path_1663" data-name="Path 1663"
+                                                            d="M12.966.561,5.854,7.673A2.9,2.9,0,0,0,5,9.735v.783a.583.583,0,0,0,.583.583h.783a2.9,2.9,0,0,0,2.062-.854l7.112-7.112a1.823,1.823,0,0,0,0-2.575,1.863,1.863,0,0,0-2.575,0Zm1.75,1.75L7.6,9.423a1.762,1.762,0,0,1-1.237.512h-.2v-.2A1.762,1.762,0,0,1,6.679,8.5l7.112-7.112a.67.67,0,0,1,.925,0,.655.655,0,0,1,0,.925Z"
+                                                            transform="translate(-2.083 -0.019)" fill="#2c2c2c" />
+                                                        <path id="Path_1664" data-name="Path 1664"
+                                                            d="M13.417,5.238a.583.583,0,0,0-.583.583V8.75H10.5A1.75,1.75,0,0,0,8.75,10.5v2.333H2.917a1.75,1.75,0,0,1-1.75-1.75V2.917a1.75,1.75,0,0,1,1.75-1.75H8.191A.583.583,0,1,0,8.191,0H2.917A2.92,2.92,0,0,0,0,2.917v8.167A2.92,2.92,0,0,0,2.917,14H9.533a2.9,2.9,0,0,0,2.063-.854L13.145,11.6A2.9,2.9,0,0,0,14,9.533V5.821A.583.583,0,0,0,13.417,5.238Zm-2.645,7.083a1.735,1.735,0,0,1-.855.467V10.5a.583.583,0,0,1,.583-.583h2.29a1.759,1.759,0,0,1-.467.854Z"
+                                                            fill="#2c2c2c" />
+                                                    </svg>
+
+                                                </span>
+                                            </p>
+
+                                        </div>
+                                        <!-- address information popup -->
+                                        <div class="addressInfoofficePopupWrapper" id="officePopupWrapper">
+                                            <div class="addProudctArea">
+                                                <!-- Delivery Address -->
+                                                <div class="contactInformationArea">
+                                                    <div class="profilePopupCloseBtn">
+                                                        <p class="closeBtn" id="closeDeliveryAdddressPopup">×</p>
+                                                    </div>
+                                                    <div class="contactInformationHeading">
+                                                        <p class="contactInformationHeadingText">Delivery Address</p>
+
+                                                    </div>
+
+                                                    <div class="contactInformationForOffer">
+                                                        <label for="" class="contactInformationForOfferInner">
+                                                            <span class="labelText">Full Name</span>
+                                                            <input type="text" class="inputFieldControl"
+                                                                autocomplete="off">
+                                                        </label>
+                                                    </div>
+                                                    <div class="dflexForDesktop">
+                                                        <div class="contactInformationForOffer width50ForDesktop">
+                                                            <label for="" class="contactInformationForOfferInner">
+                                                                <span class="labelText">Country</span>
+                                                                <input type="text" class="inputFieldControl"
+                                                                    autocomplete="off">
+                                                            </label>
+                                                        </div>
+                                                        <div class="contactInformationForOffer width50ForDesktop">
+                                                            <label for="" class="contactInformationForOfferInner">
+                                                                <span class="labelText">City</span>
+                                                                <input type="text" class="inputFieldControl"
+                                                                    autocomplete="off">
+                                                            </label>
+                                                        </div>
+                                                        <div class="contactInformationForOffer width50ForDesktop">
+                                                            <label for="" class="contactInformationForOfferInner">
+                                                                <span class="labelText">Postal Code</span>
+                                                                <input type="text" class="inputFieldControl"
+                                                                    autocomplete="off">
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="contactInformationForOffer mt30ForMobile">
+                                                        <label for="" class="contactInformationForOfferInner">
+                                                            <span class="labelText textAreaLabel">Address</span>
+                                                            <textarea class="inputTextAreadField" name="" id=""
+                                                                cols="30" rows="10"></textarea>
+                                                        </label>
+                                                        <button class="popupBtn">Save Address</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- address information popup -->
+                                    </div>
+                                    <!-- col -->
+                                    <div class="contactItemCol ">
+
+                                        <div class="addAddressBtnArea">
+                                            <button class="addAddressBtn">
+                                                <span class="addAddressBtnInner">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                        viewBox="0 0 13 13">
+                                                        <path id="fi-rr-plus"
+                                                            d="M11.5,5.5h-5V.5A.5.5,0,0,0,6,0H6a.5.5,0,0,0-.5.5v5H.5A.5.5,0,0,0,0,6H0a.5.5,0,0,0,.5.5h5v5A.5.5,0,0,0,6,12H6a.5.5,0,0,0,.5-.5v-5h5A.5.5,0,0,0,12,6h0A.5.5,0,0,0,11.5,5.5Z"
+                                                            transform="translate(0.5 0.5)" fill="#2c2c2c"
+                                                            stroke="#2c2c2c" stroke-width="1" />
+                                                    </svg>
+
+                                                </span>
+                                                <span class="addAddressBtnInner">
+                                                    Add Address
+                                                </span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- ==========  -->
+
+
                     </div>
 
                 </div>
@@ -955,9 +1455,24 @@
         userNumber.innerText = user.number;
 
 
-        // usr status
+        // popup
+        document.getElementById("personalInformationUpdateBtn").addEventListener("click", function () {
+            document.getElementById("popupWrapper").classList.add("showPopup")
+        });
 
+        // close popup
+        document.getElementById("closeBtn").addEventListener("click", function () {
+            document.getElementById("popupWrapper").classList.remove("showPopup")
+        });
 
+        // address informaion popup
+        document.getElementById("addressInformationOfficePopup").addEventListener("click", function () {
+            document.getElementById("officePopupWrapper").classList.add("showPopup");
+        });
+
+        document.getElementById("closeDeliveryAdddressPopup").addEventListener("click", function () {
+            document.getElementById("officePopupWrapper").classList.remove("showPopup");
+        });
     </script>
 </body>
 
